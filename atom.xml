@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io/</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-05-23T02:47:56.313Z</updated>
+    <updated>2020-05-23T06:14:07.004Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io/"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -17,7 +17,7 @@
         </link>
         <updated>2020-05-22T14:09:26.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
-<p>截止稿子写完的时候，MIUI 12已经上线MIUI官网 https://home.miui.com/ 不过这次小凡还是说，受限于发布会时间，很多功能没办法讲全。如果你现在想要申请MIUI 12，请去小米社区查看有关界面。</p>
+<p>截止稿子写完的时候，MIUI 12已经上线<a href="https://home.miui.com/">MIUI官网</a> 不过这次小凡还是说，受限于发布会时间，很多功能没办法讲全。如果你现在想要申请MIUI 12，请去小米社区查看有关界面。</p>
 </blockquote>
 <blockquote>
 <p>本篇图文只针对发布会信息。等我的小米8真的用上了MIUI 12，我会再写一篇图文的。</p>
@@ -130,10 +130,10 @@
 然后说了一个AI电话助理的事。大家可能也都了解了。可以让小爱同学帮你接打电话。这功能对于一些有特殊需求的人来说挺有用的。小米这一点做的还是很棒的。当然更多人用它还是防骚扰电话。</p>
 <h2 id="写在最后">写在最后</h2>
 <p>去年的9月24日下午，MIUI 11 发布。<br>
-当时牺牲了我下午睡觉的时间看发布会，又利用日语课休息短暂的时间赶了一篇图文出来。[酷安图文]（https://www.coolapk.com/feed/13974735?shareKey=NmVjZDRhMTE0ODI0NWVhNDBhMGM~&amp;shareUid=1756645&amp;shareFrom=com.coolapk.market_10.0.4 ）<br>
+当时牺牲了我下午睡觉的时间看发布会，又利用日语课休息短暂的时间赶了一篇图文出来。<a href="https://www.coolapk.com/feed/13974735?shareKey=NmVjZDRhMTE0ODI0NWVhNDBhMGM~&amp;shareUid=1756645&amp;shareFrom=com.coolapk.market_10.0.4">酷安图文</a><br>
 今天重新看这篇图文。不得不说小凡的演讲肯定差了点雷总的意思。风格不是那么能放得开，有点拘谨。<br>
 我记得MIUI 10 给我印象最深的就是那个瀑布式的后台多任务界面。10 发布的时候是2018年的夏天。那也是我人生最为颓废的日子，虽然马上要高考了。我和同学去网吧开黑。累了打开MIUI的官网。看到这个“瀑布式”，我们都觉得这肯定很难操作。当时我已经计划好高考后买一部小米手机，不过没决定是mix 2s还是米8，同学已经买完了8+128的一加6。<br>
-手机到手的过程详见我的另一篇评测 [酷安图文]（https://www.coolapk.com/feed/16048805?shareKey=MjRlMGE0ZmYwY2IwNWVhNDE0MTI~&amp;shareUid=1756645&amp;shareFrom=com.coolapk.market_10.0.4 ）<br>
+手机到手的过程详见我的另一篇评测 <a href="https://www.coolapk.com/feed/16048805?shareKey=MjRlMGE0ZmYwY2IwNWVhNDE0MTI~&amp;shareUid=1756645&amp;shareFrom=com.coolapk.market_10.0.4">酷安图文</a><br>
 后来到手线刷了开发版。事实证明瀑布流用得还是很舒服的。<br>
 MIUI 11应该是我从头到尾参与功能优化的MIUI版本。得益于与以往不同的内测方案，11的大部分功能在发布前就已经下发给了10的开发版用户。不得不说这个方案确实加快了系统的分发效率，不过坏处是，对于我来说，发布会上就没有什么新鲜的东西了。也有很多用户对这种内测方案表示不满的，说更新的东西很少，这才是所谓“快速分发”的原因。事实上更新的东西确实很少，并非是分发的问题。在国产UI较为以前更加完善的如今，各家UI的功能几乎没有太大的区别。MIUI“一枝独秀”的感觉早就没有了。再加上小米产品线的铺开，留给工程师认真做系统，做一些比较大的改变的的机会也不多了。<br>
 不过我还是守候在电脑屏幕前看发布会，内心深处是期待着有什么新鲜的东西的到来的。这次的发布会我很满意。尽管发布的东西总体也不算太多，但和上一次相比，真的有一种“我还没看够”的感觉。我也有理由相信还有很多东西没在发布会上讲出来。<br>
