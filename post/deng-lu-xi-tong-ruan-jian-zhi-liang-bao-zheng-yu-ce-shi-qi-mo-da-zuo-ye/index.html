@@ -1,0 +1,327 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>登录系统——软件质量保证与测试期末大作业 | bluebonnet27的博客</title>
+<link rel="shortcut icon" href="https://bluebonnet27.github.io//favicon.ico?v=1590922011252">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://bluebonnet27.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="登录系统——软件质量保证与测试期末大作业 | bluebonnet27的博客 - Atom Feed" href="https://bluebonnet27.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="
+啥也不会的说
+
+先放一张流程图吧。
+
+其实期末作业没什么可说的。很多python代码来自网上的，自己修改了下。这学期寒假贪玩了很多，Java也没好好学，只能用python这样子。😂 Markdown也是第一次用，排版都不会。
+# -- ..." />
+    <meta name="keywords" content="python" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://bluebonnet27.github.io/">
+  <img class="avatar" src="https://bluebonnet27.github.io//images/avatar.png?v=1590922011252" alt="">
+  </a>
+  <h1 class="site-title">
+    bluebonnet27的博客
+  </h1>
+  <p class="site-description">
+    欢迎来到这里
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/bluebonnet27" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/jiang-yuan-feng-91" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              登录系统——软件质量保证与测试期末大作业
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-25
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://bluebonnet27.github.io/tag/pythonSnake/" class="post-tag">
+                  # python
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>啥也不会的说</p>
+</blockquote>
+<p>先放一张流程图吧。<br>
+<img src="https://bluebonnet27.github.io//post-images/1590398217026.jpg" alt="process on制作" loading="lazy"></p>
+<p>其实期末作业没什么可说的。很多python代码来自网上的，自己修改了下。这学期寒假贪玩了很多，Java也没好好学，只能用python这样子。😂 Markdown也是第一次用，排版都不会。</p>
+<pre><code># -- coding: GBK --
+#一个基于thinker部件的登录与注册程序，加入了一些别的功能
+#最后更新时间 2020.05.24
+#作者@bluebonnet27 @宫浩泽
+
+import random #随机
+import pickle  # 存放数据的模块
+import tkinter as tk
+import tkinter.messagebox
+
+#图像
+from PIL import ImageTk, Image
+window = tk.Tk()
+window.title(&quot;注册登陆页面&quot;)
+window.geometry(&quot;500x400&quot;)
+ 
+canvas = tk.Canvas(window, height=500, width=500)
+imgpath = 'denglu.gif'
+img = Image.open(imgpath)
+photo = ImageTk.PhotoImage(img)
+image = canvas.create_image(0, 0, anchor='nw', image=photo)
+canvas.pack()
+
+a=str(random.randint(10,90))
+b=str(random.randint(10,90))
+
+tk.Label(window, text='用户名:').place(x=100, y=100)
+tk.Label(window, text='密码:').place(x=100, y=150)
+tk.Label(window, text='请在下面输入问题的正确答案').place(x=100, y=200)
+tk.Label(window, text=a+'+'+b+'=').place(x=100, y=250)
+         
+var_usr_name = tk.StringVar()
+#var_usr_name.set('请输入用户名')
+ 
+var_usr_pwd = tk.StringVar()
+#var_usr_pwd.set('请输入密码')
+
+var_usr_judge = tk.StringVar()
+#var_usr_judge.set('请再次输入密码')
+ 
+entry_usr_name = tk.Entry(window, textvariable=var_usr_name)
+entry_usr_name.place(x=200, y=100)
+entry_usr_pwd = tk.Entry(window, textvariable=var_usr_pwd, show='*')
+entry_usr_pwd.place(x=200, y=150)
+entry_usr_judge = tk.Entry(window, textvariable=var_usr_judge)
+entry_usr_judge.place(x=200, y=250)
+ 
+def usr_login():
+    usr_name = var_usr_name.get()
+    usr_pwd = var_usr_pwd.get()
+    usr_judge = var_usr_judge.get()
+    try:
+        with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file: #注意这个地方用到了pickle可以百度一下使用方法
+            usrs_info = pickle.load(usr_file)
+    except FileNotFoundError:
+        with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
+            usrs_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
+            pickle.dump(usrs_info, usr_file)
+ 
+    if usr_name in usrs_info:
+        #print(usr_judge)
+        if usr_pwd == usrs_info[usr_name] and int(usr_judge) == (int(a)+int(b)):
+            tk.messagebox.showinfo(title=&quot;登陆成功！&quot;, message=&quot;今天过得怎么样？&quot; + usr_name)
+        elif int(usr_judge) != (int(a)+int(b)):
+            tk.messagebox.showerror(message=&quot;错误1，请检查验证码的输入！&quot;)
+        else:
+            tk.messagebox.showerror(message=&quot;错误2，请检查你的密码输入！&quot;)
+    else:
+        is_sign_up = tk.messagebox.askyesno(&quot;错误3&quot;, &quot;你似乎还没有注册，要今天注册么？&quot;)
+        if is_sign_up:
+            usr_sign_up()
+        else: 
+            window.destroy()
+ 
+ 
+def usr_sign_up():
+    def sign_to_Python():
+        signpwd = sign_pwd.get()
+        signpwdconfirm = sign_pwd_confirm.get()
+        signname = sign_name.get()
+        #口令
+        #signorder = sign_order.get()
+        
+        try:
+            with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file:
+                exist_usr_info = pickle.load(usr_file)
+        except FileNotFoundError:
+            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
+                exist_usr_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
+                pickle.dump(exist_usr_info, usr_file)
+        if signpwd != signpwdconfirm:
+            tk.messagebox.showerror(&quot;错误4&quot;, &quot;两次输入的密码不一致！&quot;)
+        elif signname in exist_usr_info:
+            tk.messagebox.showerror(&quot;错误5&quot;, &quot;这个用户已经注册了！你似乎忘记了你的密码。 &quot;)
+        else:
+            exist_usr_info[signname] = signpwd
+            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:
+                pickle.dump(exist_usr_info, usr_file)
+ 
+            tk.messagebox.showinfo(&quot;欢迎&quot;, &quot;注册成功！&quot;)
+            # close window
+            window_sign_up.destroy()
+ 
+    window_sign_up = tk.Toplevel(window)
+    window_sign_up.geometry(&quot;350x300&quot;)
+    window_sign_up.title(&quot;注册页面&quot;)
+ 
+    sign_name = tk.StringVar()
+    sign_name.set('请输入用户名')
+    tk.Label(window_sign_up, text=&quot;用户名:&quot;).place(x=10, y=10)
+    entry_new_name = tk.Entry(window_sign_up, textvariable=sign_name)
+    entry_new_name.place(x=150, y=10)
+ 
+    sign_pwd = tk.StringVar()
+    tk.Label(window_sign_up, text=&quot;密码:&quot;).place(x=10, y=50)
+    entry_usr_pwd = tk.Entry(window_sign_up, textvariable=sign_pwd, show='*')
+    entry_usr_pwd.place(x=150, y=50)
+ 
+    sign_pwd_confirm = tk.StringVar()
+    tk.Label(window_sign_up, text=&quot;确认密码:&quot;).place(x=10, y=90)
+    entry_usr_pwd_confirm = tk.Entry(window_sign_up, textvariable=sign_pwd_confirm, show='*')
+    entry_usr_pwd_confirm.place(x=150, y=90)
+ 
+    btn_confirm_sign_up = tk.Button(window_sign_up, text=&quot;  创建  &quot;, command=sign_to_Python)
+    btn_confirm_sign_up.place(x=150, y=250)
+ 
+ 
+# login and sign up
+btn_login = tk.Button(window, text=&quot;  登录  &quot;, command=usr_login)
+btn_login.place(x=155, y=300)
+ 
+btn_sign_up = tk.Button(window, text=&quot;  创建  &quot;, command=usr_sign_up)
+btn_sign_up.place(x=270, y=300)
+ 
+window.mainloop()
+
+#def catch_back_password():
+</code></pre>
+<p>实际上<code>catch_back_password()</code>是打算写一个密码找回程序的。实际上很多注释是这样的：本来想加一个新功能，但发现太费劲了，就把写了一半的代码注释掉了。</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://bluebonnet27.github.io/post/miui12forMe/">
+              <h3 class="post-title">
+                MIUI 12 杂谈（发布会篇）
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  bluebonnet27的个人博客||<a href="mailto:tihongsheng@foxmail.com">给我发电子邮件</a>
+  <a class="rss" href="https://bluebonnet27.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
