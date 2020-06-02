@@ -2201,8 +2201,8 @@ pre > span.copy-code:hover {
       color: #eee;
       border-bottom-color: #eee;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #f03e3e;
+      border-bottom-color: #f03e3e;
     }.active-current > a {
       color: #fc6423 !important;
       border-bottom-color: #fc6423 !important;
