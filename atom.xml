@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io/</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-06-14T22:08:35.093Z</updated>
+    <updated>2020-06-22T09:41:53.395Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io/"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -10,6 +10,63 @@
     <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
     <icon>https://bluebonnet27.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[每周说（4）：何去何从的时光]]></title>
+        <id>https://bluebonnet27.github.io/post/weeklysay4/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay4/">
+        </link>
+        <updated>2020-06-19T13:53:28.000Z</updated>
+        <content type="html"><![CDATA[<p><em>一段以泪洗面的日子以后，往往接着另外一段</em></p>
+<p>每周说第4篇，<em>这个系列的目的是练习Markdown语法</em></p>
+<h1 id="何去何从的时光">何去何从的时光</h1>
+<p><em>压力大的时候，我会找个地方哭。然后。。。这是一个技术性博客，不该写这些东西的——管他呢，我想写什么就写什么</em></p>
+<p>这篇每周说<font color='red'>不讨论热点话题</font>。如果你是来看热点话题的，请看别的“每周说”</p>
+<p>这篇讨论关于我自己的事。</p>
+<p>大二学期接近结束，我发现<font color='red'>自己仍然没有做好工作的准备</font>。疫情期间的专业核心课也<font color='red'>一塌糊涂</font>。我发觉自己在面对大学的态度上有问题。</p>
+<p>我觉得大学<font color='red'>不挂科</font>就是最终目标。可惜不是这样的。占总课时三分之一，甚至二分之一的课不会对未来的工作有任何帮助。而我却花了很多时间在这上面。没有提升自己的编程能力。没有课的时候我也不会做一些事情主动提升自己，而是做一些没有建树的工作。这固然有学校的原因，也有我自己的责任。</p>
+<p>而这一切的集中爆发点在上周的数据库作业。</p>
+<p>具体内容不细说了。我依然觉得这种要求十分奇怪，但我也没有办法。而当我意识到很多人能够做到的时候，我觉得我是个废物，彻头彻底的废物。</p>
+<p>那个时候状态很差，躺在床上被压得喘不过气来。可能是因为夏天特别热的缘故？我自己清楚知道不是这么回事。</p>
+<p>可真正努力起来又很难。去leetcode，结果第一题，我的python代码运行6s，别人用哈希只用了4ms。</p>
+<p>大学两年，也没考虑找个女朋友。因为对我来说，<font color='red'>因为孤独去找女朋友是很不正常的</font>。两年也没认清学校的本质：<font color='red'>理论的东西可以教给你，实践的东西都要自学</font>。</p>
+<p>有时候也觉得自己和当初所想象的越来越遥远了，大学生活也是。依然没有想好考研还是就业。不过还有一年的时间。</p>
+<p>要不现在开始种一棵树？</p>
+<h1 id="未来的计划">未来的计划</h1>
+<p>专业相关的理论基础课：</p>
+<ol>
+<li>《计算机组成原理》<br>
+状态：基本混的60分<br>
+应对方法：《CSAP》</li>
+<li>《数据结构与算法》<br>
+状态：认真学了，但现在都基本忘了<br>
+应对方法：《算法导论》</li>
+<li>《操作系统》<br>
+状态：疫情期间的专业课，状态你懂得。<br>
+应对方法：开学有考试。正好借着暑假的机会恶补下。<br>
+《计算机网络》，《数据库原理》同理</li>
+</ol>
+<p>专业相关的高级基础课：</p>
+<ol>
+<li>《软件工程》（有空把SEAA看一遍，做好笔记）</li>
+<li>《离散数学》（开学有考试，正好复习）</li>
+</ol>
+<p>实践课：</p>
+<ol>
+<li>MySQL 利用b站的视频解决</li>
+<li>Java 《Java核心技术》</li>
+<li>python 把书上剩下的项目全做了。</li>
+</ol>
+<p>其他：</p>
+<ol>
+<li>英语，准备最后考一次六级。冲500分。虽然能感觉到，年龄越大，英语成绩越不理想。但冲一次500应该不是问题。（但愿）</li>
+<li>每月一本书计划：买个kindle。纸质书越来越贵了。</li>
+<li>每周一部电影计划：这次不专注于高分电影。高分不等于好看。</li>
+</ol>
+<p>一切准备妥当以后，想去<font color='red'>找个实习</font>。看看我自己适不适合开发岗位。</p>
+<p>就，这样。</p>
+<p>封面图：<span>Photo by <a href="https://unsplash.com/@craftedbygc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Green Chameleon</a> on <a href="/s/photos/university?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[每周说（3)：中北大学学生跳楼事件，matlab无法使用，这周的大作业]]></title>
         <id>https://bluebonnet27.github.io/post/weeklysay3/</id>
