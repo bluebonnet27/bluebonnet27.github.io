@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.bluebonnet27.xyz</id>
+    <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-08-04T08:00:13.309Z</updated>
+    <updated>2020-10-19T09:25:03.925Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.bluebonnet27.xyz"/>
-    <link rel="self" href="https://blog.bluebonnet27.xyz/atom.xml"/>
+    <link rel="alternate" href="https://bluebonnet27.github.io"/>
+    <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
     <subtitle>欢迎来到这里，建议使用电脑浏览</subtitle>
-    <logo>https://blog.bluebonnet27.xyz/images/avatar.png</logo>
-    <icon>https://blog.bluebonnet27.xyz/favicon.ico</icon>
+    <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
+    <icon>https://bluebonnet27.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, bluebonnet27的博客</rights>
     <entry>
         <title type="html"><![CDATA[每周说（7）：特别篇：《三色绘恋s》]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/weeklysay7/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/weeklysay7/">
+        <id>https://bluebonnet27.github.io/post/weeklysay7/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay7/">
         </link>
         <updated>2020-07-11T03:05:12.000Z</updated>
         <content type="html"><![CDATA[<p><em>明知道不是真实的，你依然会热泪盈眶</em></p>
@@ -46,8 +46,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[每周说（6）：独立思考的能力在任何时候都显得无比重要]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/weeklysay6/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/weeklysay6/">
+        <id>https://bluebonnet27.github.io/post/weeklysay6/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay6/">
         </link>
         <updated>2020-07-02T02:34:58.000Z</updated>
         <content type="html"><![CDATA[<p><em>起码让你活得明白些，也许不会带来快乐</em></p>
@@ -89,8 +89,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[每周说（4）：何去何从的时光]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/weeklysay4/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/weeklysay4/">
+        <id>https://bluebonnet27.github.io/post/weeklysay4/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay4/">
         </link>
         <updated>2020-06-19T13:53:28.000Z</updated>
         <content type="html"><![CDATA[<p><em>一段以泪洗面的日子以后，往往接着另外一段</em></p>
@@ -146,8 +146,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[每周说（3)：中北大学学生跳楼事件，matlab无法使用，这周的大作业]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/weeklysay3/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/weeklysay3/">
+        <id>https://bluebonnet27.github.io/post/weeklysay3/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay3/">
         </link>
         <updated>2020-06-10T09:00:42.000Z</updated>
         <content type="html"><![CDATA[<p><em>焦虑是大部分人生活的常态</em></p>
@@ -196,8 +196,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[每周说（2）：线上考试的困境，美国的示威活动的思考，b站up主虎子]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/weeklysay2/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/weeklysay2/">
+        <id>https://bluebonnet27.github.io/post/weeklysay2/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay2/">
         </link>
         <updated>2020-06-01T13:26:57.000Z</updated>
         <content type="html"><![CDATA[<!-- more -->
@@ -273,8 +273,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[每周说（1）：形式主义与现实主义]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/weeklysay1/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/weeklysay1/">
+        <id>https://bluebonnet27.github.io/post/weeklysay1/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay1/">
         </link>
         <updated>2020-05-30T11:17:22.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -321,15 +321,15 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[登录系统——软件质量保证与测试期末大作业]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/">
+        <id>https://bluebonnet27.github.io/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/</id>
+        <link href="https://bluebonnet27.github.io/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/">
         </link>
         <updated>2020-05-25T09:12:58.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
 <p>啥也不会的说</p>
 </blockquote>
 <p>先放一张流程图吧。<br>
-<img src="https://blog.bluebonnet27.xyz/post-images/1590398217026.jpg" alt="process on制作" loading="lazy"></p>
+<img src="https://bluebonnet27.github.io/post-images/1590398217026.jpg" alt="process on制作" loading="lazy"></p>
 <p>其实期末作业没什么可说的。很多python代码来自网上的，自己修改了下。这学期寒假贪玩了很多，Java也没好好学，只能用python这样子。😂 Markdown也是第一次用，排版都不会。</p>
 <pre><code># -- coding: GBK --
 #一个基于thinker部件的登录与注册程序，加入了一些别的功能
@@ -773,8 +773,8 @@ window.mainloop()
     </entry>
     <entry>
         <title type="html"><![CDATA[MIUI 12 杂谈（发布会篇）]]></title>
-        <id>https://blog.bluebonnet27.xyz/post/miui12forMe/</id>
-        <link href="https://blog.bluebonnet27.xyz/post/miui12forMe/">
+        <id>https://bluebonnet27.github.io/post/miui12forMe/</id>
+        <link href="https://bluebonnet27.github.io/post/miui12forMe/">
         </link>
         <updated>2020-05-22T14:09:26.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
