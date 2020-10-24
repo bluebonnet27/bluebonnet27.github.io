@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-10-23T13:09:13.323Z</updated>
+    <updated>2020-10-24T04:53:28.869Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
     <icon>https://bluebonnet27.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[每周说（8）：新的开始]]></title>
+        <id>https://bluebonnet27.github.io/post/weeklysay8/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay8/">
+        </link>
+        <updated>2020-10-24T04:08:03.000Z</updated>
+        <content type="html"><![CDATA[<p><em>已经过去一半了</em></p>
+<p>每周说第8期，<em>这个系列的目的是练习Markdown语法</em></p>
+<h1 id="老朋友新故事">老朋友，新故事</h1>
+<p><em>来自刻俄柏的问候：你今天被密饼撑到了么？</em></p>
+<p>想说的东西有很多，就是不知道从哪里说起。</p>
+<h2 id="找回自己的博客">找回自己的博客</h2>
+<p>4月份的时候，我在腾讯云申请了现在的域名<a href="http://blog.bluebonnet27.xyz/">blog.bluebonnet27.xyz</a>，计划将这个域名解析到我原来的<a href="http://bluebonnet27.github.io/">bluebonnet27.github.io</a>，也许这样做就不会发生<font color=red>只能用特殊手段访问</font>的问题。但事实上解析依旧不好用，我产生了用 coding 码云代替 gihub pages 的想法，一通操作结果还是不行。说下决心自己花钱购买服务器，估计也没那个精力去配置很多东西。</p>
+<p>向来对云服务不感兴趣，或者说以后可能会感兴趣但不打算把现在的精力花到这个里面。于是<font color=red >博客的事情就这么不了了之了</font></p>
+<p>这个月（10月）偶然写Android代码写累了，想试试 github.io 的地址是不是还能访问，结果意外进去了。gridea 的同步也恢复正常了。于是想着：再写一篇吧。反正文件本地都有备份的。github pages 再访问不了也可以“东山再起”。于是写了这一篇博客。</p>
+<h2 id="其他的">其他的</h2>
+<p>这期间我尝试在<a href="https://blog.csdn.net/qq_37387199/">CSDN</a>，<a href="https://www.cnblogs.com/bluebonnet27/">cnblogs博客园</a>，发一些文章。CSDN 上的有两篇是原创的，有空我会搬到这里来，<s>或者就是单纯贴个链接</s>但其实大部分文章都是从这里搬过去的。</p>
+<p>CSDN，怎么说呢。恰饭的行为我没什么感觉。但大部分都是关于代码的文章，我一个天天吹水的人不适合在那里和大佬一块玩耍。cnblogs 也是，而且博客园自定义的程度貌似更高一点，用到很多前端的高级知识。我自己的博客用的都是 gridea 商城的主题，惭愧，我不是一个合格的程序员，天天piao别人的轮子。</p>
+<p>其实更重要的是，<font color=red>我希望博客是一个半私人的空间</font>。攀比也好利益也好，CSDN 和博客园很多文章都是互相抄袭不写出处的。原创文章出头之日遥遥无期。所以不如干脆不出头，关起门来自己玩。有人问你为什么不直接写日记呢？<font color=red>其实还是希望自己的文章有人看见</font>，总比只有自己能看见的日记强。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/10/24/sSQ7n1gumPFkl6Y.jpg" alt="博客.jpg" loading="lazy"></figure>
+<p>重新看到这个界面的时候，那种心情难以形容，就像小时候搬走的邻居家的小女孩有一天在大街上和你重新遇见了一样。泻药，人在图书馆，外面的红叶落了一地。午后的阳光准确的打在面前的桌子上，像极了动漫中的某个场景。</p>
+<h1 id="友情链接">友情链接</h1>
+<p>lifeni 大佬也有写博客的习惯我是没有想到的，人工智能课上我们交换了下友链。他的博客地址：<a href="https://lifeni.life/">记录干杯</a>，反正做的肯定比我好就是了。</p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/10/24/skw5Ql3Oizx1btZ.jpg" alt="l博客.jpg" loading="lazy"></figure>
+<h1 id="one-more-thing">One more thing...</h1>
+<p><em>by Steve Jobs</em></p>
+<p>写一下这次的更新记录吧：</p>
+<ol>
+<li>更新了腾讯云到这个网站的解析记录。</li>
+<li>和 lifeni大佬交换了下友链</li>
+<li>更新这篇文章</li>
+</ol>
+<p>未来计划的：</p>
+<ol>
+<li>增加评论系统</li>
+<li>把 CSDN 上的几篇文章移植过来</li>
+<li>更新博客的“about”界面。</li>
+</ol>
+<hr>
+<p>封面图：《言叶之庭》剧照</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[每周说（7）：特别篇：《三色绘恋s》]]></title>
         <id>https://bluebonnet27.github.io/post/weeklysay7/</id>
