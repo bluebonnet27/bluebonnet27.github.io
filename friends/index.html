@@ -9,7 +9,7 @@
 <meta name="description" content="欢迎来到这里，建议使用电脑浏览">
 <meta name="theme-color" content="#000">
 <title>bluebonnet27的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1603601746782">
+<link rel="shortcut icon" href="/favicon.ico?v=1604058089582">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -203,19 +203,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">9</span>
+        <span class="site-item-stat-count">11</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-count">5</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-count">5</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1128,6 +1128,111 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://bluebonnet27.github.io/post/firefox_theme_upload/"" data-c="
+          &lt;p&gt;&lt;em&gt;本说明基于 firefox 79&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;文章最早由我发布在CSDN&lt;/em&gt;&lt;a href=&#34;https://blog.csdn.net/qq_37387199/article/details/107892333&#34;&gt;地址&lt;/a&gt;&lt;br&gt;
+上一篇教程里，我介绍了如何使用 firefox color 自定义浏览器的主题。&lt;br&gt;
+&lt;a href=&#34;https://blog.csdn.net/qq_37387199/article/details/107801061&#34;&gt;文章链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这一次我们将制作好的主题进行打包发布。&lt;/p&gt;
+&lt;p&gt;如同 firefox 的扩展一样，打包好的主题是一个&lt;strong&gt;xpi文件&lt;/strong&gt;&lt;br&gt;
+我们将其解压（使用7zip或者别的解压软件都可以）&lt;br&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20200809121708620.jpg&#34; alt=&#34;解压后的&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;images&lt;/strong&gt;是主题用到的图片文件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;json&lt;/strong&gt;是主题文件的描述，类似于 firefox 扩展的 json 描述。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我的主题 json 描述如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;manifest_version&amp;quot;: 2,
+  &amp;quot;version&amp;quot;: &amp;quot;1.0&amp;quot;,
+  &amp;quot;name&amp;quot;: &amp;quot;秒速五厘米1&amp;quot;,
+  &amp;quot;theme&amp;quot;: {
+    &amp;quot;images&amp;quot;: {
+      &amp;quot;additional_backgrounds&amp;quot;: [
+        &amp;quot;images/0.jpg&amp;quot;
+      ]
+    },
+    &amp;quot;properties&amp;quot;: {
+      &amp;quot;additional_backgrounds_alignment&amp;quot;: [
+        &amp;quot;center center&amp;quot;
+      ],
+      &amp;quot;additional_backgrounds_tiling&amp;quot;: [
+        &amp;quot;no-repeat&amp;quot;
+      ]
+    },
+    &amp;quot;colors&amp;quot;: {
+      &amp;quot;toolbar&amp;quot;: &amp;quot;rgba(43, 206, 227, 0)&amp;quot;,
+      &amp;quot;toolbar_text&amp;quot;: &amp;quot;rgb(255, 255, 255)&amp;quot;,
+      &amp;quot;frame&amp;quot;: &amp;quot;rgb(84, 84, 84)&amp;quot;,
+      &amp;quot;tab_background_text&amp;quot;: &amp;quot;rgb(255, 255, 255)&amp;quot;,
+      &amp;quot;toolbar_field&amp;quot;: &amp;quot;rgba(0, 0, 0, 0.36)&amp;quot;,
+      &amp;quot;toolbar_field_text&amp;quot;: &amp;quot;rgb(255, 255, 255)&amp;quot;,
+      &amp;quot;tab_line&amp;quot;: &amp;quot;rgb(255, 255, 255)&amp;quot;,
+      &amp;quot;popup&amp;quot;: &amp;quot;rgb(84, 84, 84)&amp;quot;,
+      &amp;quot;popup_text&amp;quot;: &amp;quot;rgb(255, 255, 255)&amp;quot;,
+      &amp;quot;tab_loading&amp;quot;: &amp;quot;rgb(255, 255, 255)&amp;quot;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其实这些东西就是在 firefox color 里自定义的部分，只不过将可视化的语言转成了代码。&lt;/p&gt;
+&lt;p&gt;接下来，我们登陆 &lt;a href=&#34;https://addons.mozilla.org/zh-CN/developers/&#34;&gt;firefox附加组件开发者中心&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20200809122629628.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70&#34; alt=&#34;主页&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这里，我们选择提交一个新主题，并将主题交给mozilla的网站托管。&lt;br&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20200809122748955.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70&#34; alt=&#34;上传&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这里选择我们之前导出的xpi文件就可以了，选择兼容性为PC端的firefox。上传文件后会进行校验，没问题就可以转到发布页了。&lt;/p&gt;
+&lt;p&gt;值得一提的是，选择下面的&lt;strong&gt;创建一个主题&lt;/strong&gt;也可以当场创建主题，但界面比较简陋，效果远不如 firefox color 的可视化要好。&lt;/p&gt;
+&lt;p&gt;下一个页面就是填写主题的详细信息了，中文名字方便中国人搜到主题，可惜的是 firefox 主题商店是没有“动漫”的分类的，所以我选择了“影视”。&lt;br&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20200809123241784.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70&#34; alt=&#34;许可协议&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这里的几个选项决定了cc协议的种类。&lt;/p&gt;
+&lt;p&gt;之后就是审核了，速度还是很快的。这里是我审核完的主题。&lt;br&gt;
+&lt;img src=&#34;https://img-blog.csdnimg.cn/20200809123859464.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70&#34; alt=&#34;主题&#34; loading=&#34;lazy&#34;&gt;希望这篇文章能对你有所帮助。&lt;/p&gt;
+">打包发布firefox的主题</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://bluebonnet27.github.io/post/firefox_theme_manual/"" data-c="
+          &lt;p&gt;&lt;em&gt;本说明基于firefox 79&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;最早发布在CSDN&lt;/em&gt;&lt;a href=&#34;https://blog.csdn.net/qq_37387199/article/details/107801061&#34;&gt;原地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;轻量级主题&#34;&gt;轻量级主题&lt;/h2&gt;
+&lt;p&gt;引用：&lt;a href=&#34;https://support.mozilla.org/zh-CN/kb/Firefox%20%E5%86%85%E7%BD%AE%E7%9A%84%E4%B8%BB%E9%A2%98&#34;&gt;firefox关于主题&lt;/a&gt;的说法，firefox现在仅支持轻量级主题了。&lt;/p&gt;
+&lt;p&gt;那么什么是&lt;font color=&#34;red&#34;&gt;轻量级主题&lt;/font&gt;呢？&lt;/p&gt;
+&lt;p&gt;mozilla官方并没有明确的定义，我的理解是，&lt;strong&gt;轻量级主题的概念是区别于旧的，高度自定义的主题的概念。它只能改变一些静态的样式&lt;/strong&gt;。这使得对于普通用户来说，制作一个自己的主题变得更加容易——你不需要任何编程知识。&lt;/p&gt;
+&lt;p&gt;轻量级主题还可能有以下优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加快firefox的冷启动速度&lt;/li&gt;
+&lt;li&gt;提升兼容性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然，缺点也是显而易见的。你无法实现一些比较漂亮而复杂的样式。相比于国产浏览器花样百出的主题&lt;img src=&#34;https://img-blog.csdnimg.cn/20200804220127403.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;某国产浏览器的主题宣传&#34; loading=&#34;lazy&#34;&gt;firefox的主题市场显得比较冷清。&lt;br&gt;
+但话又说回来了，chrome和edge都是轻量级主题。也许没有谁是绝对的正确的。&lt;/p&gt;
+&lt;h2 id=&#34;使用firefox-color自定义主题&#34;&gt;使用firefox color自定义主题&lt;/h2&gt;
+&lt;p&gt;在firefox的扩展商店找到这个扩展：&lt;br&gt;
+&lt;a href=&#34;https://addons.mozilla.org/zh-CN/firefox/addon/firefox-color/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200804220551124.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;这是官方提供给你的可视化制作主题的工具。&lt;br&gt;
+打开主界面，如图：&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/2020080422075611.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;界面是全英文的，不过不碍事。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;preset themes：官方预设的主题样式&lt;/li&gt;
+&lt;li&gt;custom colors：基本的组件颜色与透明度&lt;/li&gt;
+&lt;li&gt;advanced colors：高级的组件颜色与透明度&lt;/li&gt;
+&lt;li&gt;custom colors：背景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;你可以使用custom里官方预设的主题样式，在这些样式的基础上进行自己的修改，比如在custom colors里更改颜色，在custom backgrounds里更改背景填充，用官方花纹或者自己的图片。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/2020080422130660.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;当我们选择这里的每一项时，上方的可视化窗口会展示效果。你不必知道每个选项究竟是做什么的。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/202008042214566.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center&#34; alt=&#34;在这里插入图片描述&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;这里要特别说一下。如果你使用自己的图片，需要将图片的比例调节至15:1接近的比例，在中间两项选择水平与垂直居中，“重复”选择“no repeat”。这个比例是firefox制作主题时的默认比例。过大或者过小都会导致图片没办法完全显示。&lt;/p&gt;
+&lt;p&gt;做完主题就自动使用了。若换回原来的主题，在设置里启用即可。若想换回这个，打开firefox color，随便做一点更改，就自动套用了。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200804222401423.jpg#pic_center&#34; alt=&#34;在这里插入图片描述&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;你可以选择这里的export，将做好的主题打包成xpi格式发布到firefox主题市场。我没发布过主题，不知道审核速度如何。关于主题发布的问题，也许我会在下一篇博客里说明。&lt;/p&gt;
+&lt;p&gt;谢谢你的阅读。&lt;/p&gt;
+">使用firefox color自定义firefox的主题</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://bluebonnet27.github.io/post/weeklysay8/"" data-c="

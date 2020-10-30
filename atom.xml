@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-10-25T04:55:48.759Z</updated>
+    <updated>2020-10-30T11:42:04.646Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -10,6 +10,117 @@
     <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
     <icon>https://bluebonnet27.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[打包发布firefox的主题]]></title>
+        <id>https://bluebonnet27.github.io/post/firefox_theme_upload/</id>
+        <link href="https://bluebonnet27.github.io/post/firefox_theme_upload/">
+        </link>
+        <updated>2020-10-30T11:37:14.000Z</updated>
+        <content type="html"><![CDATA[<p><em>本说明基于 firefox 79</em><br>
+<em>文章最早由我发布在CSDN</em><a href="https://blog.csdn.net/qq_37387199/article/details/107892333">地址</a><br>
+上一篇教程里，我介绍了如何使用 firefox color 自定义浏览器的主题。<br>
+<a href="https://blog.csdn.net/qq_37387199/article/details/107801061">文章链接</a></p>
+<p>这一次我们将制作好的主题进行打包发布。</p>
+<p>如同 firefox 的扩展一样，打包好的主题是一个<strong>xpi文件</strong><br>
+我们将其解压（使用7zip或者别的解压软件都可以）<br>
+<img src="https://img-blog.csdnimg.cn/20200809121708620.jpg" alt="解压后的" loading="lazy"></p>
+<p>其中：</p>
+<ul>
+<li><strong>images</strong>是主题用到的图片文件</li>
+<li><strong>json</strong>是主题文件的描述，类似于 firefox 扩展的 json 描述。</li>
+</ul>
+<p>我的主题 json 描述如下：</p>
+<pre><code>{
+  &quot;manifest_version&quot;: 2,
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;name&quot;: &quot;秒速五厘米1&quot;,
+  &quot;theme&quot;: {
+    &quot;images&quot;: {
+      &quot;additional_backgrounds&quot;: [
+        &quot;images/0.jpg&quot;
+      ]
+    },
+    &quot;properties&quot;: {
+      &quot;additional_backgrounds_alignment&quot;: [
+        &quot;center center&quot;
+      ],
+      &quot;additional_backgrounds_tiling&quot;: [
+        &quot;no-repeat&quot;
+      ]
+    },
+    &quot;colors&quot;: {
+      &quot;toolbar&quot;: &quot;rgba(43, 206, 227, 0)&quot;,
+      &quot;toolbar_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;frame&quot;: &quot;rgb(84, 84, 84)&quot;,
+      &quot;tab_background_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;toolbar_field&quot;: &quot;rgba(0, 0, 0, 0.36)&quot;,
+      &quot;toolbar_field_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;tab_line&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;popup&quot;: &quot;rgb(84, 84, 84)&quot;,
+      &quot;popup_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;tab_loading&quot;: &quot;rgb(255, 255, 255)&quot;
+    }
+  }
+}
+</code></pre>
+<p>其实这些东西就是在 firefox color 里自定义的部分，只不过将可视化的语言转成了代码。</p>
+<p>接下来，我们登陆 <a href="https://addons.mozilla.org/zh-CN/developers/">firefox附加组件开发者中心</a><br>
+<img src="https://img-blog.csdnimg.cn/20200809122629628.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="主页" loading="lazy"><br>
+这里，我们选择提交一个新主题，并将主题交给mozilla的网站托管。<br>
+<img src="https://img-blog.csdnimg.cn/20200809122748955.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="上传" loading="lazy"><br>
+这里选择我们之前导出的xpi文件就可以了，选择兼容性为PC端的firefox。上传文件后会进行校验，没问题就可以转到发布页了。</p>
+<p>值得一提的是，选择下面的<strong>创建一个主题</strong>也可以当场创建主题，但界面比较简陋，效果远不如 firefox color 的可视化要好。</p>
+<p>下一个页面就是填写主题的详细信息了，中文名字方便中国人搜到主题，可惜的是 firefox 主题商店是没有“动漫”的分类的，所以我选择了“影视”。<br>
+<img src="https://img-blog.csdnimg.cn/20200809123241784.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="许可协议" loading="lazy"><br>
+这里的几个选项决定了cc协议的种类。</p>
+<p>之后就是审核了，速度还是很快的。这里是我审核完的主题。<br>
+<img src="https://img-blog.csdnimg.cn/20200809123859464.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="主题" loading="lazy">希望这篇文章能对你有所帮助。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用firefox color自定义firefox的主题]]></title>
+        <id>https://bluebonnet27.github.io/post/firefox_theme_manual/</id>
+        <link href="https://bluebonnet27.github.io/post/firefox_theme_manual/">
+        </link>
+        <updated>2020-10-30T11:33:20.000Z</updated>
+        <content type="html"><![CDATA[<p><em>本说明基于firefox 79</em><br>
+<em>最早发布在CSDN</em><a href="https://blog.csdn.net/qq_37387199/article/details/107801061">原地址</a></p>
+<h2 id="轻量级主题">轻量级主题</h2>
+<p>引用：<a href="https://support.mozilla.org/zh-CN/kb/Firefox%20%E5%86%85%E7%BD%AE%E7%9A%84%E4%B8%BB%E9%A2%98">firefox关于主题</a>的说法，firefox现在仅支持轻量级主题了。</p>
+<p>那么什么是<font color="red">轻量级主题</font>呢？</p>
+<p>mozilla官方并没有明确的定义，我的理解是，<strong>轻量级主题的概念是区别于旧的，高度自定义的主题的概念。它只能改变一些静态的样式</strong>。这使得对于普通用户来说，制作一个自己的主题变得更加容易——你不需要任何编程知识。</p>
+<p>轻量级主题还可能有以下优点：</p>
+<ul>
+<li>加快firefox的冷启动速度</li>
+<li>提升兼容性</li>
+</ul>
+<p>当然，缺点也是显而易见的。你无法实现一些比较漂亮而复杂的样式。相比于国产浏览器花样百出的主题<img src="https://img-blog.csdnimg.cn/20200804220127403.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="某国产浏览器的主题宣传" loading="lazy">firefox的主题市场显得比较冷清。<br>
+但话又说回来了，chrome和edge都是轻量级主题。也许没有谁是绝对的正确的。</p>
+<h2 id="使用firefox-color自定义主题">使用firefox color自定义主题</h2>
+<p>在firefox的扩展商店找到这个扩展：<br>
+<a href="https://addons.mozilla.org/zh-CN/firefox/addon/firefox-color/">下载地址</a></p>
+<figure data-type="image" tabindex="1"><img src="https://img-blog.csdnimg.cn/20200804220551124.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>这是官方提供给你的可视化制作主题的工具。<br>
+打开主界面，如图：</p>
+<figure data-type="image" tabindex="2"><img src="https://img-blog.csdnimg.cn/2020080422075611.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>界面是全英文的，不过不碍事。</p>
+<ul>
+<li>preset themes：官方预设的主题样式</li>
+<li>custom colors：基本的组件颜色与透明度</li>
+<li>advanced colors：高级的组件颜色与透明度</li>
+<li>custom colors：背景</li>
+</ul>
+<p>你可以使用custom里官方预设的主题样式，在这些样式的基础上进行自己的修改，比如在custom colors里更改颜色，在custom backgrounds里更改背景填充，用官方花纹或者自己的图片。</p>
+<figure data-type="image" tabindex="3"><img src="https://img-blog.csdnimg.cn/2020080422130660.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>当我们选择这里的每一项时，上方的可视化窗口会展示效果。你不必知道每个选项究竟是做什么的。</p>
+<figure data-type="image" tabindex="4"><img src="https://img-blog.csdnimg.cn/202008042214566.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>这里要特别说一下。如果你使用自己的图片，需要将图片的比例调节至15:1接近的比例，在中间两项选择水平与垂直居中，“重复”选择“no repeat”。这个比例是firefox制作主题时的默认比例。过大或者过小都会导致图片没办法完全显示。</p>
+<p>做完主题就自动使用了。若换回原来的主题，在设置里启用即可。若想换回这个，打开firefox color，随便做一点更改，就自动套用了。</p>
+<figure data-type="image" tabindex="5"><img src="https://img-blog.csdnimg.cn/20200804222401423.jpg#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>你可以选择这里的export，将做好的主题打包成xpi格式发布到firefox主题市场。我没发布过主题，不知道审核速度如何。关于主题发布的问题，也许我会在下一篇博客里说明。</p>
+<p>谢谢你的阅读。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[每周说（8）：新的开始]]></title>
         <id>https://bluebonnet27.github.io/post/weeklysay8/</id>
@@ -811,138 +922,6 @@ window.mainloop()
 
 </code></pre>
 <p>需要文件夹目录下有一张<code>denglu.gif</code>GIF图片，然后数据是用pickle文件存储的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MIUI 12 杂谈（发布会篇）]]></title>
-        <id>https://bluebonnet27.github.io/post/miui12forMe/</id>
-        <link href="https://bluebonnet27.github.io/post/miui12forMe/">
-        </link>
-        <updated>2020-05-22T14:09:26.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>截止稿子写完的时候，MIUI 12已经上线<a href="https://home.miui.com/">MIUI官网</a> 不过这次小凡还是说，受限于发布会时间，很多功能没办法讲全。如果你现在想要申请MIUI 12，请去小米社区查看有关界面。</p>
-</blockquote>
-<blockquote>
-<p>本篇图文只针对发布会信息。等我的小米8真的用上了MIUI 12，我会再写一篇图文的。</p>
-</blockquote>
-<hr>
-<p>这是一个风和日丽的下午。外面因为春天的到来已经变得有点热了。<br>
-发布会很精彩。我相信真的有很多功能因为时间所限没有讲出来。尤其是火星动画出来的时候，我真的wow了一下。<br>
-你将看到：</p>
-<ul>
-<li>光锥动画架构</li>
-<li>新的动效与设计语言</li>
-<li>超级壁纸</li>
-<li>隐私</li>
-<li>多任务</li>
-<li>灵弦手机运动算法</li>
-</ul>
-<hr>
-<h2 id="光锥动画">光锥动画</h2>
-<p>小凡说有很多人和他反馈动画的问题。</p>
-<p>非常客观地承认了苹果的动画水平确实很高。</p>
-<blockquote>
-<p>其实安卓现有的能力，远远无法支撑我们的梦想</p>
-</blockquote>
-<p>于是小米自己研发了“光锥动效架构”</p>
-<ol>
-<li>
-<p>渲染引擎：<br>
-在抗锯齿，G2连续曲线，高级混色，模糊等方面击败了搭载原生Android 10的pixel 4（如果我没认错的话）。毕竟我也没用过谷歌亲儿子系列，不知道具体是否是这样的。不过如果真的如小凡所说，确实有很大的进步。<br>
-小米终于有一天拿谷歌开刀了</p>
-</li>
-<li>
-<p>物理引擎：<br>
-物理引擎呈现物体质感和真实反馈。当你打开或者退出应用的时候，引擎动画模拟三维空间中的物理曲线。“这个动画是可以打断的”</p>
-</li>
-<li>
-<p>动态窗体：<br>
-这个主要是解决横屏问题。安卓应用历来存在的问题是，系统界面和应用，在竖屏横屏相互转换时存在卡死，延迟。小凡以《王者荣耀》为例子，展示了MIUI 12对这一过程的优化。<br>
-而且，甚至当你从不同的方向用不同的全面屏手势左右滑动退出的时候，动画是不同的。（演示以默认图标为例子，对于用第三方图标包的用户来说可能有点吃亏，这是鱼和熊掌的问题）<br>
-等我到手以后会测试下，这一动画效果的具体表现如何。我的手机是小米8，在MIUI 12适配的手机中性能已经是中游水平，不知道MIUI有没有考虑优化的问题。不过这台手机既然出现在推荐名单里，相必问题不大。</p>
-</li>
-</ol>
-<h2 id="动态设计语言">动态设计语言</h2>
-<p>用有生命力的动画传递真实。<br>
-比如</p>
-<ul>
-<li>控制中心（？这是什么）</li>
-<li>安全扫描（我从来不扫）</li>
-<li>便签与待办（？这界面又是一个新东西）</li>
-<li>天气（和酷安的某位老哥设计得很像啊）</li>
-<li>存储空间，关于手机，小米账号</li>
-</ul>
-<p>总之就是UI进行了重绘，变得更加好看了。我有理由相信显示出来的只是一部分，不过就是这一部分也让我很期待MIUI 12系统的样子。</p>
-<h2 id="超级壁纸">超级壁纸</h2>
-<blockquote>
-<p>将息屏，锁屏，桌面进行了统一。</p>
-</blockquote>
-<p>我当时喊了一声 WOW！血液真的往脑袋上涌。<br>
-而且不只有火星，也有地球<br>
-其实pixel wallpaper也提供了类似的功能。不过受限于原生系统，国内的手机并不能完全体验到动态壁纸。这次小米真的很酷。<br>
-虽然可能性不大，不过我倒是希望小米后期能在主题商店推出更多这样的壁纸</p>
-<h2 id="隐私">隐私</h2>
-<ol>
-<li>
-<p>照明弹：<br>
-暴露所有应用的隐私行为。<br>
-也就是内测了很长时间的后台应用行为记录。在应用的详情页和手机管家-应用管理都可以查看。<br>
-酷安的各位应该对这个功能很熟悉了。早期上线的时候存在记录不准确的bug，不过多次测试后基本没有了。<br>
-在应用后台执行一些敏感的行为，包括拍照，录音，定位时，状态栏给予明显的提示。</p>
-</li>
-<li>
-<p>拦截网：<br>
-灵感来源于Android 10对定位的“仅在使用中允许”<br>
-将这一权限选项扩展到更多应用。<br>
-对部分权限支持仅允许一次，对没说清楚用途的应用，将不支持“始终允许”<br>
-分享照片时可以擦除隐私信息<br>
-当然，链式启动，相互唤醒也做了相对的防控。</p>
-</li>
-<li>
-<p>隐匿面具：<br>
-也就是OAID标识符。<br>
-（以下引用自互联网）</p>
-</li>
-</ol>
-<blockquote>
-<p>“在 Android 10 版本中，广告渠道商们作为非厂商系统应用将无法获取 IMEI、MAC 等设备信息。旧版本的手机系统在用户手动升级前将保持不变，但是搭载 Android 10 系统的手机系统将不支持获取 IMEI。在一段时间内，将处于新旧版手机系统共存的状态，但是新版手机系统的用户占比将会逐渐提高，会造成新版系统用户无法进行推广渠道的匹配。<br>
-近日移动安全联盟针对该问题联合国内手机厂商推出补充设备标准体系方案，选择 OAID 字段作为 IMEI 等的替代字段 。广告渠道商选择 OAID 作为 IMEI 的替代字段。OAID 字段是由中国信通院联合华为、小米、OPPO、VIVO 等厂商共同推出的设备识别字段，具有一定的权威性。OAID 的准确性和覆盖率均满足广告场景的使用需求。<br>
-关于 OAID 更多信息可参考 移动安全联盟官网。”</p>
-</blockquote>
-<p>简单来说，以前Android应用读取IMEI码，并将之绑定账号数据。这些数据汇总至跨应用广告商，勾勒出你的用户画像（基于不同应用的同一个IMEI），再将这些信息返还给各个应用。比如你今天在淘宝看中了一件衣服，下一分钟会在知乎看到这件衣服的相关推荐。<br>
-这带来了一定程度的方便，缺点是隐私暴露得一览无遗。你在互联网上不再是匿名的。<br>
-但Android 10不允许第三方应用读取IMEI，不过广告商依然要精准投放广告，所以用OAID代替IMEI。不同的是，IMEI只有一个且不可更改，但OAID可以随时擦除再生成新的。<br>
-个人猜测小米貌似是想把这个功能推广到非Android 10底层的手机上，或者让大家都升级底层？我觉得前者可能性更大一点。<br>
-另外一个是空信息授权。<br>
-也就是系统给了权限，但返回null信息。<br>
-这个所谓的德国莱茵TÜV测评，针对的就是小米的隐私方案。<br>
-关于隐私的问题，其实可以多说两句。但在这里说多了就和主题无关了😂<br>
-大数据时代隐私的问题愈发严重，MIUI 12算是开了个好头，希望其他厂商也开始重视隐私的问题。包括应用方，消费者也要自己注重隐私问题。不过也有悲观的看法认为如今Guo情在这里，隐私什么的都是笑话。这种… …见仁见智吧。<br>
-反正这样的功能总不是没用的。</p>
-<h2 id="多任务">多任务</h2>
-<p>没提瀑布流和层叠式的问题。倒是说了一个小窗的全新方案。<br>
-电脑端多任务其实很方便，但手机端多任务，由于屏幕尺寸的问题，很不方便。Android原生提供的分屏其实并不是理想的方案。<br>
-横幅消息，下滑可以开小窗，上推就收起。<br>
-再次下拉可以转为全屏：<br>
-在多任务的右上角增加稍后处理区（先这么叫吧，没说名字）上滑切多任务时可以顺手收起。<br>
-横屏下的游戏也支持小窗收起。</p>
-<h2 id="灵弦手机运动算法">灵弦手机运动算法</h2>
-<p>如果用小米手环的人，比如我看到发布会可能心情很复杂。其实就是把小米手环的功能搬到手机里来了<br>
-把手机揣在兜里和戴上手环一样，可以记录一天的运动。晚上睡觉时也可以开启记录。甚至可以记录打鼾和梦话<br>
-耗电量很低，一天下来大概只有1%，所有数据离线计算，不会给用户带来隐私困扰。<br>
-然后说了一个AI电话助理的事。大家可能也都了解了。可以让小爱同学帮你接打电话。这功能对于一些有特殊需求的人来说挺有用的。小米这一点做的还是很棒的。当然更多人用它还是防骚扰电话。</p>
-<h2 id="写在最后">写在最后</h2>
-<p>去年的9月24日下午，MIUI 11 发布。<br>
-当时牺牲了我下午睡觉的时间看发布会，又利用日语课休息短暂的时间赶了一篇图文出来。<a href="https://www.coolapk.com/feed/13974735?shareKey=NmVjZDRhMTE0ODI0NWVhNDBhMGM~&amp;shareUid=1756645&amp;shareFrom=com.coolapk.market_10.0.4">酷安图文</a><br>
-今天重新看这篇图文。不得不说小凡的演讲肯定差了点雷总的意思。风格不是那么能放得开，有点拘谨。<br>
-我记得MIUI 10 给我印象最深的就是那个瀑布式的后台多任务界面。10 发布的时候是2018年的夏天。那也是我人生最为颓废的日子，虽然马上要高考了。我和同学去网吧开黑。累了打开MIUI的官网。看到这个“瀑布式”，我们都觉得这肯定很难操作。当时我已经计划好高考后买一部小米手机，不过没决定是mix 2s还是米8，同学已经买完了8+128的一加6。<br>
-手机到手的过程详见我的另一篇评测 <a href="https://www.coolapk.com/feed/16048805?shareKey=MjRlMGE0ZmYwY2IwNWVhNDE0MTI~&amp;shareUid=1756645&amp;shareFrom=com.coolapk.market_10.0.4">酷安图文</a><br>
-后来到手线刷了开发版。事实证明瀑布流用得还是很舒服的。<br>
-MIUI 11应该是我从头到尾参与功能优化的MIUI版本。得益于与以往不同的内测方案，11的大部分功能在发布前就已经下发给了10的开发版用户。不得不说这个方案确实加快了系统的分发效率，不过坏处是，对于我来说，发布会上就没有什么新鲜的东西了。也有很多用户对这种内测方案表示不满的，说更新的东西很少，这才是所谓“快速分发”的原因。事实上更新的东西确实很少，并非是分发的问题。在国产UI较为以前更加完善的如今，各家UI的功能几乎没有太大的区别。MIUI“一枝独秀”的感觉早就没有了。再加上小米产品线的铺开，留给工程师认真做系统，做一些比较大的改变的的机会也不多了。<br>
-不过我还是守候在电脑屏幕前看发布会，内心深处是期待着有什么新鲜的东西的到来的。这次的发布会我很满意。尽管发布的东西总体也不算太多，但和上一次相比，真的有一种“我还没看够”的感觉。我也有理由相信还有很多东西没在发布会上讲出来。<br>
-下一次有机会一定要去现场。我希望能看到现场的欢呼，像是多年前在电脑上第一次看小米发布会那样。当时无限可能的小米，今天依旧无限可能；当时无限可能的我们，如今也依旧无限可能。<br>
-永远相信美好的事情即将发生<br>
-夏天终究在我们最渴望理想的时候到来。夜里我们总是静静的坐着，在风中支起耳朵，听见我们的船正朝着星辰大海的方向驶去。</p>
 ]]></content>
     </entry>
 </feed>
