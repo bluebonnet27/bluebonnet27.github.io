@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-10-31T09:17:40.546Z</updated>
+    <updated>2020-11-06T15:13:46.648Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
     <icon>https://bluebonnet27.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[《第一行代码Android（第三版）》遇到的问题记录]]></title>
+        <id>https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/</id>
+        <link href="https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/">
+        </link>
+        <updated>2020-11-06T14:16:45.000Z</updated>
+        <content type="html"><![CDATA[<p><em>写在前面：guolin肯定是个大神。就凭他能用一本书把Android讲得如此透彻也是个大神。但纸质书最大的问题就是会过时，所以开个新坑，记录这本书遇到的一些问题</em></p>
+<p><font color=green>纸质书的版本：2020.04版（2020.05重印）</font></p>
+<h1 id="2020-11-06-更新">2020-11-06 更新</h1>
+<p><em>Android Studio 4.1<br>
+内部版本号 #AI-201.8743.12.41.6858069, 构建于 September 23, 2020<br>
+运行时版本: 1.8.0_242-release-1644-b01 amd64<br>
+kotlin 1.3.72-release-Studio4.1-5</em></p>
+<h2 id="chapter3">Chapter3：</h2>
+<ol>
+<li>
+<p>首先 Google 现在十分坑爹的把 xml 设计页一分为三（而不是这本书上的一分为二），增加了一个可视化编辑与代码共存的 Split 页。而且默认是可视化的设计页。Google 就这么觉得可视化设计很舒服么？<br>
+<img src="https://i.loli.net/2020/11/06/Nm8OFITlAE2wntZ.jpg" alt="android1.jpg" loading="lazy"></p>
+<p>新建 activity 向下兼容的选项已经没了<s>这玩意没啥影响其实</s></p>
+<p>android x 的选项也没了，guolin 确实是预言家。</p>
+</li>
+<li>
+<p>最新版本的 Android studio 新建项目的时候不会自动引入 kotlin-android-extensions 插件（也可能是我 AS 出 bug 了，反正我重装以后就会一直不引入），需要在<code>app</code>的<code>build.gradle</code>里引入 id 自动导入插件：</p>
+<pre><code>plugins {
+ id 'com.android.application'
+ id 'kotlin-android'
+ id 'kotlin-android-extensions'
+ }
+</code></pre>
+</li>
+</ol>
+<h2 id="chapter-7">Chapter 7</h2>
+<p>如今 Android studio 已经自带了查看数据库的功能了，所以书上的插件其实不用安装也 OK ，<a href="https://d.android.com/r/studio-ui/db-inspector-help">Google 的说明（国内应该打不开）</a><br>
+<img src="https://i.loli.net/2020/11/06/6hfQjgniSlFKmpk.jpg" alt="android2.jpg" loading="lazy"></p>
+<p>但是这个要求 API 26 以上，而且应用没在运行的时候是看不了数据库的（似乎不是查看db文件的）</p>
+<h2 id="chapter-8">Chapter 8</h2>
+<p>p324 的 Manifest 是 android 下的，而不是 java.util 的。所以写进程序的时候前面会加上 android 的前缀。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[打包发布firefox的主题]]></title>
         <id>https://bluebonnet27.github.io/post/firefox_theme_upload/</id>
@@ -470,458 +509,6 @@
 <li>每周一部电影，欠了两周但还没选好片子。</li>
 </ul>
 <p>封面图：Photo by Tobias Tullius on Unsplash <a href="https://unsplash.com/photos/4dKy7d3lkKM">https://unsplash.com/photos/4dKy7d3lkKM</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[登录系统——软件质量保证与测试期末大作业]]></title>
-        <id>https://bluebonnet27.github.io/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/</id>
-        <link href="https://bluebonnet27.github.io/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/">
-        </link>
-        <updated>2020-05-25T09:12:58.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>啥也不会的说</p>
-</blockquote>
-<p>先放一张流程图吧。<br>
-<img src="https://bluebonnet27.github.io/post-images/1590398217026.jpg" alt="process on制作" loading="lazy"></p>
-<p>其实期末作业没什么可说的。很多python代码来自网上的，自己修改了下。这学期寒假贪玩了很多，Java也没好好学，只能用python这样子。😂 Markdown也是第一次用，排版都不会。</p>
-<pre><code># -- coding: GBK --
-#一个基于thinker部件的登录与注册程序，加入了一些别的功能
-#最后更新时间 2020.05.24
-#作者@bluebonnet27 @宫浩泽
-
-import random #随机
-import pickle  # 存放数据的模块
-import tkinter as tk
-import tkinter.messagebox
-
-#图像
-from PIL import ImageTk, Image
-window = tk.Tk()
-window.title(&quot;注册登陆页面&quot;)
-window.geometry(&quot;500x400&quot;)
- 
-canvas = tk.Canvas(window, height=500, width=500)
-imgpath = 'denglu.gif'
-img = Image.open(imgpath)
-photo = ImageTk.PhotoImage(img)
-image = canvas.create_image(0, 0, anchor='nw', image=photo)
-canvas.pack()
-
-a=str(random.randint(10,90))
-b=str(random.randint(10,90))
-
-tk.Label(window, text='用户名:').place(x=100, y=100)
-tk.Label(window, text='密码:').place(x=100, y=150)
-tk.Label(window, text='请在下面输入问题的正确答案').place(x=100, y=200)
-tk.Label(window, text=a+'+'+b+'=').place(x=100, y=250)
-         
-var_usr_name = tk.StringVar()
-#var_usr_name.set('请输入用户名')
- 
-var_usr_pwd = tk.StringVar()
-#var_usr_pwd.set('请输入密码')
-
-var_usr_judge = tk.StringVar()
-#var_usr_judge.set('请再次输入密码')
- 
-entry_usr_name = tk.Entry(window, textvariable=var_usr_name)
-entry_usr_name.place(x=200, y=100)
-entry_usr_pwd = tk.Entry(window, textvariable=var_usr_pwd, show='*')
-entry_usr_pwd.place(x=200, y=150)
-entry_usr_judge = tk.Entry(window, textvariable=var_usr_judge)
-entry_usr_judge.place(x=200, y=250)
- 
-def usr_login():
-    usr_name = var_usr_name.get()
-    usr_pwd = var_usr_pwd.get()
-    usr_judge = var_usr_judge.get()
-    try:
-        with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file: #注意这个地方用到了pickle可以百度一下使用方法
-            usrs_info = pickle.load(usr_file)
-    except FileNotFoundError:
-        with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-            usrs_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-            pickle.dump(usrs_info, usr_file)
- 
-    if usr_name in usrs_info:
-        #print(usr_judge)
-        if usr_pwd == usrs_info[usr_name] and int(usr_judge) == (int(a)+int(b)):
-            tk.messagebox.showinfo(title=&quot;登陆成功！&quot;, message=&quot;今天过得怎么样？&quot; + usr_name)
-        elif int(usr_judge) != (int(a)+int(b)):
-            tk.messagebox.showerror(message=&quot;错误1，请检查验证码的输入！&quot;)
-        else:
-            tk.messagebox.showerror(message=&quot;错误2，请检查你的密码输入！&quot;)
-    else:
-        is_sign_up = tk.messagebox.askyesno(&quot;错误3&quot;, &quot;你似乎还没有注册，要今天注册么？&quot;)
-        if is_sign_up:
-            usr_sign_up()
-        else: 
-            window.destroy()
- 
- 
-def usr_sign_up():
-    def sign_to_Python():
-        signpwd = sign_pwd.get()
-        signpwdconfirm = sign_pwd_confirm.get()
-        signname = sign_name.get()
-        #口令
-        #signorder = sign_order.get()
-        
-        try:
-            with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file:
-                exist_usr_info = pickle.load(usr_file)
-        except FileNotFoundError:
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-                exist_usr_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-                pickle.dump(exist_usr_info, usr_file)
-        if signpwd != signpwdconfirm:
-            tk.messagebox.showerror(&quot;错误4&quot;, &quot;两次输入的密码不一致！&quot;)
-        elif signname in exist_usr_info:
-            tk.messagebox.showerror(&quot;错误5&quot;, &quot;这个用户已经注册了！你似乎忘记了你的密码。 &quot;)
-        else:
-            exist_usr_info[signname] = signpwd
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:
-                pickle.dump(exist_usr_info, usr_file)
- 
-            tk.messagebox.showinfo(&quot;欢迎&quot;, &quot;注册成功！&quot;)
-            # close window
-            window_sign_up.destroy()
- 
-    window_sign_up = tk.Toplevel(window)
-    window_sign_up.geometry(&quot;350x300&quot;)
-    window_sign_up.title(&quot;注册页面&quot;)
- 
-    sign_name = tk.StringVar()
-    sign_name.set('请输入用户名')
-    tk.Label(window_sign_up, text=&quot;用户名:&quot;).place(x=10, y=10)
-    entry_new_name = tk.Entry(window_sign_up, textvariable=sign_name)
-    entry_new_name.place(x=150, y=10)
- 
-    sign_pwd = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;密码:&quot;).place(x=10, y=50)
-    entry_usr_pwd = tk.Entry(window_sign_up, textvariable=sign_pwd, show='*')
-    entry_usr_pwd.place(x=150, y=50)
- 
-    sign_pwd_confirm = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;确认密码:&quot;).place(x=10, y=90)
-    entry_usr_pwd_confirm = tk.Entry(window_sign_up, textvariable=sign_pwd_confirm, show='*')
-    entry_usr_pwd_confirm.place(x=150, y=90)
- 
-    btn_confirm_sign_up = tk.Button(window_sign_up, text=&quot;  创建  &quot;, command=sign_to_Python)
-    btn_confirm_sign_up.place(x=150, y=250)
- 
- 
-# login and sign up
-btn_login = tk.Button(window, text=&quot;  登录  &quot;, command=usr_login)
-btn_login.place(x=155, y=300)
- 
-btn_sign_up = tk.Button(window, text=&quot;  创建  &quot;, command=usr_sign_up)
-btn_sign_up.place(x=270, y=300)
- 
-window.mainloop()
-
-#def catch_back_password():
-</code></pre>
-<p>实际上<code>catch_back_password()</code>是打算写一个密码找回程序的。实际上很多注释是这样的：本来想加一个新功能，但发现太费劲了，就把写了一半的代码注释掉了。</p>
-<p>最后上交的时候，加了<font color = 'red'>密码长度的限制和其他功能</font>。</p>
-<p>最终版的代码如下：</p>
-<pre><code># -- coding: GBK --
-#一个基于thinker部件的登录与注册程序，加入了一些别的功能
-#最后更新时间 2020-5-26 22:40:44
-#作者@bluebonnet27 @宫浩泽
-
-import random #随机
-import pickle  # 存放数据的模块
-import tkinter as tk #tk模块
-import tkinter.messagebox #messagebox模块
-
-#登录函数
-def usr_login():
-    pwd=''
-    usr_name = var_usr_name.get()
-    usr_pwd = var_usr_pwd.get()
-    usr_judge = var_usr_judge.get()
-
-    #查找pickle文件，不存在则admin占位
-    try:
-        with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file: 
-            usrs_info = pickle.load(usr_file)
-    except FileNotFoundError:
-        with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  
-            usrs_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-            pickle.dump(usrs_info, usr_file)
-    
-    if usr_name in usrs_info:
-		
-		#提取密码
-        for i in usrs_info[usr_name]:
-            if i=='|':
-                break
-            else:
-                pwd=pwd+i
-        print(pwd)
-        
-        #校验
-        if usr_pwd == pwd and int(usr_judge) == (int(a)+int(b)):
-            tk.messagebox.showinfo(title=&quot;登陆成功！&quot;, message=&quot;今天过得怎么样？&quot; + usr_name)
-        elif int(usr_judge) != (int(a)+int(b)):
-            tk.messagebox.showerror(message=&quot;错误1，请检查验证码的输入！&quot;)
-        else:
-            tk.messagebox.showerror(message=&quot;错误2，请检查你的密码输入！&quot;)
-    
-    else:
-        is_sign_up = tk.messagebox.askyesno(&quot;错误3&quot;, &quot;你似乎还没有注册，要今天注册么？&quot;)
-        if is_sign_up:
-            usr_sign_up()
- 
-#注册函数 
-def usr_sign_up():
-    def sign_to_Python():
-        signpwd = sign_pwd.get()
-        signpwdconfirm = sign_pwd_confirm.get()
-        signname = sign_name.get()
-        signsp = sign_sp.get()
-       
-       #依然是文件确认，下回就不写注释了
-        try:
-            with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file:
-                exist_usr_info = pickle.load(usr_file)
-        except FileNotFoundError:
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-                exist_usr_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-                pickle.dump(exist_usr_info, usr_file)
-        
-        #校验注册数据合法性
-        if signpwd != signpwdconfirm:
-            tk.messagebox.showerror(&quot;错误4&quot;, &quot;两次输入的密码不一致！&quot;)
-        elif '|' in signpwd or '|' in signsp :
-            tk.messagebox.showerror(&quot;警告&quot;, &quot;密码不要包含|字符，这是我们用来分割的！&quot;)
-        elif len(signpwd)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的密码长度不可以小于4位！&quot;)
-        elif len(signpwd)&gt;8 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的密码长度不可以大于8位！&quot;)
-        elif len(signsp)&gt;6 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的二级密码长度不可以大于6位！&quot;) 
-        elif len(signsp)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的二级密码长度不可以小于4位！&quot;)
-        elif signname in exist_usr_info:
-            tk.messagebox.showerror(&quot;错误5&quot;, &quot;这个用户已经注册了！你似乎忘记了你的密码。 &quot;)
-        
-        #没问题后写入数据
-        else:
-            exist_usr_info[signname]=signpwd+'|'+signsp
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:
-                pickle.dump(exist_usr_info, usr_file)
- 
-             #欢迎程序
-            tk.messagebox.showinfo(&quot;欢迎&quot;, &quot;注册成功！&quot;)
-            # 关闭窗口
-            window_sign_up.destroy()
- 
-    #绘制注册界面
-    window_sign_up = tk.Toplevel(window)
-    window_sign_up.geometry(&quot;350x300&quot;)
-    window_sign_up.title(&quot;注册页面&quot;)
-
-    #用户名，密码，二级密码输入框
-    sign_name = tk.StringVar()
-    sign_name.set('请输入用户名')
-    tk.Label(window_sign_up, text=&quot;用户名:&quot;).place(x=10, y=10)
-    entry_new_name = tk.Entry(window_sign_up, textvariable=sign_name)
-    entry_new_name.place(x=150, y=10)
- 
-    sign_pwd = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;密码(4-8位）&quot;).place(x=10, y=50)
-    entry_usr_pwd = tk.Entry(window_sign_up, textvariable=sign_pwd, show='*')
-    entry_usr_pwd.place(x=150, y=50)
- 
-    sign_pwd_confirm = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;确认密码:&quot;).place(x=10, y=90)
-    entry_usr_pwd_confirm = tk.Entry(window_sign_up, textvariable=sign_pwd_confirm, show='*')
-    entry_usr_pwd_confirm.place(x=150, y=90)
-
-    sign_sp = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;为方便您找回密码&quot;).place(x=10, y=130)
-    entry_usr_sp = tk.Entry(window_sign_up, textvariable=sign_sp, show='*')
-    tk.Label(window_sign_up, text=&quot;请输入二级密码(4-6位）:&quot;).place(x=10, y=170)
-    entry_usr_sp = tk.Entry(window_sign_up, textvariable=sign_sp, show='*')
-    entry_usr_sp.place(x=150, y=170)
- 
-    btn_confirm_sign_up = tk.Button(window_sign_up, text=&quot;  创建  &quot;, command=sign_to_Python)
-    btn_confirm_sign_up.place(x=150, y=250)
-
-#重置密码函数 
-def usr_sign_sp():
-    sp=''
-    
-    def sign_to_python():
-        count=0
-        signpwd = sign_pwd.get()
-        signpwdconfirm = sign_pwd_confirm.get()
-        signname = sign_name.get()
-        signsp = sign_sp.get()
-        
-        try:
-            with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file:
-                exist_usr_info = pickle.load(usr_file)
-        except FileNotFoundError:
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-                exist_usr_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-                pickle.dump(exist_usr_info, usr_file)
-        
-        #读取存储的二级密码
-        for i in exist_usr_info[signname]:
-                count+=1
-                if i=='|':
-                    sp=exist_usr_info[signname][count:]
-                    print(sp)
-                    break
-        
-        #校验重置密码输入数据的合法性
-        if signpwd != signpwdconfirm:
-            tk.messagebox.showerror(&quot;错误4&quot;, &quot;两次输入的密码不一致！&quot;)
-        elif signsp!=sp:
-            tk.messagebox.showerror(&quot;错误6&quot;, &quot;你的二级密码错误！请重新输入！ &quot;)
-        elif len(signpwd)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的密码长度不可以小于4位！&quot;)
-        elif len(signpwd)&gt;8 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的密码长度不可以大于8位！&quot;)
-        elif len(signsp)&gt;6 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的二级密码长度不可以大于6位！&quot;) 
-        elif len(signsp)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的二级密码长度不可以小于4位！&quot;)
-        elif signname not in exist_usr_info:
-            tk.messagebox.showerror(&quot;错误7&quot;, &quot;用户名错误！ &quot;)
-        elif '|' in signpwd or '|' in signsp :
-            tk.messagebox.showerror(&quot;警告&quot;, &quot;密码不要包含|字符，这是我们用来分割的！&quot;)
-        
-        #数据没有问题，可以重置了
-        else:            
-            exist_usr_info[signname]=signpwd+'|'+signsp
-            print(signpwd+signsp)
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:
-                pickle.dump(exist_usr_info, usr_file)
-            
-            #弹出重置成功的欢迎
-            tk.messagebox.showinfo(&quot;欢迎&quot;, &quot;重置成功！&quot;)
-            #关闭窗口
-            window_sign_up.destroy()
-    
-    #重置密码的相关绘图指令         
-    window_sign_up = tk.Toplevel(window)
-    window_sign_up.geometry(&quot;350x300&quot;)
-    window_sign_up.title(&quot;重置密码页面&quot;)
-    
-    sign_name = tk.StringVar()
-    sign_name.set('请输入用户名')
-    tk.Label(window_sign_up, text=&quot;用户名:&quot;).place(x=10, y=10)
-    entry_new_name = tk.Entry(window_sign_up, textvariable=sign_name)
-    entry_new_name.place(x=150, y=10)
-    
-    sign_pwd = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;新密码(4-8位):&quot;).place(x=10, y=50)
-    entry_usr_pwd = tk.Entry(window_sign_up, textvariable=sign_pwd, show='*')
-    entry_usr_pwd.place(x=150, y=50)
- 
-    sign_pwd_confirm = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;确认密码:&quot;).place(x=10, y=90)
-    entry_usr_pwd_confirm = tk.Entry(window_sign_up, textvariable=sign_pwd_confirm, show='*')
-    entry_usr_pwd_confirm.place(x=150, y=90)
-
-    sign_sp = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;请输入二级密码(4-6位):&quot;).place(x=10, y=130)
-    entry_usr_sp = tk.Entry(window_sign_up, textvariable=sign_sp, show='*')
-    entry_usr_sp.place(x=150, y=130)
-
-    btn_confirm_sign_up = tk.Button(window_sign_up, text=&quot;  创建  &quot;, command=sign_to_python)
-    btn_confirm_sign_up.place(x=150, y=250)
-
-
-
-#图像
-from PIL import ImageTk, Image
-import os
-
-#主窗口
-window = tk.Tk()
-window.title(&quot;注册登陆页面&quot;)
-window.geometry(&quot;500x400&quot;)
-
-#gif背景
-class MyLabel(tk.Label): 
-    def __init__(self, master, filename):
-        im = Image.open(filename)
-        seq = []
-        try:
-            while 1:
-                seq.append(im.copy())
-                im.seek(len(seq))
-        except EOFError:
-            pass
-        try:
-            self.delay = im.info['duration']
-        except KeyError:
-            self.delay = 100
-
-        first = seq[0].convert('RGBA')
-        self.frames = [ImageTk.PhotoImage(first)]
-
-        tk.Label.__init__(self, master, image=self.frames[0])
-        temp = seq[0]
-
-        for image in seq[1:]:
-            temp.paste(image)
-            frame = temp.convert('RGBA')
-            self.frames.append(ImageTk.PhotoImage(frame))
-        self.idx = 0
-        self.cancel = self.after(self.delay, self.play)
-    def play(self):
-        self.config(image=self.frames[self.idx])
-        self.idx += 1
-        if self.idx == len(self.frames):
-            self.idx = 0
-        self.cancel = self.after(self.delay, self.play)   
-
-#读取绘制gif
-anim = MyLabel(window, 'denglu.gif') 
-anim.pack() 
-
-#随机数产生
-a=str(random.randint(10,90))
-b=str(random.randint(10,90))
-
-#窗口静态文字绘制
-tk.Label(window, text='用户名:').place(x=100, y=100)
-tk.Label(window, text='密码:').place(x=100, y=150)
-tk.Label(window, text='请在下面输入问题的正确答案').place(x=100, y=200)
-tk.Label(window, text=a+'+'+b+'=').place(x=100, y=250)
-
-#输入感知         
-var_usr_name = tk.StringVar()
-var_usr_pwd = tk.StringVar()
-var_usr_judge = tk.StringVar()
-
-entry_usr_name = tk.Entry(window, textvariable=var_usr_name)
-entry_usr_name.place(x=200, y=100)
-entry_usr_pwd = tk.Entry(window, textvariable=var_usr_pwd, show='*')
-entry_usr_pwd.place(x=200, y=150)
-entry_usr_judge = tk.Entry(window, textvariable=var_usr_judge)
-entry_usr_judge.place(x=200, y=250)
-
-# 交互按钮
-btn_login = tk.Button(window, text=&quot;  登录  &quot;, command=usr_login)
-btn_login.place(x=150, y=300)
- 
-btn_sign_up = tk.Button(window, text=&quot;  注册  &quot;, command=usr_sign_up)
-btn_sign_up.place(x=270, y=300)
-
-btn_sign_sp = tk.Button(window, text=&quot;  重置密码  &quot;, command=usr_sign_sp)
-btn_sign_sp.place(x=350, y=350)
-
-window.mainloop()
-
-</code></pre>
-<p>需要文件夹目录下有一张<code>denglu.gif</code>GIF图片，然后数据是用pickle文件存储的。</p>
 ]]></content>
     </entry>
 </feed>
