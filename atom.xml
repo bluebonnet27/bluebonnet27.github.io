@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-11-06T15:13:46.648Z</updated>
+    <updated>2020-11-13T14:51:39.304Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -47,6 +47,203 @@ kotlin 1.3.72-release-Studio4.1-5</em></p>
 <p>但是这个要求 API 26 以上，而且应用没在运行的时候是看不了数据库的（似乎不是查看db文件的）</p>
 <h2 id="chapter-8">Chapter 8</h2>
 <p>p324 的 Manifest 是 android 下的，而不是 java.util 的。所以写进程序的时候前面会加上 android 的前缀。</p>
+<h2 id="chapter-9">Chapter 9</h2>
+<p>项目遇到了一个bug，从相册返回主mainactivity时没有照片显示，所以把出bug的代码先记录下来，以后解决：</p>
+<h3 id="这是mainactivity的">这是mainactivity的</h3>
+<pre><code>package com.ti.cameraalbumtest
+
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Matrix
+import android.media.ExifInterface
+import android.net.Uri
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import androidx.core.content.FileProvider
+import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
+import java.net.URI
+
+class MainActivity : AppCompatActivity() {
+
+    //button1
+    val takePhoto = 1
+    lateinit var imageUri:Uri
+    lateinit var outputImage:File
+
+    //button2
+    val fromAlbum = 2
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        takePhotoButton.setOnClickListener {
+            //file object
+            outputImage = File(externalCacheDir,&quot;output_image.jpg&quot;)
+            //exist
+            if(outputImage.exists()){
+                outputImage.delete()
+            }
+            outputImage.createNewFile()
+            //API judge,兼容性处理
+            imageUri = if(Build.VERSION.SDK_INT&gt;=Build.VERSION_CODES.N){
+                // need to unit in Manifest.xml
+                FileProvider.getUriForFile(this,&quot;com.ti.cameraalbumtest.fileprovider&quot;,
+                outputImage)
+            }else{
+                Uri.fromFile(outputImage)
+            }
+            //Set up CAMERA
+            val intent_camera = Intent(&quot;android.media.action.IMAGE_CAPTURE&quot;)
+            intent_camera.putExtra(MediaStore.EXTRA_OUTPUT,imageUri)
+            startActivityForResult(intent_camera,takePhoto)
+        }
+
+        getPhotoFromAlbum.setOnClickListener {
+            //文件选择器
+            val intent_album = Intent(Intent.ACTION_OPEN_DOCUMENT)
+                //只访问可以被共享的文件
+            intent_album.addCategory(Intent.CATEGORY_OPENABLE)
+                //文件格式：图片
+            intent_album.type=&quot;image/*&quot;
+            //下一个activity销毁后返回fromdlbum值
+            startActivityForResult(intent_album,fromAlbum)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode){
+            takePhoto-&gt;{
+                if(resultCode==Activity.RESULT_OK){
+                    //show the photo photoed
+                    val bitmap = BitmapFactory.decodeStream(contentResolver.
+                        openInputStream(imageUri))
+                    photoImageMe.setImageBitmap(rotatedIfRequired(bitmap))
+                }
+            }
+            fromAlbum-&gt;{
+                if(requestCode==Activity.RESULT_OK&amp;&amp;data!=null){
+                    data.data?.let { uri -&gt;
+                        //the second data=getData()
+//                        if(uri==null){
+//                            Log.d(&quot;emptyResult&quot;,&quot;uri is empty&quot;)
+//                        }
+                        val bitmap = getBitmapFromUri(uri)
+//                        if(bitmap==null){
+//                            Log.d(&quot;emptyResult&quot;,&quot;bitmap is empty&quot;)
+//                        }
+                        photoImageMe.setImageBitmap(bitmap)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun rotatedIfRequired(bitmap: Bitmap):Bitmap{
+        //exif object: infor + jpeg
+        val exif = ExifInterface(outputImage.path)
+        //direction information
+        val orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION,
+            ExifInterface.ORIENTATION_NORMAL)
+        // spin/rotate
+        return when(orientation){
+            ExifInterface.ORIENTATION_ROTATE_90 -&gt; rotateBitmap(bitmap,90)
+            ExifInterface.ORIENTATION_ROTATE_180 -&gt; rotateBitmap(bitmap,180)
+            ExifInterface.ORIENTATION_ROTATE_270 -&gt; rotateBitmap(bitmap,270)
+            //do nothing if no degree
+            else -&gt; bitmap
+        }
+    }
+
+    private fun rotateBitmap(bitmap: Bitmap,degree:Int):Bitmap{
+        //矩阵程序
+        val matrix = Matrix();
+        //旋转矩阵到一定的角度
+        matrix.postRotate(degree.toFloat())
+        val rotatedBitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.width,bitmap.height,
+                        matrix,true)
+        bitmap.recycle()//回收矩阵
+        return rotatedBitmap
+    }
+
+    private fun getBitmapFromUri(uri: Uri) = contentResolver.openFileDescriptor(uri,&quot;r&quot;)?.use {
+        BitmapFactory.decodeFileDescriptor(it.fileDescriptor)
+    }
+}
+</code></pre>
+<h3 id="这是对应的xml">这是对应的xml</h3>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/takePhotoButton&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;点我拍照&quot;&gt;&lt;/Button&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/getPhotoFromAlbum&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;点我从相册选择图片&quot;&gt;&lt;/Button&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/photoImageMe&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_gravity=&quot;center_horizontal&quot;&gt;&lt;/ImageView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+<h3 id="这是manifest文件">这是manifest文件：</h3>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.ti.cameraalbumtest&quot;&gt;
+
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;&gt;&lt;/uses-permission&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/Theme.CameraAlbumTest&quot;&gt;
+
+        &lt;provider
+            android:authorities=&quot;com.ti.cameraalbumtest.fileprovider&quot;
+            android:name=&quot;androidx.core.content.FileProvider&quot;
+            android:exported=&quot;false&quot;
+            android:grantUriPermissions=&quot;true&quot;&gt;
+            &lt;meta-data
+                android:name=&quot;android.support.FILE_PROVIDER_PATHS&quot;
+                android:resource=&quot;@xml/file_paths&quot;&gt;&lt;/meta-data&gt;
+        &lt;/provider&gt;
+        &lt;activity android:name=&quot;.MainActivity&quot; android:screenOrientation=&quot;portrait&quot;&gt;
+        &lt;!--    Not in the book, but in source codes        --&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
 ]]></content>
     </entry>
     <entry>
