@@ -9,7 +9,7 @@
 <meta name="description" content="欢迎来到这里，建议使用电脑浏览">
 <meta name="theme-color" content="#000">
 <title>使用firefox color自定义firefox的主题 | bluebonnet27的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1605279094605">
+<link rel="shortcut icon" href="/favicon.ico?v=1606022272911">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1963,6 +1963,39 @@ class MainActivity : AppCompatActivity() {
 
 &amp;lt;/manifest&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;2020-11-22-更新&#34;&gt;2020-11-22 更新&lt;/h1&gt;
+&lt;h2 id=&#34;补充-android-studio-中-git-的使用&#34;&gt;补充 Android Studio 中 git 的使用&lt;/h2&gt;
+&lt;p&gt;首先再次强调我的 AS 的版本，&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Android Studio 4.1&lt;br&gt;
+内部版本号 #AI-201.8743.12.41.6858069, 构建于 September 23, 2020&lt;br&gt;
+运行时版本: 1.8.0_242-release-1644-b01 amd64&lt;br&gt;
+JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我电脑里最新版本的 pycharm 和 webstorm 的 git 登录方法和 AS 的不太一样，不过大家都是jetbrains 家的软件，想必 AS 下一步也会更新到这个版本。只是时间问题。（也可能是已经更新了但我没更新软件所以不知道）&lt;/p&gt;
+&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+&lt;p&gt;guolin 在书中写的很好，命令行格式的 git 命令是每个程序员应该掌握的技能，但不得不说图形化更容易操作。所以我简单补充下图形化的操作方法。&lt;/p&gt;
+&lt;h3 id=&#34;基础搭建&#34;&gt;基础搭建&lt;/h3&gt;
+&lt;p&gt;首先你需要有一个 git ，然后配置正确的用户名和邮箱，如果你这步有问题的话网上有一大堆教程，我以后可能也会写一个出来。书里也有教程。&lt;/p&gt;
+&lt;p&gt;需要在 android studio 的设置（settings）里配置 git.exe 的位置，AS 会自动找到的，没有的话你手动找一下就行。&lt;br&gt;
+&lt;img src=&#34;https://i.loli.net/2020/11/22/pWtKuPR64eL8cbG.jpg&#34; alt=&#34;git1.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+在下面的 github 里配置你的账号密码，然后登录。&lt;br&gt;
+&lt;img src=&#34;https://i.loli.net/2020/11/22/jtL31ZIJOl4EqyP.jpg&#34; alt=&#34;github1.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+这一步可能会报 401 错误，网上的解决办法有很多，比如在网址前面加一个 https:// ，或者改账号为你的用户名，或者你可以直接用右上角的 token 登录。去 github 的网站申请一个 token 。申请的方法就是点击 头像 - settings - develop settings - general access tokens。为 AS 申请一个 token ，然后将 token 输入进来就可以。&lt;/p&gt;
+&lt;p&gt;注意 ：&lt;font color = red&gt; token 需要 &lt;code&gt;repo,gist,read:org&lt;/code&gt;权限。&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&#34;本地项目上传到-github&#34;&gt;本地项目上传到 github&lt;/h3&gt;
+&lt;p&gt;点击 VCS ，上传到版本控制（version control)，有一个 &lt;code&gt;share project on github&lt;/code&gt;，AS 会检测 github 上有没有重名的 resposity ，没有会提示你新建一个。这里新建的话，只能填写库名和描述，选择公开性。不能初始化 readme 和 license 文件。&lt;br&gt;
+&lt;img src=&#34;https://i.loli.net/2020/11/22/jCIeLJkShWHvgor.jpg&#34; alt=&#34;github2.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后就是正常的git操作了，和其他 jetbrains 家的软件一样，commit，push 和 ferch。都可以在VCS 的菜单里解决。&lt;/p&gt;
+&lt;h3 id=&#34;直接拉取远程项目到本地&#34;&gt;直接拉取远程项目到本地&lt;/h3&gt;
+&lt;p&gt;Android Studio 首页有从 github 拉取项目的选项，直接操作即可。&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
+&lt;p&gt;如果你使用的是 gitee ，你需要在扩展商店（plugins-marketplace）里找一个 gitee 插件，&lt;br&gt;
+&lt;img src=&#34;https://i.loli.net/2020/11/22/v9BOyC3aoSUflPx.jpg&#34; alt=&#34;github3.jpg&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后设置-版本控制里 github 附近会多出一个 gitee ，操作和 github 类似，这里就不写了。（其实 github 相关功能本身也是 AS 的一个插件，只不过因为预装的原因看起来像是 AS 的一部分）&lt;/p&gt;
+&lt;h2 id=&#34;chapter-10&#34;&gt;Chapter 10&lt;/h2&gt;
+&lt;p&gt;如果你的 SDK 是 Android R（11），IntentService 方法会显示被废弃，这很正常，因为它确实被废弃了。&lt;s&gt;废弃又不耽误你用，在乎那么多干啥😒&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;具体可以参考这篇博客：&lt;a href=&#34;https://shoewann0402.github.io/2020/03/10/android-R-IntentService-deprecated/&#34;&gt;链接&lt;/a&gt;&lt;/p&gt;
 ">《第一行代码Android（第三版）》遇到的问题记录</a>
       </div>
       

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-11-13T14:52:21.518Z</updated>
+    <updated>2020-11-22T05:17:56.996Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -244,6 +244,39 @@ class MainActivity : AppCompatActivity() {
 
 &lt;/manifest&gt;
 </code></pre>
+<h1 id="2020-11-22-更新">2020-11-22 更新</h1>
+<h2 id="补充-android-studio-中-git-的使用">补充 Android Studio 中 git 的使用</h2>
+<p>首先再次强调我的 AS 的版本，</p>
+<blockquote>
+<p>Android Studio 4.1<br>
+内部版本号 #AI-201.8743.12.41.6858069, 构建于 September 23, 2020<br>
+运行时版本: 1.8.0_242-release-1644-b01 amd64<br>
+JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o</p>
+</blockquote>
+<p>我电脑里最新版本的 pycharm 和 webstorm 的 git 登录方法和 AS 的不太一样，不过大家都是jetbrains 家的软件，想必 AS 下一步也会更新到这个版本。只是时间问题。（也可能是已经更新了但我没更新软件所以不知道）</p>
+<h3 id="前言">前言</h3>
+<p>guolin 在书中写的很好，命令行格式的 git 命令是每个程序员应该掌握的技能，但不得不说图形化更容易操作。所以我简单补充下图形化的操作方法。</p>
+<h3 id="基础搭建">基础搭建</h3>
+<p>首先你需要有一个 git ，然后配置正确的用户名和邮箱，如果你这步有问题的话网上有一大堆教程，我以后可能也会写一个出来。书里也有教程。</p>
+<p>需要在 android studio 的设置（settings）里配置 git.exe 的位置，AS 会自动找到的，没有的话你手动找一下就行。<br>
+<img src="https://i.loli.net/2020/11/22/pWtKuPR64eL8cbG.jpg" alt="git1.jpg" loading="lazy"><br>
+在下面的 github 里配置你的账号密码，然后登录。<br>
+<img src="https://i.loli.net/2020/11/22/jtL31ZIJOl4EqyP.jpg" alt="github1.jpg" loading="lazy"><br>
+这一步可能会报 401 错误，网上的解决办法有很多，比如在网址前面加一个 https:// ，或者改账号为你的用户名，或者你可以直接用右上角的 token 登录。去 github 的网站申请一个 token 。申请的方法就是点击 头像 - settings - develop settings - general access tokens。为 AS 申请一个 token ，然后将 token 输入进来就可以。</p>
+<p>注意 ：<font color = red> token 需要 <code>repo,gist,read:org</code>权限。</font></p>
+<h3 id="本地项目上传到-github">本地项目上传到 github</h3>
+<p>点击 VCS ，上传到版本控制（version control)，有一个 <code>share project on github</code>，AS 会检测 github 上有没有重名的 resposity ，没有会提示你新建一个。这里新建的话，只能填写库名和描述，选择公开性。不能初始化 readme 和 license 文件。<br>
+<img src="https://i.loli.net/2020/11/22/jCIeLJkShWHvgor.jpg" alt="github2.jpg" loading="lazy"><br>
+然后就是正常的git操作了，和其他 jetbrains 家的软件一样，commit，push 和 ferch。都可以在VCS 的菜单里解决。</p>
+<h3 id="直接拉取远程项目到本地">直接拉取远程项目到本地</h3>
+<p>Android Studio 首页有从 github 拉取项目的选项，直接操作即可。</p>
+<h3 id="其他">其他</h3>
+<p>如果你使用的是 gitee ，你需要在扩展商店（plugins-marketplace）里找一个 gitee 插件，<br>
+<img src="https://i.loli.net/2020/11/22/v9BOyC3aoSUflPx.jpg" alt="github3.jpg" loading="lazy"><br>
+然后设置-版本控制里 github 附近会多出一个 gitee ，操作和 github 类似，这里就不写了。（其实 github 相关功能本身也是 AS 的一个插件，只不过因为预装的原因看起来像是 AS 的一部分）</p>
+<h2 id="chapter-10">Chapter 10</h2>
+<p>如果你的 SDK 是 Android R（11），IntentService 方法会显示被废弃，这很正常，因为它确实被废弃了。<s>废弃又不耽误你用，在乎那么多干啥😒</s></p>
+<p>具体可以参考这篇博客：<a href="https://shoewann0402.github.io/2020/03/10/android-R-IntentService-deprecated/">链接</a></p>
 ]]></content>
     </entry>
     <entry>
