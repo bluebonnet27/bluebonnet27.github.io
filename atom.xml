@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-11-22T05:17:56.996Z</updated>
+    <updated>2020-11-25T07:50:40.785Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -277,6 +277,43 @@ JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o</p>
 <h2 id="chapter-10">Chapter 10</h2>
 <p>如果你的 SDK 是 Android R（11），IntentService 方法会显示被废弃，这很正常，因为它确实被废弃了。<s>废弃又不耽误你用，在乎那么多干啥😒</s></p>
 <p>具体可以参考这篇博客：<a href="https://shoewann0402.github.io/2020/03/10/android-R-IntentService-deprecated/">链接</a></p>
+<h1 id="2020-11-25-更新">2020-11-25 更新</h1>
+<h2 id="apache-服务器的使用chapter-11">Apache 服务器的使用（Chapter 11）</h2>
+<p>书上关于这个 Apache 服务器并没有说明太多，所以我补充一点东西。</p>
+<h3 id="下载与安装">下载与安装</h3>
+<p>首先我建议你下载和安装时参考网上的一些教程。你从 Apache 官网是下不到二进制exe文件的，只能下载到压缩包（我倒不是很意外，毕竟 tomcat 和 maven 都是压缩包，一个组织下的 httpd 不至于用别的），所以书上的无脑 next 教程并不适用。</p>
+<p>首先解压下载的文件，到<code>Apache24\conf</code>里找<code>httpd.conf</code>文件，找到<code>Define SRVROOT</code>，把它从默认的<code>c:/Apache24</code>改成你解压的正确的 Apache24 路径，比如我的是：</p>
+<pre><code>D:/privatePrograms/httpd-2.4.46-o111h-x64-vc15/Apache24
+</code></pre>
+<p>注意改下斜杠。</p>
+<p>然后将 httpd 的服务注册到系统里。需要用管理员权限在<code>httpd.exe</code>所在的根目录执行以下命令：</p>
+<pre><code>.\httpd -k install
+</code></pre>
+<p>注册成功的话会有提示信息的。这时可以去系统的服务里看有没有 Apache 开头的服务。</p>
+<h3 id="启动">启动</h3>
+<p>启动的方式可以在目录下直接执行<code>httpd.exe</code>，或者双击执行。会有一个窗口，关窗口就是停止了。可能会有接口占用的问题，表现为：</p>
+<ol>
+<li>Windows 警告：<br>
+<img src="https://i.loli.net/2020/11/25/CsgQT7danz4j21H.jpg" alt="httpderrpr1.jpg" loading="lazy"></li>
+<li>命令行界面执行会直接告诉你接口被占用。
+<blockquote>
+<p>(OS 10013)以一种访问权限不允许的方式做了一个访问套接字的尝试。 : AH00072: make_sock: could not bind to address [::]:80<br>
+(OS 10013)以一种访问权限不允许的方式做了一个访问套接字的尝试。 : AH00072: make_sock: could not bind to address 0.0.0.0:80<br>
+AH00451: no listening sockets available, shutting down<br>
+AH00015: Unable to open logs</p>
+</blockquote>
+</li>
+</ol>
+<p>解决办法：</p>
+<ol>
+<li>改 httpd 的接口，在刚才的 conf 文件里找<code>listen 80</code>，这是默认的监听接口，改成别的就 ok。</li>
+<li>把占用的程序停止。首先要找到占用的程序。<code>netstat -ano</code>查看接口占用，<code>tasklist|findstr 进程PID</code>找到程序信息，我的是 VMWare 的托管程序占用了，所以去任务管理器里关掉就可以了。</li>
+</ol>
+<h3 id="访问">访问：</h3>
+<ol>
+<li>访问<code>localhost:80</code>（接口号改了就用你改完的）</li>
+<li>访问<code>127.0.0.1</code></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
