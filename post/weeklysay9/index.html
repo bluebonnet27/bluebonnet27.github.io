@@ -8,7 +8,7 @@
 <meta name="keywords" content="bluebonnet27的博客">
 <meta name="description" content="欢迎来到这里，建议使用电脑浏览">
 <meta name="theme-color" content="#000">
-<title>打包发布firefox的主题 | bluebonnet27的博客</title>
+<title>每周说（9）：考研路上 | bluebonnet27的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1616297537643">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="打包发布firefox的主题" />
-  <meta name="keywords" content="firefox" />
+  <meta name="description" content="每周说（9）：考研路上" />
+  <meta name="keywords" content="每周说点" />
 </head>
 
 <body>
@@ -203,7 +203,8 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -271,6 +272,195 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E4%B8%89%E6%9C%88%E4%B8%8D%E4%B8%8B%E9%9B%AA">三月不下雪</a>
+<ul>
+<li><a href="#%E6%88%91%E7%94%9F%E7%97%85%E4%BA%86">我生病了</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -358,8 +548,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://bluebonnet27.github.io/post/firefox_theme_upload/">
-      打包发布firefox的主题
+    <a class="post-title-link" href="https://bluebonnet27.github.io/post/weeklysay9/">
+      每周说（9）：考研路上
     </a>
   </h1>
   <div class="post-meta">
@@ -367,7 +557,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span>2020-10-30</span>
+      <span>2021-03-21</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -376,8 +566,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://bluebonnet27.github.io/tag/firefox/">
-        <span>firefox</span>
+      <a href="https://bluebonnet27.github.io/tag/weeklytalk/">
+        <span>每周说点</span>
       </a>
       
       
@@ -386,17 +576,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>3<span class="language" data-lan="minute">分钟</span></span>
+      <span>1<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>575<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>158<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/firefox_theme_upload/" data-flag-title="打包发布firefox的主题" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/weeklysay9/" data-flag-title="每周说（9）：考研路上" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -405,65 +595,13 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p><em>本说明基于 firefox 79</em><br>
-<em>文章最早由我发布在CSDN</em><a href="https://blog.csdn.net/qq_37387199/article/details/107892333">地址</a><br>
-上一篇教程里，我介绍了如何使用 firefox color 自定义浏览器的主题。<br>
-<a href="https://blog.csdn.net/qq_37387199/article/details/107801061">文章链接</a></p>
-<p>这一次我们将制作好的主题进行打包发布。</p>
-<p>如同 firefox 的扩展一样，打包好的主题是一个<strong>xpi文件</strong><br>
-我们将其解压（使用7zip或者别的解压软件都可以）<br>
-<img src="https://img-blog.csdnimg.cn/20200809121708620.jpg" alt="解压后的" loading="lazy"></p>
-<p>其中：</p>
-<ul>
-<li><strong>images</strong>是主题用到的图片文件</li>
-<li><strong>json</strong>是主题文件的描述，类似于 firefox 扩展的 json 描述。</li>
-</ul>
-<p>我的主题 json 描述如下：</p>
-<pre><code>{
-  &quot;manifest_version&quot;: 2,
-  &quot;version&quot;: &quot;1.0&quot;,
-  &quot;name&quot;: &quot;秒速五厘米1&quot;,
-  &quot;theme&quot;: {
-    &quot;images&quot;: {
-      &quot;additional_backgrounds&quot;: [
-        &quot;images/0.jpg&quot;
-      ]
-    },
-    &quot;properties&quot;: {
-      &quot;additional_backgrounds_alignment&quot;: [
-        &quot;center center&quot;
-      ],
-      &quot;additional_backgrounds_tiling&quot;: [
-        &quot;no-repeat&quot;
-      ]
-    },
-    &quot;colors&quot;: {
-      &quot;toolbar&quot;: &quot;rgba(43, 206, 227, 0)&quot;,
-      &quot;toolbar_text&quot;: &quot;rgb(255, 255, 255)&quot;,
-      &quot;frame&quot;: &quot;rgb(84, 84, 84)&quot;,
-      &quot;tab_background_text&quot;: &quot;rgb(255, 255, 255)&quot;,
-      &quot;toolbar_field&quot;: &quot;rgba(0, 0, 0, 0.36)&quot;,
-      &quot;toolbar_field_text&quot;: &quot;rgb(255, 255, 255)&quot;,
-      &quot;tab_line&quot;: &quot;rgb(255, 255, 255)&quot;,
-      &quot;popup&quot;: &quot;rgb(84, 84, 84)&quot;,
-      &quot;popup_text&quot;: &quot;rgb(255, 255, 255)&quot;,
-      &quot;tab_loading&quot;: &quot;rgb(255, 255, 255)&quot;
-    }
-  }
-}
-</code></pre>
-<p>其实这些东西就是在 firefox color 里自定义的部分，只不过将可视化的语言转成了代码。</p>
-<p>接下来，我们登陆 <a href="https://addons.mozilla.org/zh-CN/developers/">firefox附加组件开发者中心</a><br>
-<img src="https://img-blog.csdnimg.cn/20200809122629628.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="主页" loading="lazy"><br>
-这里，我们选择提交一个新主题，并将主题交给mozilla的网站托管。<br>
-<img src="https://img-blog.csdnimg.cn/20200809122748955.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="上传" loading="lazy"><br>
-这里选择我们之前导出的xpi文件就可以了，选择兼容性为PC端的firefox。上传文件后会进行校验，没问题就可以转到发布页了。</p>
-<p>值得一提的是，选择下面的<strong>创建一个主题</strong>也可以当场创建主题，但界面比较简陋，效果远不如 firefox color 的可视化要好。</p>
-<p>下一个页面就是填写主题的详细信息了，中文名字方便中国人搜到主题，可惜的是 firefox 主题商店是没有“动漫”的分类的，所以我选择了“影视”。<br>
-<img src="https://img-blog.csdnimg.cn/20200809123241784.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="许可协议" loading="lazy"><br>
-这里的几个选项决定了cc协议的种类。</p>
-<p>之后就是审核了，速度还是很快的。这里是我审核完的主题。<br>
-<img src="https://img-blog.csdnimg.cn/20200809123859464.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="主题" loading="lazy">希望这篇文章能对你有所帮助。</p>
+              <p><em>翻过这座山，让他们听到你的故事</em></p>
+<p>每周说第9期，<em>这个系列的目的是练习Markdown语法</em></p>
+<h1 id="三月不下雪">三月不下雪</h1>
+<p><em>上个四月份下雪的时候，我在自习室看窗边的妹子</em></p>
+<h2 id="我生病了">我生病了</h2>
+<p>全身酸痛，喉咙痛，没有力气，昏昏沉沉的。吃点药也许缓解了一下，马上开始背单词，毕竟今天的 60 个单词还没有背完。</p>
+<p>正大光明地摸鱼让我寝食难安，但确实除了背单词别的都干不动了。也许一会可以看一会汤神或者永乐大帝的网课？</p>
 
             </div>
             
@@ -480,7 +618,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://bluebonnet27.github.io/post/firefox_theme_upload/" title="打包发布firefox的主题">https://bluebonnet27.github.io/post/firefox_theme_upload/</a>
+      <a href="https://bluebonnet27.github.io/post/weeklysay9/" title="每周说（9）：考研路上">https://bluebonnet27.github.io/post/weeklysay9/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -489,21 +627,17 @@
   </ul>
   <div class="tags">
     
-      <a href="https://bluebonnet27.github.io/tag/firefox/"># firefox</a>
+      <a href="https://bluebonnet27.github.io/tag/weeklytalk/"># 每周说点</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="《第一行代码Android（第三版）》遇到的问题记录" href="https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/">《第一行代码Android（第三版）》遇到的问题记录</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="《第一行代码Android（第三版）》遇到的问题记录" href="https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="使用firefox color自定义firefox的主题" href="https://bluebonnet27.github.io/post/firefox_theme_manual/">使用firefox color自定义firefox的主题</a>
-        <a class="nav-mobile-next" title="使用firefox color自定义firefox的主题" href="https://bluebonnet27.github.io/post/firefox_theme_manual/">下一篇</a>
+        <a class="nav-pc-next" title="《第一行代码Android（第三版）》遇到的问题记录" href="https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/">《第一行代码Android（第三版）》遇到的问题记录</a>
+        <a class="nav-mobile-next" title="《第一行代码Android（第三版）》遇到的问题记录" href="https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

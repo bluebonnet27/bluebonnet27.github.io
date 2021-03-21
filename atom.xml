@@ -2,14 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2020-12-17T10:40:43.902Z</updated>
+    <updated>2021-03-21T03:32:25.482Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
     <subtitle>欢迎来到这里，建议使用电脑浏览</subtitle>
     <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
     <icon>https://bluebonnet27.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, bluebonnet27的博客</rights>
+    <rights>All rights reserved 2021, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[每周说（9）：考研路上]]></title>
+        <id>https://bluebonnet27.github.io/post/weeklysay9/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay9/">
+        </link>
+        <updated>2021-03-21T03:22:41.000Z</updated>
+        <content type="html"><![CDATA[<p><em>翻过这座山，让他们听到你的故事</em></p>
+<p>每周说第9期，<em>这个系列的目的是练习Markdown语法</em></p>
+<h1 id="三月不下雪">三月不下雪</h1>
+<p><em>上个四月份下雪的时候，我在自习室看窗边的妹子</em></p>
+<h2 id="我生病了">我生病了</h2>
+<p>全身酸痛，喉咙痛，没有力气，昏昏沉沉的。吃点药也许缓解了一下，马上开始背单词，毕竟今天的 60 个单词还没有背完。</p>
+<p>正大光明地摸鱼让我寝食难安，但确实除了背单词别的都干不动了。也许一会可以看一会汤神或者永乐大帝的网课？</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《第一行代码Android（第三版）》遇到的问题记录]]></title>
         <id>https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/</id>
@@ -728,54 +743,6 @@ AH00015: Unable to open logs</p>
 <li>《愤怒的小鸟2》一般吧。</li>
 </ol>
 <p>封面图：Photo by Nik Shuliahin on Unsplash</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[每周说（1）：形式主义与现实主义]]></title>
-        <id>https://bluebonnet27.github.io/post/weeklysay1/</id>
-        <link href="https://bluebonnet27.github.io/post/weeklysay1/">
-        </link>
-        <updated>2020-05-30T11:17:22.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>这两个的含义貌似是差不多的</p>
-</blockquote>
-<p>每周说第一篇，天气真热，外面风也挺大的。<em>第一篇顺便练习下Markdown语法。</em></p>
-<h1 id="线上汇报中的形式主义">线上汇报中的形式主义</h1>
-<blockquote>
-<p>🙏希望人没事，错了，🙏希望人有事</p>
-</blockquote>
-<p>不上学的日子从三月份开始，到现在过去了三个月。每天都在发生的，大概就是线上汇报了。</p>
-<p>线上汇报分为早汇报和晚汇报，都是在微信签到。早汇报的目的是对heu app的普通汇报签到，其实一共是<font color = 'red'>两个汇报</font>。晚汇报需要填写名字，健康与否（其实只能填写健康）。如果你没有填写微信汇报，班长会来催你；如果你没有填写heu app上的汇报，学校就会用短信催你。</p>
-<blockquote>
-<p>【哈尔滨工程大学】请于上午11点前通过移_动校园app或网上办事中心（<a href="http://one.hrbeu.edu.cn">http://one.hrbeu.edu.cn</a>）上报健康情况（学校疫情防控领导小组）。</p>
-</blockquote>
-<p>目的其实很明显了。</p>
-<p>万一你出了什么事情，学校是不负责的。</p>
-<p>但签到活动的本意应该是<font color = 'red'>为学生着想</font>，而不应该是<font color = 'red'>用来逃避责任的一种手段</font>，为学生着想大可<font color = 'green'>把住宿费退掉一部分或者减免</font>，这可能是更切实际的做法。</p>
-<p>“我说的对吗，老铁们？😁”</p>
-<p>不过昨天晚上发生了一件不愉快的事，使得我开始不爱公开发表很多事情的意见。不如在博客里说，真的。等我心情好一些可能会单独说下这件事。</p>
-<h1 id="三句不离考研的的现实主义">三句不离考研的的现实主义</h1>
-<blockquote>
-<p>其实我也没想好自己到底要不要考研。。。</p>
-</blockquote>
-<p>哈工程的老师上课有个特点，三句话不离考研。这个季节正是研究生面试的时候，上课的老师喜欢提两句关于考研就业的问题。但是我觉得<font color = 'red'>大可不必把这件事看得如此重要，尤其不能比教授知识重要</font>。</p>
-<p>说到社会毒打之类的，害，大家还是在象牙塔里，过早接触社会，大学四年就没什么意义了。我写博客的语言也尽量轻松一点，避免过于紧张的语调。不过硬要拿社会那一套说事，我也没办法。</p>
-<p>越来越喜欢喜欢折木奉太郎的节能主义了。</p>
-<h1 id="one-more-thing">one more thing...</h1>
-<blockquote>
-<p>by Steve Jobs</p>
-</blockquote>
-<h2 id="博客方面">博客方面</h2>
-<ul>
-<li>开两个小坑，分享下自己的《Java 核心技术》和《计算机原理》的阅读笔记，tag就是书的名字</li>
-<li>去知乎查下github托管博客有什么文件大小限制没有（🙏最好没有）</li>
-</ul>
-<h2 id="其他方面">其他方面</h2>
-<ul>
-<li>每月一本书，六月的是<a href="https://book.douban.com/subject/26780574/">伊坂幸太郎的《家鸭与野鸭的投币式寄物柜》</a></li>
-<li>每周一部电影，欠了两周但还没选好片子。</li>
-</ul>
-<p>封面图：Photo by Tobias Tullius on Unsplash <a href="https://unsplash.com/photos/4dKy7d3lkKM">https://unsplash.com/photos/4dKy7d3lkKM</a></p>
 ]]></content>
     </entry>
 </feed>
