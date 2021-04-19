@@ -8,7 +8,7 @@
 <meta name="keywords" content="bluebonnet27的博客">
 <meta name="description" content="欢迎来到这里，建议使用电脑浏览">
 <meta name="theme-color" content="#000">
-<title>使用firefox color自定义firefox的主题 | bluebonnet27的博客</title>
+<title>解决《穿越火线》在windows10上的模糊问题 | bluebonnet27的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1618820368611">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="使用firefox color自定义firefox的主题" />
-  <meta name="keywords" content="firefox" />
+  <meta name="description" content="解决《穿越火线》在windows10上的模糊问题" />
+  <meta name="keywords" content="随想随写" />
 </head>
 
 <body>
@@ -278,12 +278,18 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#amdintel">AMD？Intel？</a></li>
+<li><a href="#%E5%B0%81%E9%A1%B6">封顶</a></li>
+<li><a href="#%E4%B8%BB%E7%A8%8B%E5%BA%8F">主程序</a></li>
+<li><a href="#125%EF%B8%8F124">125➡️124</a></li>
+<li><a href="#%E7%9C%9F%E7%9B%B8">真相</a>
 <ul>
-<li><a href="#%E8%BD%BB%E9%87%8F%E7%BA%A7%E4%B8%BB%E9%A2%98">轻量级主题</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8firefox-color%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98">使用firefox color自定义主题</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">解决办法：</a></li>
+<li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
 </ul>
 </li>
+<li><a href="#%E9%A2%98%E5%A4%96%E8%AF%9D">题外话</a></li>
 </ul>
 
   </div>
@@ -549,8 +555,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://bluebonnet27.github.io/post/firefox_theme_manual/">
-      使用firefox color自定义firefox的主题
+    <a class="post-title-link" href="https://bluebonnet27.github.io/post/crossfirefix/">
+      解决《穿越火线》在windows10上的模糊问题
     </a>
   </h1>
   <div class="post-meta">
@@ -558,7 +564,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span>2020-10-30</span>
+      <span>2021-04-19</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -567,8 +573,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://bluebonnet27.github.io/tag/firefox/">
-        <span>firefox</span>
+      <a href="https://bluebonnet27.github.io/tag/others/">
+        <span>随想随写</span>
       </a>
       
       
@@ -577,17 +583,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>3<span class="language" data-lan="minute">分钟</span></span>
+      <span>5<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>675<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1337<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/firefox_theme_manual/" data-flag-title="使用firefox color自定义firefox的主题" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/crossfirefix/" data-flag-title="解决《穿越火线》在windows10上的模糊问题" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -596,42 +602,52 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p><em>本说明基于firefox 79</em><br>
-<em>最早发布在CSDN</em><a href="https://blog.csdn.net/qq_37387199/article/details/107801061">原地址</a></p>
-<h2 id="轻量级主题">轻量级主题</h2>
-<p>引用：<a href="https://support.mozilla.org/zh-CN/kb/Firefox%20%E5%86%85%E7%BD%AE%E7%9A%84%E4%B8%BB%E9%A2%98">firefox关于主题</a>的说法，firefox现在仅支持轻量级主题了。</p>
-<p>那么什么是<font color="red">轻量级主题</font>呢？</p>
-<p>mozilla官方并没有明确的定义，我的理解是，<strong>轻量级主题的概念是区别于旧的，高度自定义的主题的概念。它只能改变一些静态的样式</strong>。这使得对于普通用户来说，制作一个自己的主题变得更加容易——你不需要任何编程知识。</p>
-<p>轻量级主题还可能有以下优点：</p>
-<ul>
-<li>加快firefox的冷启动速度</li>
-<li>提升兼容性</li>
-</ul>
-<p>当然，缺点也是显而易见的。你无法实现一些比较漂亮而复杂的样式。相比于国产浏览器花样百出的主题<img src="https://img-blog.csdnimg.cn/20200804220127403.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="某国产浏览器的主题宣传" loading="lazy">firefox的主题市场显得比较冷清。<br>
-但话又说回来了，chrome和edge都是轻量级主题。也许没有谁是绝对的正确的。</p>
-<h2 id="使用firefox-color自定义主题">使用firefox color自定义主题</h2>
-<p>在firefox的扩展商店找到这个扩展：<br>
-<a href="https://addons.mozilla.org/zh-CN/firefox/addon/firefox-color/">下载地址</a></p>
-<figure data-type="image" tabindex="1"><img src="https://img-blog.csdnimg.cn/20200804220551124.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
-<p>这是官方提供给你的可视化制作主题的工具。<br>
-打开主界面，如图：</p>
-<figure data-type="image" tabindex="2"><img src="https://img-blog.csdnimg.cn/2020080422075611.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
-<p>界面是全英文的，不过不碍事。</p>
-<ul>
-<li>preset themes：官方预设的主题样式</li>
-<li>custom colors：基本的组件颜色与透明度</li>
-<li>advanced colors：高级的组件颜色与透明度</li>
-<li>custom colors：背景</li>
-</ul>
-<p>你可以使用custom里官方预设的主题样式，在这些样式的基础上进行自己的修改，比如在custom colors里更改颜色，在custom backgrounds里更改背景填充，用官方花纹或者自己的图片。</p>
-<figure data-type="image" tabindex="3"><img src="https://img-blog.csdnimg.cn/2020080422130660.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
-<p>当我们选择这里的每一项时，上方的可视化窗口会展示效果。你不必知道每个选项究竟是做什么的。</p>
-<figure data-type="image" tabindex="4"><img src="https://img-blog.csdnimg.cn/202008042214566.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
-<p>这里要特别说一下。如果你使用自己的图片，需要将图片的比例调节至15:1接近的比例，在中间两项选择水平与垂直居中，“重复”选择“no repeat”。这个比例是firefox制作主题时的默认比例。过大或者过小都会导致图片没办法完全显示。</p>
-<p>做完主题就自动使用了。若换回原来的主题，在设置里启用即可。若想换回这个，打开firefox color，随便做一点更改，就自动套用了。</p>
-<figure data-type="image" tabindex="5"><img src="https://img-blog.csdnimg.cn/20200804222401423.jpg#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
-<p>你可以选择这里的export，将做好的主题打包成xpi格式发布到firefox主题市场。我没发布过主题，不知道审核速度如何。关于主题发布的问题，也许我会在下一篇博客里说明。</p>
-<p>谢谢你的阅读。</p>
+              <p><em>大三亿鼠标的枪战梦想已经消逝，但仍有朝圣者耕耘在先人曾踌躇的大地上</em></p>
+<h1 id="前言">前言</h1>
+<p>更换新电脑后，我第一件事就是把《穿越火线》下载回来。但在游戏里调整为<font color=red>1920*1080</font>时，字体和界面都变得很模糊，不像是这个分辨率下应该有的画质。于是我开始寻找解决办法，发现这不仅仅是一个游戏的问题，更是 Windows 10 系统对于所有使用老开发技术的软件的优化问题。</p>
+<h1 id="amdintel">AMD？Intel？</h1>
+<p>起初我觉得是 AMD 的问题。因为使用 i3 9100f ,GTX 1065 的 Windows 7 并没有出现模糊的问题。但是我使用的这台 lenovo region r9000x 是有独显直连功能的，开启以后 AMD 的 Radeon 核显会被屏蔽。</p>
+<p>然后，依然很模糊。</p>
+<p>难不成是针对图灵架构的显卡也没有优化？当然不可能。AMD 可能会有兼容性问题，但 NVIDIA 不可能会有的。（当然，事实证明这是我对 AMD 根深蒂固的偏见罢了，其实根本和硬件没关系）</p>
+<h1 id="封顶">封顶</h1>
+<p>首先尝试在游戏里修改多个分辨率，排除分辨率修改本身出问题的可能。</p>
+<p>结果发现调节 4:3 下 800*600 ，画质会变得异常模糊，（题外话：判断《穿越火线》分辨率的一个简单办法是看游戏内的字体。低分辨率下游戏的字体会退化成点阵字体，这也是当年 M bug 的来源；高分辨率下则会变成标准的宋体字）证明调低分辨率是有效的。</p>
+<p>也就是说，更像是<font color=red>分辨率的向上调整撞上了“墙”，使得这些操作完全无效。</font></p>
+<p>WeGame 自带的修复就不说了，不可能解决任何问题的东西。</p>
+<h1 id="主程序">主程序</h1>
+<p>难道是兼容性出了问题？找到桌面图标对应的本地源 Win32 文件，发现这个名为&quot;client.exe&quot;的文件只是一个客户端。于是只能启动游戏用任务管理器找到主程序文件是&quot;crossfire.exe&quot;，使用兼容性疑难解答调整其为“Windows 8”。</p>
+<p>问题依然没有解决。而且可以确定，这个问题在 Windows 8 时代就已经出现了。</p>
+<h1 id="125️124">125➡️124</h1>
+<p>在找解决办法的同时，我也在网上找相关的资料。不过，毕竟游戏年代久远，相关的解决办法少之又少，靠谱的我想一个也没有。但当我把搜索范围扩大，将“穿越火线”替换成“所有软件”的模糊问题时。一个解决办法出现了：</p>
+<p>把Windows10的缩放比例调整为 124%。（默认是 125%）</p>
+<p>确实有用。</p>
+<p>不过毕竟不能为了一个软件更改系统的规则。不过我已经积累了足够的信息了，而我与真正的解决办法之间，只有一座山的距离。</p>
+<h1 id="真相">真相</h1>
+<h2 id="解决办法">解决办法：</h2>
+<ol>
+<li>在 &quot;D:\WeGameApps\穿越火线&quot; 下找到crossfire.exe，右键属性，</li>
+<li>选择“兼容性”-“更改高 DPI 设置”，</li>
+<li>在下面的“高DPI缩放替代”-“缩放执行”选择“应用程序”</li>
+</ol>
+<h2 id="原理">原理</h2>
+<p>在 Windows 8 的时代，微软就意识到随着 Windows 设备屏幕分辨率的不断增大，Windows 组件也需要不断增大防止高分屏下组件过小。于是，微软在系统中加入了“缩放比例”直接放大组件，而不是开发多个适配不同分辨率的组件。对于第三方软件，微软也提供了一系列与原来不冲突的 API 方便适配。当然，像穿越火线这样的软件肯定是不会适配的。</p>
+<p>这就带来了几个问题：</p>
+<ol>
+<li>主界面直接按照原来的像素放大，变模糊。</li>
+<li>更严重的是，软件内部分辨率调节和屏幕的分辨率永远会有“缩放比例”的缩放。</li>
+</ol>
+<p>以穿越火线为例。我的电脑是 1920 *1080 的，对于 125% 的放大，游戏内能调节的最大纵向分辨率就是 1080/1.25=864 ，超过 864 的调节都是无效的。甚至调不到 1600x900。</p>
+<p>那怎么办呢？很简单，这种 bug 出现的原因就是系统接管了应用程序的缩放调节，把缩放调节的权利还给应用程序不就可以了？就是我刚才的操作。</p>
+<p>能否将所有应用程序的缩放权利都还给应用自己呢？目前看来是不太现实。一方面，淘汰过去的软件本身就是一种趋势，在兼容性上做最大限度的保证和恶化体验加速淘汰并不冲突；另一方面，微软似乎觉得自己有能力解决这个问题。</p>
+<h1 id="题外话">题外话</h1>
+<p>在我查阅相关资料的时候，我也在联想社区里看到类似的问题。不过评论区都是冷嘲热讽：</p>
+<blockquote>
+<p>cf老掉牙的游戏还要玩？</p>
+</blockquote>
+<blockquote>
+<p>为什么不去玩CSGO呢？</p>
+</blockquote>
+<p>这就像是我写一段c代码出现问题发到 CSDN 上，结果一堆人讽刺我为什么不用 Python 一样。我一直觉得有 bug 就要解决，说风凉话的人可能连基本的原理都不清楚，nt一样。</p>
 
             </div>
             
@@ -648,7 +664,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://bluebonnet27.github.io/post/firefox_theme_manual/" title="使用firefox color自定义firefox的主题">https://bluebonnet27.github.io/post/firefox_theme_manual/</a>
+      <a href="https://bluebonnet27.github.io/post/crossfirefix/" title="解决《穿越火线》在windows10上的模糊问题">https://bluebonnet27.github.io/post/crossfirefix/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -657,21 +673,17 @@
   </ul>
   <div class="tags">
     
-      <a href="https://bluebonnet27.github.io/tag/firefox/"># firefox</a>
+      <a href="https://bluebonnet27.github.io/tag/others/"># 随想随写</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="打包发布firefox的主题" href="https://bluebonnet27.github.io/post/firefox_theme_upload/">打包发布firefox的主题</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="打包发布firefox的主题" href="https://bluebonnet27.github.io/post/firefox_theme_upload/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="每周说（8）：新的开始" href="https://bluebonnet27.github.io/post/weeklysay8/">每周说（8）：新的开始</a>
-        <a class="nav-mobile-next" title="每周说（8）：新的开始" href="https://bluebonnet27.github.io/post/weeklysay8/">下一篇</a>
+        <a class="nav-pc-next" title="每周说（9）：考研路上" href="https://bluebonnet27.github.io/post/weeklysay9/">每周说（9）：考研路上</a>
+        <a class="nav-mobile-next" title="每周说（9）：考研路上" href="https://bluebonnet27.github.io/post/weeklysay9/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

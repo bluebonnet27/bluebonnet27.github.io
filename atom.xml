@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2021-04-19T04:05:25.474Z</updated>
+    <updated>2021-04-19T08:19:36.552Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -10,6 +10,60 @@
     <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
     <icon>https://bluebonnet27.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[解决《穿越火线》在windows10上的模糊问题]]></title>
+        <id>https://bluebonnet27.github.io/post/crossfirefix/</id>
+        <link href="https://bluebonnet27.github.io/post/crossfirefix/">
+        </link>
+        <updated>2021-04-19T07:20:08.000Z</updated>
+        <content type="html"><![CDATA[<p><em>大三亿鼠标的枪战梦想已经消逝，但仍有朝圣者耕耘在先人曾踌躇的大地上</em></p>
+<h1 id="前言">前言</h1>
+<p>更换新电脑后，我第一件事就是把《穿越火线》下载回来。但在游戏里调整为<font color=red>1920*1080</font>时，字体和界面都变得很模糊，不像是这个分辨率下应该有的画质。于是我开始寻找解决办法，发现这不仅仅是一个游戏的问题，更是 Windows 10 系统对于所有使用老开发技术的软件的优化问题。</p>
+<h1 id="amdintel">AMD？Intel？</h1>
+<p>起初我觉得是 AMD 的问题。因为使用 i3 9100f ,GTX 1065 的 Windows 7 并没有出现模糊的问题。但是我使用的这台 lenovo region r9000x 是有独显直连功能的，开启以后 AMD 的 Radeon 核显会被屏蔽。</p>
+<p>然后，依然很模糊。</p>
+<p>难不成是针对图灵架构的显卡也没有优化？当然不可能。AMD 可能会有兼容性问题，但 NVIDIA 不可能会有的。（当然，事实证明这是我对 AMD 根深蒂固的偏见罢了，其实根本和硬件没关系）</p>
+<h1 id="封顶">封顶</h1>
+<p>首先尝试在游戏里修改多个分辨率，排除分辨率修改本身出问题的可能。</p>
+<p>结果发现调节 4:3 下 800*600 ，画质会变得异常模糊，（题外话：判断《穿越火线》分辨率的一个简单办法是看游戏内的字体。低分辨率下游戏的字体会退化成点阵字体，这也是当年 M bug 的来源；高分辨率下则会变成标准的宋体字）证明调低分辨率是有效的。</p>
+<p>也就是说，更像是<font color=red>分辨率的向上调整撞上了“墙”，使得这些操作完全无效。</font></p>
+<p>WeGame 自带的修复就不说了，不可能解决任何问题的东西。</p>
+<h1 id="主程序">主程序</h1>
+<p>难道是兼容性出了问题？找到桌面图标对应的本地源 Win32 文件，发现这个名为&quot;client.exe&quot;的文件只是一个客户端。于是只能启动游戏用任务管理器找到主程序文件是&quot;crossfire.exe&quot;，使用兼容性疑难解答调整其为“Windows 8”。</p>
+<p>问题依然没有解决。而且可以确定，这个问题在 Windows 8 时代就已经出现了。</p>
+<h1 id="125️124">125➡️124</h1>
+<p>在找解决办法的同时，我也在网上找相关的资料。不过，毕竟游戏年代久远，相关的解决办法少之又少，靠谱的我想一个也没有。但当我把搜索范围扩大，将“穿越火线”替换成“所有软件”的模糊问题时。一个解决办法出现了：</p>
+<p>把Windows10的缩放比例调整为 124%。（默认是 125%）</p>
+<p>确实有用。</p>
+<p>不过毕竟不能为了一个软件更改系统的规则。不过我已经积累了足够的信息了，而我与真正的解决办法之间，只有一座山的距离。</p>
+<h1 id="真相">真相</h1>
+<h2 id="解决办法">解决办法：</h2>
+<ol>
+<li>在 &quot;D:\WeGameApps\穿越火线&quot; 下找到crossfire.exe，右键属性，</li>
+<li>选择“兼容性”-“更改高 DPI 设置”，</li>
+<li>在下面的“高DPI缩放替代”-“缩放执行”选择“应用程序”</li>
+</ol>
+<h2 id="原理">原理</h2>
+<p>在 Windows 8 的时代，微软就意识到随着 Windows 设备屏幕分辨率的不断增大，Windows 组件也需要不断增大防止高分屏下组件过小。于是，微软在系统中加入了“缩放比例”直接放大组件，而不是开发多个适配不同分辨率的组件。对于第三方软件，微软也提供了一系列与原来不冲突的 API 方便适配。当然，像穿越火线这样的软件肯定是不会适配的。</p>
+<p>这就带来了几个问题：</p>
+<ol>
+<li>主界面直接按照原来的像素放大，变模糊。</li>
+<li>更严重的是，软件内部分辨率调节和屏幕的分辨率永远会有“缩放比例”的缩放。</li>
+</ol>
+<p>以穿越火线为例。我的电脑是 1920 *1080 的，对于 125% 的放大，游戏内能调节的最大纵向分辨率就是 1080/1.25=864 ，超过 864 的调节都是无效的。甚至调不到 1600x900。</p>
+<p>那怎么办呢？很简单，这种 bug 出现的原因就是系统接管了应用程序的缩放调节，把缩放调节的权利还给应用程序不就可以了？就是我刚才的操作。</p>
+<p>能否将所有应用程序的缩放权利都还给应用自己呢？目前看来是不太现实。一方面，淘汰过去的软件本身就是一种趋势，在兼容性上做最大限度的保证和恶化体验加速淘汰并不冲突；另一方面，微软似乎觉得自己有能力解决这个问题。</p>
+<h1 id="题外话">题外话</h1>
+<p>在我查阅相关资料的时候，我也在联想社区里看到类似的问题。不过评论区都是冷嘲热讽：</p>
+<blockquote>
+<p>cf老掉牙的游戏还要玩？</p>
+</blockquote>
+<blockquote>
+<p>为什么不去玩CSGO呢？</p>
+</blockquote>
+<p>这就像是我写一段c代码出现问题发到 CSDN 上，结果一堆人讽刺我为什么不用 Python 一样。我一直觉得有 bug 就要解决，说风凉话的人可能连基本的原理都不清楚，nt一样。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[每周说（9）：考研路上]]></title>
         <id>https://bluebonnet27.github.io/post/weeklysay9/</id>
@@ -674,83 +728,6 @@ AH00015: Unable to open logs</p>
 <li>找到了《<a href="https://movie.douban.com/subject/30402296/">天气之子</a>》的资源，今晚有空二刷。</li>
 </ol>
 <p>封面图片来源：Photo by Sydney Sims on Unsplash</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[每周说（2）：线上考试的困境，美国的示威活动的思考，b站up主虎子]]></title>
-        <id>https://bluebonnet27.github.io/post/weeklysay2/</id>
-        <link href="https://bluebonnet27.github.io/post/weeklysay2/">
-        </link>
-        <updated>2020-06-01T13:26:57.000Z</updated>
-        <content type="html"><![CDATA[<!-- more -->
-<p><em>人的命运呐，不仅取决于个人自己，也取决于时代的影响。。。</em></p>
-<!-- more -->
-<p>每周说第二篇，<em>这个系列的目的主要是练习Markdown语法，顺便输出下观点</em></p>
-<h1 id="线上考试的困境">线上考试的困境</h1>
-<p><em>这一切都要从一只蝙蝠说起</em></p>
-<p>离散的<font color='red'>线上</font>期末考试取消了。</p>
-<p>其实大家都很清楚，<font color='red'>线上考试作弊几乎是不可能不存在的</font>。离散考试的规则是：</p>
-<blockquote>
-<p>本次考试为半开卷考试，考生可最多准备 1 张 A4 纸记载知识点。考生不得利用网络互<br>
-相传递考试信息，考试过程中将全程录屏备查，如果发现作弊行为，按照《哈尔滨工程大学<br>
-本科生课程考核管理办法》相关规定执行。</p>
-</blockquote>
-<p>实际上呢？笔记本电脑对面的墙上可以贴三四张知识点吧？手机可以准备不只一部吧？有心的人去知乎上随便查都可以查出来各种作弊方法。</p>
-<p>这使得线上考试，一定程度上，比拼的是<font color='red'>谁的作弊能力强</font>，而不仅仅是<font color='red'>知识点的掌握</font>。有条件的人可以找枪手代为作答，没条件的人只能自己拼命抄知识点贴在墙上。你可能会说，诶呀按你的话，就没有纯粹公平的考试了。<strong>所有的考试都有不公平之处，但线上考试确实比线下的更加不公平</strong>。</p>
-<p><s>这句话在哪里听过的样子</s></p>
-<p>当有好办法解决（比如改考试为论文，回学校再考等）而依然使用线上考试的话，这种做法就是很不合理的。</p>
-<h1 id="美国的示威活动">美国的示威活动</h1>
-<p><em>----I have a dream!  ----Keep dreaming!</em></p>
-<p>初中课本上就有马丁路德金的《我有一个梦想》，被归类在演讲稿那一单元里，和《为人民服务》并列的。想来教材深深赞同这种精神，只是注解里写着：</p>
-<blockquote>
-<p>1964年获诺贝尔和平奖，1968被南方奴隶主的歹徒刺杀。</p>
-</blockquote>
-<p>这个奖，如今在官方媒体的笔下又是什么样子暂且不论。至少当时还是一种<font color='red'>肯定</font>。</p>
-<p>金是在一家汽车旅馆遇刺的。本来没必要做的演讲，为了振奋人气还是去了。</p>
-<p>高中课本上，我又看到了这篇文章。这回与之并列的是恩格斯《在马克思墓前的演讲》。这回老师讲了很多，讲非暴力学说，讲圣雄甘地，讲电影《塞尔玛游行》和主题曲<em>glory</em>。今天美国变成什么样子了呢？</p>
-<p>我养成了<font color='red'>对正在发生的事情不轻易发表看法</font>的习惯。比如这次的事情层层反转：</p>
-<ol>
-<li>媒体认为是<font color='red'>窒息</font>而死</li>
-<li>美国官方初步报告，认为是死于<font color='red'>本来身体就很虚弱，并且有吸毒历史</font></li>
-<li>美国官方最后承认是<font color='red'>窒息</font>而死</li>
-<li>又有传言说该黑人本来<font color='red'>履历就不是十分光彩</font>，什么07年入室抢劫，02年非法入侵入狱等等，以此作为证据证明这些歧视<font color='red'>并非无缘无故</font>。</li>
-</ol>
-<p>所谓的证据和Floyd怎么死的貌似没什么关系。<font color='red'>社会上进过监狱的人多多少少都会受点歧视的，但歧视不是你能把他按在地上用脚压死的理由</font>。</p>
-<p>也有人认为这是<font color='red'>驴子给大象下的绊子</font>，这我就不了解了。反正美国的事儿闹得挺大的。我对这件事的两个主要消息来源是<a href="https://t.bilibili.com/394673405348235256?tab=2">张局座</a>和<a href="https://www.bilibili.com/video/BV1Za4y1e7pF">郭杰瑞</a>。局座的立场比较明确，郭杰瑞比较客观，没有立场。</p>
-<p>politics相关的问题不聊太多。</p>
-<h1 id="b站up主虎子">b站up主虎子</h1>
-<p><em>该配合你演出的我却想问候你全家</em></p>
-<p>之前有人问过我一个问题：<font color='green'>你如何看待那些在街边乞讨，却实际根本没有那么惨，却还是有很多人给钱</font>的现象呢？</p>
-<p>蔡新新在《人性启迪》里讲过这个问题，也是我的看法，就是：</p>
-<p><font color='red'>他们是演员。我们给的钱是为他们的演技付费</font>。</p>
-<p>这回虎子的事情也是一波三折，反转反转：</p>
-<ol>
-<li>虎子一直<a href="https://space.bilibili.com/482201881">发视频说他得了癌症，卖惨</a>，而且这些视频在各个平台都有，不止b站。</li>
-<li>有人爆料<a href="https://www.bilibili.com/video/BV1ig4y1B7Ud">他在大众点评上的消费记录</a>。</li>
-<li>包括<a href="https://www.tmtpost.com/4424434.html">爱范儿</a>，<a href="https://www.zhihu.com/question/396875272/answer/1246078647">知乎</a>上的一众大v锤之。</li>
-<li><a href="https://static.cdsb.com/micropub/Articles/202006/6906c79ac5f0d1650b60aadd31879e32.html">三家媒体爆料说虎子的病不是假的</a>，<a href="https://t.bilibili.com/396639177521313047">b站也给予了一定的说明</a>。</li>
-<li><a href="https://www.zhihu.com/question/399171697/answer/1263056600">风向又反过来了</a>，只不过没有之前那么剧烈了。</li>
-</ol>
-<p>我想起另一位up主“<a href="https://space.bilibili.com/1774942">卡夫卡松饼君</a>”，她也是宣称自己得了癌症，后来被人锤。也是评论区拉黑挂人。</p>
-<p>以下是我的观点：</p>
-<ul>
-<li><strong>为什么这么多人对这种行为生气？</strong></li>
-</ul>
-<p>其实生气的是虎子造假？（当然造假也会很生气）他们觉得，<font color='red'>虎子的形象和认知中的“癌症晚期病人”有很大的出入</font>，这一点也体现在“卡夫卡---”上。前者癌症晚期吃火锅，后者气色十分不错，<s>外表长得也还行，不过惯有的教育告诉我们长得太好看的人一般都是蛇蝎心肠</s>。大众认为的癌症病人应该是<font color='red'>病怏怏的，有气无力的，对未来充满绝望的——起码得是笑不出来的</font>。</p>
-<ul>
-<li><strong>你如何看待这种up主？利用绝症赚钱的。</strong></li>
-</ul>
-<p>没关注过。</p>
-<p>如果最后证明他们的病的确是假的。（现在的锤都没有石锤）那我觉得他们和我写在前面的“演员”没什么区别。多余的就是，<font color='red'>大家生活压力也挺大的，有时候需要这样的演员来缓解下压力</font>，在被石锤之前。</p>
-<p>如果病是真的。这种“锤人”的风气倒不太行。没理由的锤人引起他人关注，虚荣心也不过那一点点可怜的粉丝量。不过一想到我可能也会变成这样锤人的恶人，我觉得此刻还是少说为妙。</p>
-<h1 id="one-more-thing">one more thing ...</h1>
-<p><em>by Steve Jobs</em></p>
-<h2 id="其他方面">其他方面</h2>
-<ol>
-<li>正在写软件工程的期末报告，写完会发在这里。</li>
-<li>《愤怒的小鸟2》一般吧。</li>
-</ol>
-<p>封面图：Photo by Nik Shuliahin on Unsplash</p>
 ]]></content>
     </entry>
 </feed>
