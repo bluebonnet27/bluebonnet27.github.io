@@ -9,7 +9,7 @@
 <meta name="description" content="欢迎来到这里，建议使用电脑浏览">
 <meta name="theme-color" content="#000">
 <title>每周说（4）：何去何从的时光 | bluebonnet27的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1618820368611">
+<link rel="shortcut icon" href="/favicon.ico?v=1618890694442">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1748,7 +1748,8 @@
 &lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;更换新电脑后，我第一件事就是把《穿越火线》下载回来。但在游戏里调整为&lt;font color=red&gt;1920*1080&lt;/font&gt;时，字体和界面都变得很模糊，不像是这个分辨率下应该有的画质。于是我开始寻找解决办法，发现这不仅仅是一个游戏的问题，更是 Windows 10 系统对于所有使用老开发技术的软件的优化问题。&lt;/p&gt;
 &lt;h1 id=&#34;amdintel&#34;&gt;AMD？Intel？&lt;/h1&gt;
-&lt;p&gt;起初我觉得是 AMD 的问题。因为使用 i3 9100f ,GTX 1065 的 Windows 7 并没有出现模糊的问题。但是我使用的这台 lenovo region r9000x 是有独显直连功能的，开启以后 AMD 的 Radeon 核显会被屏蔽。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://ftp.bmp.ovh/imgs/2021/04/b8474a17936c839b.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+起初我觉得是 AMD 的问题。因为使用 i3 9100f ,GTX 1065 的 Windows 7 并没有出现模糊的问题。但是我使用的这台 lenovo region r9000x 是有独显直连功能的，开启以后 AMD 的 Radeon 核显会被屏蔽。&lt;/p&gt;
 &lt;p&gt;然后，依然很模糊。&lt;/p&gt;
 &lt;p&gt;难不成是针对图灵架构的显卡也没有优化？当然不可能。AMD 可能会有兼容性问题，但 NVIDIA 不可能会有的。（当然，事实证明这是我对 AMD 根深蒂固的偏见罢了，其实根本和硬件没关系）&lt;/p&gt;
 &lt;h1 id=&#34;封顶&#34;&gt;封顶&lt;/h1&gt;
@@ -1761,8 +1762,9 @@
 &lt;p&gt;问题依然没有解决。而且可以确定，这个问题在 Windows 8 时代就已经出现了。&lt;/p&gt;
 &lt;h1 id=&#34;125️124&#34;&gt;125➡️124&lt;/h1&gt;
 &lt;p&gt;在找解决办法的同时，我也在网上找相关的资料。不过，毕竟游戏年代久远，相关的解决办法少之又少，靠谱的我想一个也没有。但当我把搜索范围扩大，将“穿越火线”替换成“所有软件”的模糊问题时。一个解决办法出现了：&lt;/p&gt;
-&lt;p&gt;把Windows10的缩放比例调整为 124%。（默认是 125%）&lt;/p&gt;
-&lt;p&gt;确实有用。&lt;/p&gt;
+&lt;p&gt;把Windows10的缩放比例调整为 124%。（默认是 125%）&lt;br&gt;
+&lt;img src=&#34;https://ftp.bmp.ovh/imgs/2021/04/da299515e6ac3924.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+确实有用。&lt;/p&gt;
 &lt;p&gt;不过毕竟不能为了一个软件更改系统的规则。不过我已经积累了足够的信息了，而我与真正的解决办法之间，只有一座山的距离。&lt;/p&gt;
 &lt;h1 id=&#34;真相&#34;&gt;真相&lt;/h1&gt;
 &lt;h2 id=&#34;解决办法&#34;&gt;解决办法：&lt;/h2&gt;
@@ -1780,7 +1782,8 @@
 &lt;/ol&gt;
 &lt;p&gt;以穿越火线为例。我的电脑是 1920 *1080 的，对于 125% 的放大，游戏内能调节的最大纵向分辨率就是 1080/1.25=864 ，超过 864 的调节都是无效的。甚至调不到 1600x900。&lt;/p&gt;
 &lt;p&gt;那怎么办呢？很简单，这种 bug 出现的原因就是系统接管了应用程序的缩放调节，把缩放调节的权利还给应用程序不就可以了？就是我刚才的操作。&lt;/p&gt;
-&lt;p&gt;能否将所有应用程序的缩放权利都还给应用自己呢？目前看来是不太现实。一方面，淘汰过去的软件本身就是一种趋势，在兼容性上做最大限度的保证和恶化体验加速淘汰并不冲突；另一方面，微软似乎觉得自己有能力解决这个问题。&lt;/p&gt;
+&lt;p&gt;能否将所有应用程序的缩放权利都还给应用自己呢？目前看来是不太现实。一方面，淘汰过去的软件本身就是一种趋势，在兼容性上做最大限度的保证和恶化体验加速淘汰并不冲突；另一方面，微软似乎觉得自己有能力解决这个问题。&lt;br&gt;
+&lt;img src=&#34;https://ftp.bmp.ovh/imgs/2021/04/32341f556c31dd1b.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;题外话&#34;&gt;题外话&lt;/h1&gt;
 &lt;p&gt;在我查阅相关资料的时候，我也在联想社区里看到类似的问题。不过评论区都是冷嘲热讽：&lt;/p&gt;
 &lt;blockquote&gt;
