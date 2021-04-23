@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://bluebonnet27.github.io</id>
     <title>bluebonnet27的博客</title>
-    <updated>2021-04-20T05:14:40.492Z</updated>
+    <updated>2021-04-23T09:32:58.426Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://bluebonnet27.github.io"/>
     <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
@@ -10,6 +10,158 @@
     <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
     <icon>https://bluebonnet27.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[2021年春季CSP认证题解]]></title>
+        <id>https://bluebonnet27.github.io/post/202104csp/</id>
+        <link href="https://bluebonnet27.github.io/post/202104csp/">
+        </link>
+        <updated>2021-04-23T08:49:58.000Z</updated>
+        <content type="html"><![CDATA[<p><em>给孩子用的，孩子很开心，9月份还会买的</em></p>
+<h1 id="成绩">成绩</h1>
+<p><em>反正就是 50 块换了一个 CSP 选修课及格</em></p>
+<figure data-type="image" tabindex="1"><img src="https://ftp.bmp.ovh/imgs/2021/04/8a96b8d1f1abb90b.png" alt="成绩" loading="lazy"></figure>
+<h1 id="题解">题解</h1>
+<p><em>说实话我就会两道题... ...硬着头皮写题解，还是第一次写<s>多美妙的词汇</s></em></p>
+<h2 id="灰度直方图">灰度直方图</h2>
+<p><em>原题链接：<a href="http://118.190.20.162/view.page?gpid=T128" target="_blank">链接</a></em></p>
+<h3 id="问题描述">问题描述</h3>
+<p>一幅长宽分别为 n 个像素和 m 个像素的灰度图像可以表示为一个 n×m 大小的矩阵 A。 其中每个元素 Aij（0≤i&lt;n、0≤j&lt;m）是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 具体来说，一个 8 比特的灰度图像中每个像素的灰度范围是 [0,128)。<br>
+一副灰度图像的灰度统计直方图（以下简称“直方图”）可以表示为一个长度为 L 的数组 h，其中 h[x]（0≤x&lt;L）表示该图像中灰度值为 x 的像素个数。显然，h[0] 到 h[L−1] 的总和应等于图像中的像素总数 n⋅m。<br>
+已知一副图像的灰度矩阵 A，试计算其灰度直方图 h[0],h[1],⋯,h[L−1]。</p>
+<h3 id="输入格式">输入格式</h3>
+<p>输入共 n+1 行。<br>
+输入的第一行包含三个用空格分隔的正整数n、m 和 L，含义如前文所述。<br>
+第二到第 n+1 行输入矩阵 A 。<br>
+第 i+2（0&lt;=i&lt;=n）行包含用空格分隔的 m 个整数，依次为Ai0,Ai1...Ai(m-1) 。</p>
+<h3 id="输出格式">输出格式</h3>
+<p>输出到标准输出。<br>
+输出仅一行，包含用空格分隔的 L 个整数 h[0],h[1],⋯,h[L−1]，表示输入图像的灰度直方图。<br>
+全部的测试数据满足 0&lt;n,m≤500 且 4≤L≤256。</p>
+<h3 id="样例">样例</h3>
+<h4 id="输入">输入</h4>
+<p>7 11 8<br>
+0 7 0 0 0 7 0 0 7 7 0<br>
+7 0 7 0 7 0 7 0 7 0 7<br>
+7 0 0 0 7 0 0 0 7 0 7<br>
+7 0 0 0 0 7 0 0 7 7 0<br>
+7 0 0 0 0 0 7 0 7 0 0<br>
+7 0 7 0 7 0 7 0 7 0 0<br>
+0 7 0 0 0 7 0 0 7 0 0</p>
+<h4 id="输出">输出</h4>
+<p>48 0 0 0 0 0 0 29</p>
+<h3 id="题解-2">题解</h3>
+<p>这题完全白给，你甚至不需要建立矩阵，直接边输入边加和就完事了。</p>
+<h3 id="代码">代码</h3>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+
+int main() {
+    int n, m, L;
+    scanf(&quot;%d %d %d&quot;, &amp;n, &amp;m, &amp;L);
+
+    int h[L];
+    int point;
+
+    memset(h, 0, sizeof(h));
+
+    for (int i = 0; i &lt; m; i++) {
+	    for (int j = 0; j &lt; n; j++) {
+		    scanf(&quot;%d&quot;, &amp;point);
+		    h[point]++;
+	    }
+    }
+
+    for (int k = 0; k &lt; L; k++) {
+	    printf(&quot;%d &quot;, h[k]);
+    }
+}
+</code></pre>
+<h2 id="邻域均值">邻域均值</h2>
+<p><em>原题链接：<a href="http://118.190.20.162/view.page?gpid=T127" target="_blank">链接</a></em></p>
+<h3 id="题目背景">题目背景</h3>
+<p>顿顿在学习了数字图像处理后，想要对手上的一副灰度图像进行降噪处理。不过该图像仅在较暗区域有很多噪点，如果贸然对全图进行降噪，会在抹去噪点的同时也模糊了原有图像。因此顿顿打算先使用邻域均值来判断一个像素是否处于较暗区域，然后仅对处于较暗区域的像素进行降噪处理。</p>
+<h3 id="题目描述">题目描述</h3>
+<p>待处理的灰度图像长宽皆为 n 个像素，可以表示为一个 n×n 大小的矩阵 A，其中每个元素是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 对于矩阵中任意一个元素 Aij（0≤i,j&lt;n），其邻域定义为附近若干元素的集和：<br>
+Neighbor(i,j,r)={Axy|0≤x,y&lt;n and |x−i|≤r and |y−j|≤r}<br>
+这里使用了一个额外的参数 r 来指明 Aij 附近元素的具体范围。根据定义，易知 Neighbor(i,j,r) 最多有 (2r+1)2 个元素。<br>
+如果元素 Aij 邻域中所有元素的平均值小于或等于一个给定的阈值 t，我们就认为该元素对应位置的像素处于较暗区域。 下图给出了两个例子，左侧图像的较暗区域在右侧图像中展示为黑色，其余区域展示为白色。现给定邻域参数 r 和阈值 t，试统计输入灰度图像中有多少像素处于较暗区域。</p>
+<p><strong>图我就不放了，没什么卵用</strong></p>
+<h3 id="输入格式-2">输入格式</h3>
+<p>从标准输入读入数据。<br>
+输入共 n+1 行。<br>
+输入的第一行包含四个用空格分隔的正整数 n、L、r 和 t，含义如前文所述。<br>
+第二到第 n+1 行输入矩阵 A。 第 i+2（0≤i&lt;n）行包含用空格分隔的 n 个整数，依次为 Ai0,Ai1,⋯,Ai(n−1)。</p>
+<h3 id="输出格式-2">输出格式</h3>
+<p>输出到标准输出。<br>
+输出一个整数，表示输入灰度图像中处于较暗区域的像素总数。<br>
+70% 的测试数据满足 n≤100、r≤10。<br>
+全部的测试数据满足 0&lt;n≤600、0&lt;r≤100 且 2≤t&lt;L≤256。</p>
+<h3 id="样例-2">样例</h3>
+<h4 id="输入-2">输入</h4>
+<p>11 8 2 2<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 7 0 0 0 7 0 0 7 7 0<br>
+7 0 7 0 7 0 7 0 7 0 7<br>
+7 0 0 0 7 0 0 0 7 0 7<br>
+7 0 0 0 0 7 0 0 7 7 0<br>
+7 0 0 0 0 0 7 0 7 0 0<br>
+7 0 7 0 7 0 7 0 7 0 0<br>
+0 7 0 0 0 7 0 0 7 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0</p>
+<h4 id="输出-2">输出</h4>
+<p>83</p>
+<h3 id="题解-3">题解</h3>
+<p>嵌套 4 层 for 循环的暴力解直接超时，无法通过 30% 的测试样例。（我为什么知道，因为我就这么做的... ...）</p>
+<p><font color=red>建议做这道题前先掌握前缀和打表法的知识</font>（其实我也会，但真的没想到要用... ...还是题做少了）</p>
+<p>贴个链接，讲得比较好的：<a href="https://zhuanlan.zhihu.com/p/117569086" target="_blank">链接</a></p>
+<p>如果你掌握了上面的知识，那这道题也相当于白给了。核心思想就是用前缀和公式求那一片的平均值而不是两层循环。注意边界条件，比如不能超过二维数组的范围，以及左上角的数据要 -1 等。</p>
+<h3 id="代码-2">代码</h3>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+int a[610][610];
+
+int main() {
+    int res = 0;
+    int n, L, r, t;
+    scanf(&quot;%d %d %d %d&quot;, &amp;n, &amp;L, &amp;r, &amp;t);
+
+    int x;
+    for (int i = 1; i &lt;= n; i++) {
+        for (int j = 1; j &lt;= n; j++) {
+            scanf(&quot;%d&quot;, &amp;x);
+            a[i][j] = a[i - 1][j] + a[i][j - 1] - a[i - 1][j - 1] + x;
+        }
+    }
+
+    for (int i = 1; i &lt;= n; i++) {
+        for (int j = 1; j &lt;= n; j++) {
+            int total, m;
+            int x1, x2, y1, y2;
+
+            x1 = max(1, i - r);
+            y1 = max(1, j - r);
+            x2 = min(n, i + r);
+            y2 = min(n, j + r);
+
+            total = a[x2][y2] - a[x1 - 1][y2] - a[x2][y1 - 1] + a[x1 - 1][y1 - 1];
+            m = (y2 - y1 + 1) * (x2 - x1 + 1);
+
+            if (total &lt;= t * m)
+                res++;
+        }
+    }
+
+    printf(&quot;%d&quot;, res);
+}
+</code></pre>
+<hr>
+<p>感谢博客<a href="https://www.cnblogs.com/hujunyao37201/p/14647595.html" target="_blank">2021年四月CCF-CSP认证题目</a>提供的相关思路。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[解决《穿越火线》在windows10上的模糊问题]]></title>
         <id>https://bluebonnet27.github.io/post/crossfirefix/</id>
@@ -681,56 +833,6 @@ AH00015: Unable to open logs</p>
 <p>一切准备妥当以后，想去<font color='red'>找个实习</font>。看看我自己适不适合开发岗位。</p>
 <p>就，这样。</p>
 <p>封面图：<span>Photo by <a href="https://unsplash.com/@craftedbygc?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Green Chameleon</a> on <a href="/s/photos/university?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[每周说（3)：中北大学学生跳楼事件，matlab无法使用，这周的大作业]]></title>
-        <id>https://bluebonnet27.github.io/post/weeklysay3/</id>
-        <link href="https://bluebonnet27.github.io/post/weeklysay3/">
-        </link>
-        <updated>2020-06-10T09:00:42.000Z</updated>
-        <content type="html"><![CDATA[<p><em>焦虑是大部分人生活的常态</em></p>
-<p>每周说第三篇，<em>这个系列的目的主要是练习Markdown语法，顺便输出下观点</em></p>
-<h1 id="中北大学学生跳楼事件">中北大学学生跳楼事件</h1>
-<p><em>编筐织娄，全在收口。那中间的部分是不是可以不要了？</em></p>
-<blockquote>
-<p>@中国之声6月9日消息，6月6日，山西中北大学大二学生时某补考中作弊被发现，离开考场不久后坠楼身亡。时某家属称，监控显示时某被发现作弊后，有长达近20分钟的哭泣，期间监考老师却并未对其进行教导和规劝。<br>
-今天（9日），中北大学校长沈兴全独家回应中国之声，称“老师做法并无不当之处”，因作弊被记过或处分可以撤销。目前学校有专门负责人与学生家长沟通，“中北大学会继续坚持对考试作弊严查的规章制度，树立严格的规范。”</p>
-</blockquote>
-<p>中国的大学在教育方针上面一直在变。从最早的“<font color = 'red'>严进宽出</font>”，到近几年加大对毕业考试的处理力度。“<font color = 'red'>严进</font>”也要“<font color = 'red'>严出</font>”。似乎我们向来就觉得，开头和结尾搞定了，中间的部分也不会有太大问题。</p>
-<p>这其实是一种<font color = 'red'>功利主义</font>的表现。确切的说，这种<font color = 'red'>只重视开始和结束而不重视过程</font>的态度，历来是功利主义的重灾区。很多人称这种功利主义为成人世界的必然法则，殊不知过程在人成长的初期过程要比结果重要。象牙塔里的学生开始谈成人世界的法则，那未来又会如何呢？</p>
-<p>回到这件事本身。</p>
-<p>学生作弊行为本身一定有问题。不过学校应当思考的是，<font color = 'red'>自己的教学环节是否出了更大的问题</font>。</p>
-<p>中国大学，教授提升职衔的办法是搞科研，带研究生都不一定有很多的加分，更何况是教本科生？而相关规定却恰好要求教授非得有教人的本领。这是很奇怪的事。</p>
-<p>一起跳楼事件背后是很多人的无奈。</p>
-<p>拿我的学校举例子。期末的大作业是一篇报告，需要相当多的Java Web知识，以及MySQL知识，但这些知识在课堂上是不教的。课堂上学的东西，包括《软件工程》和《面向对象程序设计》，都不涉及这些东西。于是大批学生被迫抄代码，学校还对这种行为<font color = 'red'>予以默许</font>。</p>
-<p>反正你们将来都是要<font color = 'red'>考研</font>的，对吧？</p>
-<h1 id="matlab无法使用">MATLAB无法使用</h1>
-<p><em>科学无国界</em></p>
-<blockquote>
-<p>近日，有哈工大的学生在网络上表示，哈工大的师生们已经收到了被MATLAB软件停止服务的邮件，原因是受到美国实体清单的出口管制影响。通知中清楚写着，根据美国最新的进出口管制名单，无法继续为您服务了，后续请关注学校的通知。其实早在5月23日，美国商务部就宣布，将共计33家中国公司及机构等列入了实体清单，其中就包括了哈工大、哈工程两所院校，而如今实体清单已经扩展到了软件层面，对师生们的教学和科学研究影响巨大。</p>
-</blockquote>
-<p><a href="https://new.qq.com/omn/20200611/20200611A0SCH700.html">详情</a></p>
-<p><font color = 'red'>开源精神是一种很可贵的精神</font>，这种可贵性尤其体现在此刻。</p>
-<p>专业软件被大公司垄断。这些大公司以较为低廉的价格将软件提供给大学和其他高等院校的学生，使他们养成习惯。而他们将来工作的地方享受不到这种优惠，就不得不<font color = 'red'>以高昂的价格购买批量授权</font>。这些大公司在面对政治的时候极为软弱，比如MATLAB的公司（mathwork）。它本质上还是一家美国公司，所以，你懂得。</p>
-<p>这就是我选择<a href="https://www.mozilla.org/zh-CN/firefox/new/">firefox</a>而不是chrome的原因。firefox是强制开源的，而chromium虽然本身是开源的，但它是一个Google主导的项目。而且chrome本身是不开源的。</p>
-<p>我不用MATLAB，但我数学系的几个同学就没这么好的运气了。不过一想起GitHub好像也是美国微软旗下的（可我每次登陆的时候，服务器都在新加坡啊... ...）我这篇博客也是托管在github上的... ...</p>
-<p>其实国内云服务器还可以卖得便宜点... ...</p>
-<h1 id="这周的大作业">这周的大作业</h1>
-<p><em>焦虑是大部分人生活的常态</em></p>
-<p>先道个歉，对不起！对不起！对不起！对不起！对不起！对不起！</p>
-<p>这周事情实在太多了，没时间打理博客。写出来的东西也没什么营养。😭 然后最后甚至用大作业来放水凑字数。😂 等忙完这一段时间会写新的东西出来的。</p>
-<p>这周的任务（其实是期末任务）是<s>抄</s>写一个Java web+SQL项目。理论部分一份28页的报告，数据库部分12页的报告。其实大家谁都没有Java web和SQL的知识。但是又如何呢？学校教的东西完全不能用来写报告。</p>
-<p>源代码较多地参考了《<a href="https://book.douban.com/subject/4889799/">Java项目开发案例精粹</a>》这本书的内容，时间紧迫也只能这么办了。</p>
-<p>不过确实要有一个属于自己的小项目，不过要等到期末以后。闭关一段时间。写完源代码会发到博客里来的。</p>
-<p>再次道歉，对不起！对不起！对不起！对不起！对不起！对不起！</p>
-<h1 id="one-more-thing">one more thing</h1>
-<p><em>by Steve Jobs</em></p>
-<h2 id="其他方面">其他方面</h2>
-<ol>
-<li>找到了《<a href="https://movie.douban.com/subject/30402296/">天气之子</a>》的资源，今晚有空二刷。</li>
-</ol>
-<p>封面图片来源：Photo by Sydney Sims on Unsplash</p>
 ]]></content>
     </entry>
 </feed>

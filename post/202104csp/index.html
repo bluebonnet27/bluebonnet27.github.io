@@ -8,7 +8,7 @@
 <meta name="keywords" content="bluebonnet27的博客">
 <meta name="description" content="欢迎来到这里，建议使用电脑浏览">
 <meta name="theme-color" content="#000">
-<title>登录系统——软件质量保证与测试期末大作业 | bluebonnet27的博客</title>
+<title>2021年春季CSP认证题解 | bluebonnet27的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1619170263617">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="登录系统——软件质量保证与测试期末大作业" />
-  <meta name="keywords" content="python" />
+  <meta name="description" content="2021年春季CSP认证题解" />
+  <meta name="keywords" content="C" />
 </head>
 
 <body>
@@ -203,7 +203,8 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -271,6 +272,226 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E6%88%90%E7%BB%A9">成绩</a></li>
+<li><a href="#%E9%A2%98%E8%A7%A3">题解</a>
+<ul>
+<li><a href="#%E7%81%B0%E5%BA%A6%E7%9B%B4%E6%96%B9%E5%9B%BE">灰度直方图</a>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0">问题描述</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F">输入格式</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F">输出格式</a></li>
+<li><a href="#%E6%A0%B7%E4%BE%8B">样例</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5">输入</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA">输出</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A2%98%E8%A7%A3-2">题解</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+</ul>
+</li>
+<li><a href="#%E9%82%BB%E5%9F%9F%E5%9D%87%E5%80%BC">邻域均值</a>
+<ul>
+<li><a href="#%E9%A2%98%E7%9B%AE%E8%83%8C%E6%99%AF">题目背景</a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0">题目描述</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-2">输入格式</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-2">输出格式</a></li>
+<li><a href="#%E6%A0%B7%E4%BE%8B-2">样例</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5-2">输入</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA-2">输出</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A2%98%E8%A7%A3-3">题解</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81-2">代码</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -358,8 +579,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://bluebonnet27.github.io/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/">
-      登录系统——软件质量保证与测试期末大作业
+    <a class="post-title-link" href="https://bluebonnet27.github.io/post/202104csp/">
+      2021年春季CSP认证题解
     </a>
   </h1>
   <div class="post-meta">
@@ -367,7 +588,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span>2020-05-25</span>
+      <span>2021-04-23</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -376,8 +597,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://bluebonnet27.github.io/tag/pythonSnake/">
-        <span>python</span>
+      <a href="https://bluebonnet27.github.io/tag/cLanguage/">
+        <span>C</span>
       </a>
       
       
@@ -386,17 +607,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>15<span class="language" data-lan="minute">分钟</span></span>
+      <span>8<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>2820<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1712<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/" data-flag-title="登录系统——软件质量保证与测试期末大作业" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/202104csp/" data-flag-title="2021年春季CSP认证题解" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -405,450 +626,150 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <blockquote>
-<p>啥也不会的说</p>
-</blockquote>
-<p>先放一张流程图吧。<br>
-<img src="https://bluebonnet27.github.io/post-images/1590398217026.jpg" alt="process on制作" loading="lazy"></p>
-<p>其实期末作业没什么可说的。很多python代码来自网上的，自己修改了下。这学期寒假贪玩了很多，Java也没好好学，只能用python这样子。😂 Markdown也是第一次用，排版都不会。</p>
-<pre><code># -- coding: GBK --
-#一个基于thinker部件的登录与注册程序，加入了一些别的功能
-#最后更新时间 2020.05.24
-#作者@bluebonnet27 @宫浩泽
+              <p><em>给孩子用的，孩子很开心，9月份还会买的</em></p>
+<h1 id="成绩">成绩</h1>
+<p><em>反正就是 50 块换了一个 CSP 选修课及格</em></p>
+<figure data-type="image" tabindex="1"><img src="https://ftp.bmp.ovh/imgs/2021/04/8a96b8d1f1abb90b.png" alt="成绩" loading="lazy"></figure>
+<h1 id="题解">题解</h1>
+<p><em>说实话我就会两道题... ...硬着头皮写题解，还是第一次写<s>多美妙的词汇</s></em></p>
+<h2 id="灰度直方图">灰度直方图</h2>
+<p><em>原题链接：<a href="http://118.190.20.162/view.page?gpid=T128" target="_blank">链接</a></em></p>
+<h3 id="问题描述">问题描述</h3>
+<p>一幅长宽分别为 n 个像素和 m 个像素的灰度图像可以表示为一个 n×m 大小的矩阵 A。 其中每个元素 Aij（0≤i&lt;n、0≤j&lt;m）是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 具体来说，一个 8 比特的灰度图像中每个像素的灰度范围是 [0,128)。<br>
+一副灰度图像的灰度统计直方图（以下简称“直方图”）可以表示为一个长度为 L 的数组 h，其中 h[x]（0≤x&lt;L）表示该图像中灰度值为 x 的像素个数。显然，h[0] 到 h[L−1] 的总和应等于图像中的像素总数 n⋅m。<br>
+已知一副图像的灰度矩阵 A，试计算其灰度直方图 h[0],h[1],⋯,h[L−1]。</p>
+<h3 id="输入格式">输入格式</h3>
+<p>输入共 n+1 行。<br>
+输入的第一行包含三个用空格分隔的正整数n、m 和 L，含义如前文所述。<br>
+第二到第 n+1 行输入矩阵 A 。<br>
+第 i+2（0&lt;=i&lt;=n）行包含用空格分隔的 m 个整数，依次为Ai0,Ai1...Ai(m-1) 。</p>
+<h3 id="输出格式">输出格式</h3>
+<p>输出到标准输出。<br>
+输出仅一行，包含用空格分隔的 L 个整数 h[0],h[1],⋯,h[L−1]，表示输入图像的灰度直方图。<br>
+全部的测试数据满足 0&lt;n,m≤500 且 4≤L≤256。</p>
+<h3 id="样例">样例</h3>
+<h4 id="输入">输入</h4>
+<p>7 11 8<br>
+0 7 0 0 0 7 0 0 7 7 0<br>
+7 0 7 0 7 0 7 0 7 0 7<br>
+7 0 0 0 7 0 0 0 7 0 7<br>
+7 0 0 0 0 7 0 0 7 7 0<br>
+7 0 0 0 0 0 7 0 7 0 0<br>
+7 0 7 0 7 0 7 0 7 0 0<br>
+0 7 0 0 0 7 0 0 7 0 0</p>
+<h4 id="输出">输出</h4>
+<p>48 0 0 0 0 0 0 29</p>
+<h3 id="题解-2">题解</h3>
+<p>这题完全白给，你甚至不需要建立矩阵，直接边输入边加和就完事了。</p>
+<h3 id="代码">代码</h3>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
 
-import random #随机
-import pickle  # 存放数据的模块
-import tkinter as tk
-import tkinter.messagebox
+int main() {
+    int n, m, L;
+    scanf(&quot;%d %d %d&quot;, &amp;n, &amp;m, &amp;L);
 
-#图像
-from PIL import ImageTk, Image
-window = tk.Tk()
-window.title(&quot;注册登陆页面&quot;)
-window.geometry(&quot;500x400&quot;)
- 
-canvas = tk.Canvas(window, height=500, width=500)
-imgpath = 'denglu.gif'
-img = Image.open(imgpath)
-photo = ImageTk.PhotoImage(img)
-image = canvas.create_image(0, 0, anchor='nw', image=photo)
-canvas.pack()
+    int h[L];
+    int point;
 
-a=str(random.randint(10,90))
-b=str(random.randint(10,90))
+    memset(h, 0, sizeof(h));
 
-tk.Label(window, text='用户名:').place(x=100, y=100)
-tk.Label(window, text='密码:').place(x=100, y=150)
-tk.Label(window, text='请在下面输入问题的正确答案').place(x=100, y=200)
-tk.Label(window, text=a+'+'+b+'=').place(x=100, y=250)
-         
-var_usr_name = tk.StringVar()
-#var_usr_name.set('请输入用户名')
- 
-var_usr_pwd = tk.StringVar()
-#var_usr_pwd.set('请输入密码')
+    for (int i = 0; i &lt; m; i++) {
+	    for (int j = 0; j &lt; n; j++) {
+		    scanf(&quot;%d&quot;, &amp;point);
+		    h[point]++;
+	    }
+    }
 
-var_usr_judge = tk.StringVar()
-#var_usr_judge.set('请再次输入密码')
- 
-entry_usr_name = tk.Entry(window, textvariable=var_usr_name)
-entry_usr_name.place(x=200, y=100)
-entry_usr_pwd = tk.Entry(window, textvariable=var_usr_pwd, show='*')
-entry_usr_pwd.place(x=200, y=150)
-entry_usr_judge = tk.Entry(window, textvariable=var_usr_judge)
-entry_usr_judge.place(x=200, y=250)
- 
-def usr_login():
-    usr_name = var_usr_name.get()
-    usr_pwd = var_usr_pwd.get()
-    usr_judge = var_usr_judge.get()
-    try:
-        with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file: #注意这个地方用到了pickle可以百度一下使用方法
-            usrs_info = pickle.load(usr_file)
-    except FileNotFoundError:
-        with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-            usrs_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-            pickle.dump(usrs_info, usr_file)
- 
-    if usr_name in usrs_info:
-        #print(usr_judge)
-        if usr_pwd == usrs_info[usr_name] and int(usr_judge) == (int(a)+int(b)):
-            tk.messagebox.showinfo(title=&quot;登陆成功！&quot;, message=&quot;今天过得怎么样？&quot; + usr_name)
-        elif int(usr_judge) != (int(a)+int(b)):
-            tk.messagebox.showerror(message=&quot;错误1，请检查验证码的输入！&quot;)
-        else:
-            tk.messagebox.showerror(message=&quot;错误2，请检查你的密码输入！&quot;)
-    else:
-        is_sign_up = tk.messagebox.askyesno(&quot;错误3&quot;, &quot;你似乎还没有注册，要今天注册么？&quot;)
-        if is_sign_up:
-            usr_sign_up()
-        else: 
-            window.destroy()
- 
- 
-def usr_sign_up():
-    def sign_to_Python():
-        signpwd = sign_pwd.get()
-        signpwdconfirm = sign_pwd_confirm.get()
-        signname = sign_name.get()
-        #口令
-        #signorder = sign_order.get()
-        
-        try:
-            with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file:
-                exist_usr_info = pickle.load(usr_file)
-        except FileNotFoundError:
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-                exist_usr_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-                pickle.dump(exist_usr_info, usr_file)
-        if signpwd != signpwdconfirm:
-            tk.messagebox.showerror(&quot;错误4&quot;, &quot;两次输入的密码不一致！&quot;)
-        elif signname in exist_usr_info:
-            tk.messagebox.showerror(&quot;错误5&quot;, &quot;这个用户已经注册了！你似乎忘记了你的密码。 &quot;)
-        else:
-            exist_usr_info[signname] = signpwd
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:
-                pickle.dump(exist_usr_info, usr_file)
- 
-            tk.messagebox.showinfo(&quot;欢迎&quot;, &quot;注册成功！&quot;)
-            # close window
-            window_sign_up.destroy()
- 
-    window_sign_up = tk.Toplevel(window)
-    window_sign_up.geometry(&quot;350x300&quot;)
-    window_sign_up.title(&quot;注册页面&quot;)
- 
-    sign_name = tk.StringVar()
-    sign_name.set('请输入用户名')
-    tk.Label(window_sign_up, text=&quot;用户名:&quot;).place(x=10, y=10)
-    entry_new_name = tk.Entry(window_sign_up, textvariable=sign_name)
-    entry_new_name.place(x=150, y=10)
- 
-    sign_pwd = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;密码:&quot;).place(x=10, y=50)
-    entry_usr_pwd = tk.Entry(window_sign_up, textvariable=sign_pwd, show='*')
-    entry_usr_pwd.place(x=150, y=50)
- 
-    sign_pwd_confirm = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;确认密码:&quot;).place(x=10, y=90)
-    entry_usr_pwd_confirm = tk.Entry(window_sign_up, textvariable=sign_pwd_confirm, show='*')
-    entry_usr_pwd_confirm.place(x=150, y=90)
- 
-    btn_confirm_sign_up = tk.Button(window_sign_up, text=&quot;  创建  &quot;, command=sign_to_Python)
-    btn_confirm_sign_up.place(x=150, y=250)
- 
- 
-# login and sign up
-btn_login = tk.Button(window, text=&quot;  登录  &quot;, command=usr_login)
-btn_login.place(x=155, y=300)
- 
-btn_sign_up = tk.Button(window, text=&quot;  创建  &quot;, command=usr_sign_up)
-btn_sign_up.place(x=270, y=300)
- 
-window.mainloop()
-
-#def catch_back_password():
+    for (int k = 0; k &lt; L; k++) {
+	    printf(&quot;%d &quot;, h[k]);
+    }
+}
 </code></pre>
-<p>实际上<code>catch_back_password()</code>是打算写一个密码找回程序的。实际上很多注释是这样的：本来想加一个新功能，但发现太费劲了，就把写了一半的代码注释掉了。</p>
-<p>最后上交的时候，加了<font color = 'red'>密码长度的限制和其他功能</font>。</p>
-<p>最终版的代码如下：</p>
-<pre><code># -- coding: GBK --
-#一个基于thinker部件的登录与注册程序，加入了一些别的功能
-#最后更新时间 2020-5-26 22:40:44
-#作者@bluebonnet27 @宫浩泽
+<h2 id="邻域均值">邻域均值</h2>
+<p><em>原题链接：<a href="http://118.190.20.162/view.page?gpid=T127" target="_blank">链接</a></em></p>
+<h3 id="题目背景">题目背景</h3>
+<p>顿顿在学习了数字图像处理后，想要对手上的一副灰度图像进行降噪处理。不过该图像仅在较暗区域有很多噪点，如果贸然对全图进行降噪，会在抹去噪点的同时也模糊了原有图像。因此顿顿打算先使用邻域均值来判断一个像素是否处于较暗区域，然后仅对处于较暗区域的像素进行降噪处理。</p>
+<h3 id="题目描述">题目描述</h3>
+<p>待处理的灰度图像长宽皆为 n 个像素，可以表示为一个 n×n 大小的矩阵 A，其中每个元素是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 对于矩阵中任意一个元素 Aij（0≤i,j&lt;n），其邻域定义为附近若干元素的集和：<br>
+Neighbor(i,j,r)={Axy|0≤x,y&lt;n and |x−i|≤r and |y−j|≤r}<br>
+这里使用了一个额外的参数 r 来指明 Aij 附近元素的具体范围。根据定义，易知 Neighbor(i,j,r) 最多有 (2r+1)2 个元素。<br>
+如果元素 Aij 邻域中所有元素的平均值小于或等于一个给定的阈值 t，我们就认为该元素对应位置的像素处于较暗区域。 下图给出了两个例子，左侧图像的较暗区域在右侧图像中展示为黑色，其余区域展示为白色。现给定邻域参数 r 和阈值 t，试统计输入灰度图像中有多少像素处于较暗区域。</p>
+<p><strong>图我就不放了，没什么卵用</strong></p>
+<h3 id="输入格式-2">输入格式</h3>
+<p>从标准输入读入数据。<br>
+输入共 n+1 行。<br>
+输入的第一行包含四个用空格分隔的正整数 n、L、r 和 t，含义如前文所述。<br>
+第二到第 n+1 行输入矩阵 A。 第 i+2（0≤i&lt;n）行包含用空格分隔的 n 个整数，依次为 Ai0,Ai1,⋯,Ai(n−1)。</p>
+<h3 id="输出格式-2">输出格式</h3>
+<p>输出到标准输出。<br>
+输出一个整数，表示输入灰度图像中处于较暗区域的像素总数。<br>
+70% 的测试数据满足 n≤100、r≤10。<br>
+全部的测试数据满足 0&lt;n≤600、0&lt;r≤100 且 2≤t&lt;L≤256。</p>
+<h3 id="样例-2">样例</h3>
+<h4 id="输入-2">输入</h4>
+<p>11 8 2 2<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 7 0 0 0 7 0 0 7 7 0<br>
+7 0 7 0 7 0 7 0 7 0 7<br>
+7 0 0 0 7 0 0 0 7 0 7<br>
+7 0 0 0 0 7 0 0 7 7 0<br>
+7 0 0 0 0 0 7 0 7 0 0<br>
+7 0 7 0 7 0 7 0 7 0 0<br>
+0 7 0 0 0 7 0 0 7 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0</p>
+<h4 id="输出-2">输出</h4>
+<p>83</p>
+<h3 id="题解-3">题解</h3>
+<p>嵌套 4 层 for 循环的暴力解直接超时，无法通过 30% 的测试样例。（我为什么知道，因为我就这么做的... ...）</p>
+<p><font color=red>建议做这道题前先掌握前缀和打表法的知识</font>（其实我也会，但真的没想到要用... ...还是题做少了）</p>
+<p>贴个链接，讲得比较好的：<a href="https://zhuanlan.zhihu.com/p/117569086" target="_blank">链接</a></p>
+<p>如果你掌握了上面的知识，那这道题也相当于白给了。核心思想就是用前缀和公式求那一片的平均值而不是两层循环。注意边界条件，比如不能超过二维数组的范围，以及左上角的数据要 -1 等。</p>
+<h3 id="代码-2">代码</h3>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
 
-import random #随机
-import pickle  # 存放数据的模块
-import tkinter as tk #tk模块
-import tkinter.messagebox #messagebox模块
+using namespace std;
+int a[610][610];
 
-#登录函数
-def usr_login():
-    pwd=''
-    usr_name = var_usr_name.get()
-    usr_pwd = var_usr_pwd.get()
-    usr_judge = var_usr_judge.get()
+int main() {
+    int res = 0;
+    int n, L, r, t;
+    scanf(&quot;%d %d %d %d&quot;, &amp;n, &amp;L, &amp;r, &amp;t);
 
-    #查找pickle文件，不存在则admin占位
-    try:
-        with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file: 
-            usrs_info = pickle.load(usr_file)
-    except FileNotFoundError:
-        with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  
-            usrs_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-            pickle.dump(usrs_info, usr_file)
-    
-    if usr_name in usrs_info:
-		
-		#提取密码
-        for i in usrs_info[usr_name]:
-            if i=='|':
-                break
-            else:
-                pwd=pwd+i
-        print(pwd)
-        
-        #校验
-        if usr_pwd == pwd and int(usr_judge) == (int(a)+int(b)):
-            tk.messagebox.showinfo(title=&quot;登陆成功！&quot;, message=&quot;今天过得怎么样？&quot; + usr_name)
-        elif int(usr_judge) != (int(a)+int(b)):
-            tk.messagebox.showerror(message=&quot;错误1，请检查验证码的输入！&quot;)
-        else:
-            tk.messagebox.showerror(message=&quot;错误2，请检查你的密码输入！&quot;)
-    
-    else:
-        is_sign_up = tk.messagebox.askyesno(&quot;错误3&quot;, &quot;你似乎还没有注册，要今天注册么？&quot;)
-        if is_sign_up:
-            usr_sign_up()
- 
-#注册函数 
-def usr_sign_up():
-    def sign_to_Python():
-        signpwd = sign_pwd.get()
-        signpwdconfirm = sign_pwd_confirm.get()
-        signname = sign_name.get()
-        signsp = sign_sp.get()
-       
-       #依然是文件确认，下回就不写注释了
-        try:
-            with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file:
-                exist_usr_info = pickle.load(usr_file)
-        except FileNotFoundError:
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-                exist_usr_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-                pickle.dump(exist_usr_info, usr_file)
-        
-        #校验注册数据合法性
-        if signpwd != signpwdconfirm:
-            tk.messagebox.showerror(&quot;错误4&quot;, &quot;两次输入的密码不一致！&quot;)
-        elif '|' in signpwd or '|' in signsp :
-            tk.messagebox.showerror(&quot;警告&quot;, &quot;密码不要包含|字符，这是我们用来分割的！&quot;)
-        elif len(signpwd)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的密码长度不可以小于4位！&quot;)
-        elif len(signpwd)&gt;8 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的密码长度不可以大于8位！&quot;)
-        elif len(signsp)&gt;6 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的二级密码长度不可以大于6位！&quot;) 
-        elif len(signsp)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的二级密码长度不可以小于4位！&quot;)
-        elif signname in exist_usr_info:
-            tk.messagebox.showerror(&quot;错误5&quot;, &quot;这个用户已经注册了！你似乎忘记了你的密码。 &quot;)
-        
-        #没问题后写入数据
-        else:
-            exist_usr_info[signname]=signpwd+'|'+signsp
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:
-                pickle.dump(exist_usr_info, usr_file)
- 
-             #欢迎程序
-            tk.messagebox.showinfo(&quot;欢迎&quot;, &quot;注册成功！&quot;)
-            # 关闭窗口
-            window_sign_up.destroy()
- 
-    #绘制注册界面
-    window_sign_up = tk.Toplevel(window)
-    window_sign_up.geometry(&quot;350x300&quot;)
-    window_sign_up.title(&quot;注册页面&quot;)
+    int x;
+    for (int i = 1; i &lt;= n; i++) {
+        for (int j = 1; j &lt;= n; j++) {
+            scanf(&quot;%d&quot;, &amp;x);
+            a[i][j] = a[i - 1][j] + a[i][j - 1] - a[i - 1][j - 1] + x;
+        }
+    }
 
-    #用户名，密码，二级密码输入框
-    sign_name = tk.StringVar()
-    sign_name.set('请输入用户名')
-    tk.Label(window_sign_up, text=&quot;用户名:&quot;).place(x=10, y=10)
-    entry_new_name = tk.Entry(window_sign_up, textvariable=sign_name)
-    entry_new_name.place(x=150, y=10)
- 
-    sign_pwd = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;密码(4-8位）&quot;).place(x=10, y=50)
-    entry_usr_pwd = tk.Entry(window_sign_up, textvariable=sign_pwd, show='*')
-    entry_usr_pwd.place(x=150, y=50)
- 
-    sign_pwd_confirm = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;确认密码:&quot;).place(x=10, y=90)
-    entry_usr_pwd_confirm = tk.Entry(window_sign_up, textvariable=sign_pwd_confirm, show='*')
-    entry_usr_pwd_confirm.place(x=150, y=90)
+    for (int i = 1; i &lt;= n; i++) {
+        for (int j = 1; j &lt;= n; j++) {
+            int total, m;
+            int x1, x2, y1, y2;
 
-    sign_sp = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;为方便您找回密码&quot;).place(x=10, y=130)
-    entry_usr_sp = tk.Entry(window_sign_up, textvariable=sign_sp, show='*')
-    tk.Label(window_sign_up, text=&quot;请输入二级密码(4-6位）:&quot;).place(x=10, y=170)
-    entry_usr_sp = tk.Entry(window_sign_up, textvariable=sign_sp, show='*')
-    entry_usr_sp.place(x=150, y=170)
- 
-    btn_confirm_sign_up = tk.Button(window_sign_up, text=&quot;  创建  &quot;, command=sign_to_Python)
-    btn_confirm_sign_up.place(x=150, y=250)
+            x1 = max(1, i - r);
+            y1 = max(1, j - r);
+            x2 = min(n, i + r);
+            y2 = min(n, j + r);
 
-#重置密码函数 
-def usr_sign_sp():
-    sp=''
-    
-    def sign_to_python():
-        count=0
-        signpwd = sign_pwd.get()
-        signpwdconfirm = sign_pwd_confirm.get()
-        signname = sign_name.get()
-        signsp = sign_sp.get()
-        
-        try:
-            with open(&quot;usrs_info.pickle&quot;, &quot;rb&quot;) as usr_file:
-                exist_usr_info = pickle.load(usr_file)
-        except FileNotFoundError:
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:  # with open with语句可以自动关闭资源
-                exist_usr_info = {&quot;admin&quot;: &quot;admin&quot;}  # 以字典的形式保存账户和密码
-                pickle.dump(exist_usr_info, usr_file)
-        
-        #读取存储的二级密码
-        for i in exist_usr_info[signname]:
-                count+=1
-                if i=='|':
-                    sp=exist_usr_info[signname][count:]
-                    print(sp)
-                    break
-        
-        #校验重置密码输入数据的合法性
-        if signpwd != signpwdconfirm:
-            tk.messagebox.showerror(&quot;错误4&quot;, &quot;两次输入的密码不一致！&quot;)
-        elif signsp!=sp:
-            tk.messagebox.showerror(&quot;错误6&quot;, &quot;你的二级密码错误！请重新输入！ &quot;)
-        elif len(signpwd)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的密码长度不可以小于4位！&quot;)
-        elif len(signpwd)&gt;8 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的密码长度不可以大于8位！&quot;)
-        elif len(signsp)&gt;6 :
-            tk.messagebox.showerror(&quot;错误9&quot;, &quot;输入的二级密码长度不可以大于6位！&quot;) 
-        elif len(signsp)&lt;4 :
-            tk.messagebox.showerror(&quot;错误8&quot;, &quot;输入的二级密码长度不可以小于4位！&quot;)
-        elif signname not in exist_usr_info:
-            tk.messagebox.showerror(&quot;错误7&quot;, &quot;用户名错误！ &quot;)
-        elif '|' in signpwd or '|' in signsp :
-            tk.messagebox.showerror(&quot;警告&quot;, &quot;密码不要包含|字符，这是我们用来分割的！&quot;)
-        
-        #数据没有问题，可以重置了
-        else:            
-            exist_usr_info[signname]=signpwd+'|'+signsp
-            print(signpwd+signsp)
-            with open(&quot;usrs_info.pickle&quot;, &quot;wb&quot;) as usr_file:
-                pickle.dump(exist_usr_info, usr_file)
-            
-            #弹出重置成功的欢迎
-            tk.messagebox.showinfo(&quot;欢迎&quot;, &quot;重置成功！&quot;)
-            #关闭窗口
-            window_sign_up.destroy()
-    
-    #重置密码的相关绘图指令         
-    window_sign_up = tk.Toplevel(window)
-    window_sign_up.geometry(&quot;350x300&quot;)
-    window_sign_up.title(&quot;重置密码页面&quot;)
-    
-    sign_name = tk.StringVar()
-    sign_name.set('请输入用户名')
-    tk.Label(window_sign_up, text=&quot;用户名:&quot;).place(x=10, y=10)
-    entry_new_name = tk.Entry(window_sign_up, textvariable=sign_name)
-    entry_new_name.place(x=150, y=10)
-    
-    sign_pwd = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;新密码(4-8位):&quot;).place(x=10, y=50)
-    entry_usr_pwd = tk.Entry(window_sign_up, textvariable=sign_pwd, show='*')
-    entry_usr_pwd.place(x=150, y=50)
- 
-    sign_pwd_confirm = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;确认密码:&quot;).place(x=10, y=90)
-    entry_usr_pwd_confirm = tk.Entry(window_sign_up, textvariable=sign_pwd_confirm, show='*')
-    entry_usr_pwd_confirm.place(x=150, y=90)
+            total = a[x2][y2] - a[x1 - 1][y2] - a[x2][y1 - 1] + a[x1 - 1][y1 - 1];
+            m = (y2 - y1 + 1) * (x2 - x1 + 1);
 
-    sign_sp = tk.StringVar()
-    tk.Label(window_sign_up, text=&quot;请输入二级密码(4-6位):&quot;).place(x=10, y=130)
-    entry_usr_sp = tk.Entry(window_sign_up, textvariable=sign_sp, show='*')
-    entry_usr_sp.place(x=150, y=130)
+            if (total &lt;= t * m)
+                res++;
+        }
+    }
 
-    btn_confirm_sign_up = tk.Button(window_sign_up, text=&quot;  创建  &quot;, command=sign_to_python)
-    btn_confirm_sign_up.place(x=150, y=250)
-
-
-
-#图像
-from PIL import ImageTk, Image
-import os
-
-#主窗口
-window = tk.Tk()
-window.title(&quot;注册登陆页面&quot;)
-window.geometry(&quot;500x400&quot;)
-
-#gif背景
-class MyLabel(tk.Label): 
-    def __init__(self, master, filename):
-        im = Image.open(filename)
-        seq = []
-        try:
-            while 1:
-                seq.append(im.copy())
-                im.seek(len(seq))
-        except EOFError:
-            pass
-        try:
-            self.delay = im.info['duration']
-        except KeyError:
-            self.delay = 100
-
-        first = seq[0].convert('RGBA')
-        self.frames = [ImageTk.PhotoImage(first)]
-
-        tk.Label.__init__(self, master, image=self.frames[0])
-        temp = seq[0]
-
-        for image in seq[1:]:
-            temp.paste(image)
-            frame = temp.convert('RGBA')
-            self.frames.append(ImageTk.PhotoImage(frame))
-        self.idx = 0
-        self.cancel = self.after(self.delay, self.play)
-    def play(self):
-        self.config(image=self.frames[self.idx])
-        self.idx += 1
-        if self.idx == len(self.frames):
-            self.idx = 0
-        self.cancel = self.after(self.delay, self.play)   
-
-#读取绘制gif
-anim = MyLabel(window, 'denglu.gif') 
-anim.pack() 
-
-#随机数产生
-a=str(random.randint(10,90))
-b=str(random.randint(10,90))
-
-#窗口静态文字绘制
-tk.Label(window, text='用户名:').place(x=100, y=100)
-tk.Label(window, text='密码:').place(x=100, y=150)
-tk.Label(window, text='请在下面输入问题的正确答案').place(x=100, y=200)
-tk.Label(window, text=a+'+'+b+'=').place(x=100, y=250)
-
-#输入感知         
-var_usr_name = tk.StringVar()
-var_usr_pwd = tk.StringVar()
-var_usr_judge = tk.StringVar()
-
-entry_usr_name = tk.Entry(window, textvariable=var_usr_name)
-entry_usr_name.place(x=200, y=100)
-entry_usr_pwd = tk.Entry(window, textvariable=var_usr_pwd, show='*')
-entry_usr_pwd.place(x=200, y=150)
-entry_usr_judge = tk.Entry(window, textvariable=var_usr_judge)
-entry_usr_judge.place(x=200, y=250)
-
-# 交互按钮
-btn_login = tk.Button(window, text=&quot;  登录  &quot;, command=usr_login)
-btn_login.place(x=150, y=300)
- 
-btn_sign_up = tk.Button(window, text=&quot;  注册  &quot;, command=usr_sign_up)
-btn_sign_up.place(x=270, y=300)
-
-btn_sign_sp = tk.Button(window, text=&quot;  重置密码  &quot;, command=usr_sign_sp)
-btn_sign_sp.place(x=350, y=350)
-
-window.mainloop()
-
+    printf(&quot;%d&quot;, res);
+}
 </code></pre>
-<p>需要文件夹目录下有一张<code>denglu.gif</code>GIF图片，然后数据是用pickle文件存储的。</p>
+<hr>
+<p>感谢博客<a href="https://www.cnblogs.com/hujunyao37201/p/14647595.html" target="_blank">2021年四月CCF-CSP认证题目</a>提供的相关思路。</p>
 
             </div>
             
@@ -865,7 +786,7 @@ window.mainloop()
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://bluebonnet27.github.io/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/" title="登录系统——软件质量保证与测试期末大作业">https://bluebonnet27.github.io/post/deng-lu-xi-tong-ruan-jian-zhi-liang-bao-zheng-yu-ce-shi-qi-mo-da-zuo-ye/</a>
+      <a href="https://bluebonnet27.github.io/post/202104csp/" title="2021年春季CSP认证题解">https://bluebonnet27.github.io/post/202104csp/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -874,21 +795,17 @@ window.mainloop()
   </ul>
   <div class="tags">
     
-      <a href="https://bluebonnet27.github.io/tag/pythonSnake/"># python</a>
+      <a href="https://bluebonnet27.github.io/tag/cLanguage/"># C</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="每周说（1）：形式主义与现实主义" href="https://bluebonnet27.github.io/post/weeklysay1/">每周说（1）：形式主义与现实主义</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="每周说（1）：形式主义与现实主义" href="https://bluebonnet27.github.io/post/weeklysay1/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="MIUI 12 杂谈（发布会篇）" href="https://bluebonnet27.github.io/post/miui12forMe/">MIUI 12 杂谈（发布会篇）</a>
-        <a class="nav-mobile-next" title="MIUI 12 杂谈（发布会篇）" href="https://bluebonnet27.github.io/post/miui12forMe/">下一篇</a>
+        <a class="nav-pc-next" title="解决《穿越火线》在windows10上的模糊问题" href="https://bluebonnet27.github.io/post/crossfirefix/">解决《穿越火线》在windows10上的模糊问题</a>
+        <a class="nav-mobile-next" title="解决《穿越火线》在windows10上的模糊问题" href="https://bluebonnet27.github.io/post/crossfirefix/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

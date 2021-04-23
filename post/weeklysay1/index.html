@@ -9,7 +9,7 @@
 <meta name="description" content="欢迎来到这里，建议使用电脑浏览">
 <meta name="theme-color" content="#000">
 <title>每周说（1）：形式主义与现实主义 | bluebonnet27的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1618895569226">
+<link rel="shortcut icon" href="/favicon.ico?v=1619170263617">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -221,19 +221,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">14</span>
+        <span class="site-item-stat-count">15</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">7</span>
+        <span class="site-item-stat-count">8</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">7</span>
+        <span class="site-item-stat-count">8</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1738,6 +1738,155 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://bluebonnet27.github.io/post/202104csp/"" data-c="
+          &lt;p&gt;&lt;em&gt;给孩子用的，孩子很开心，9月份还会买的&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;成绩&#34;&gt;成绩&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;反正就是 50 块换了一个 CSP 选修课及格&lt;/em&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://ftp.bmp.ovh/imgs/2021/04/8a96b8d1f1abb90b.png&#34; alt=&#34;成绩&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;题解&#34;&gt;题解&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;说实话我就会两道题... ...硬着头皮写题解，还是第一次写&lt;s&gt;多美妙的词汇&lt;/s&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;灰度直方图&#34;&gt;灰度直方图&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;原题链接：&lt;a href=&#34;http://118.190.20.162/view.page?gpid=T128&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+&lt;p&gt;一幅长宽分别为 n 个像素和 m 个像素的灰度图像可以表示为一个 n×m 大小的矩阵 A。 其中每个元素 Aij（0≤i&amp;lt;n、0≤j&amp;lt;m）是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 具体来说，一个 8 比特的灰度图像中每个像素的灰度范围是 [0,128)。&lt;br&gt;
+一副灰度图像的灰度统计直方图（以下简称“直方图”）可以表示为一个长度为 L 的数组 h，其中 h[x]（0≤x&amp;lt;L）表示该图像中灰度值为 x 的像素个数。显然，h[0] 到 h[L−1] 的总和应等于图像中的像素总数 n⋅m。&lt;br&gt;
+已知一副图像的灰度矩阵 A，试计算其灰度直方图 h[0],h[1],⋯,h[L−1]。&lt;/p&gt;
+&lt;h3 id=&#34;输入格式&#34;&gt;输入格式&lt;/h3&gt;
+&lt;p&gt;输入共 n+1 行。&lt;br&gt;
+输入的第一行包含三个用空格分隔的正整数n、m 和 L，含义如前文所述。&lt;br&gt;
+第二到第 n+1 行输入矩阵 A 。&lt;br&gt;
+第 i+2（0&amp;lt;=i&amp;lt;=n）行包含用空格分隔的 m 个整数，依次为Ai0,Ai1...Ai(m-1) 。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;输出到标准输出。&lt;br&gt;
+输出仅一行，包含用空格分隔的 L 个整数 h[0],h[1],⋯,h[L−1]，表示输入图像的灰度直方图。&lt;br&gt;
+全部的测试数据满足 0&amp;lt;n,m≤500 且 4≤L≤256。&lt;/p&gt;
+&lt;h3 id=&#34;样例&#34;&gt;样例&lt;/h3&gt;
+&lt;h4 id=&#34;输入&#34;&gt;输入&lt;/h4&gt;
+&lt;p&gt;7 11 8&lt;br&gt;
+0 7 0 0 0 7 0 0 7 7 0&lt;br&gt;
+7 0 7 0 7 0 7 0 7 0 7&lt;br&gt;
+7 0 0 0 7 0 0 0 7 0 7&lt;br&gt;
+7 0 0 0 0 7 0 0 7 7 0&lt;br&gt;
+7 0 0 0 0 0 7 0 7 0 0&lt;br&gt;
+7 0 7 0 7 0 7 0 7 0 0&lt;br&gt;
+0 7 0 0 0 7 0 0 7 0 0&lt;/p&gt;
+&lt;h4 id=&#34;输出&#34;&gt;输出&lt;/h4&gt;
+&lt;p&gt;48 0 0 0 0 0 0 29&lt;/p&gt;
+&lt;h3 id=&#34;题解-2&#34;&gt;题解&lt;/h3&gt;
+&lt;p&gt;这题完全白给，你甚至不需要建立矩阵，直接边输入边加和就完事了。&lt;/p&gt;
+&lt;h3 id=&#34;代码&#34;&gt;代码&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;cstdio&amp;gt;
+#include &amp;lt;cstring&amp;gt;
+
+int main() {
+    int n, m, L;
+    scanf(&amp;quot;%d %d %d&amp;quot;, &amp;amp;n, &amp;amp;m, &amp;amp;L);
+
+    int h[L];
+    int point;
+
+    memset(h, 0, sizeof(h));
+
+    for (int i = 0; i &amp;lt; m; i++) {
+	    for (int j = 0; j &amp;lt; n; j++) {
+		    scanf(&amp;quot;%d&amp;quot;, &amp;amp;point);
+		    h[point]++;
+	    }
+    }
+
+    for (int k = 0; k &amp;lt; L; k++) {
+	    printf(&amp;quot;%d &amp;quot;, h[k]);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;邻域均值&#34;&gt;邻域均值&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;原题链接：&lt;a href=&#34;http://118.190.20.162/view.page?gpid=T127&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;题目背景&#34;&gt;题目背景&lt;/h3&gt;
+&lt;p&gt;顿顿在学习了数字图像处理后，想要对手上的一副灰度图像进行降噪处理。不过该图像仅在较暗区域有很多噪点，如果贸然对全图进行降噪，会在抹去噪点的同时也模糊了原有图像。因此顿顿打算先使用邻域均值来判断一个像素是否处于较暗区域，然后仅对处于较暗区域的像素进行降噪处理。&lt;/p&gt;
+&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;p&gt;待处理的灰度图像长宽皆为 n 个像素，可以表示为一个 n×n 大小的矩阵 A，其中每个元素是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 对于矩阵中任意一个元素 Aij（0≤i,j&amp;lt;n），其邻域定义为附近若干元素的集和：&lt;br&gt;
+Neighbor(i,j,r)={Axy|0≤x,y&amp;lt;n and |x−i|≤r and |y−j|≤r}&lt;br&gt;
+这里使用了一个额外的参数 r 来指明 Aij 附近元素的具体范围。根据定义，易知 Neighbor(i,j,r) 最多有 (2r+1)2 个元素。&lt;br&gt;
+如果元素 Aij 邻域中所有元素的平均值小于或等于一个给定的阈值 t，我们就认为该元素对应位置的像素处于较暗区域。 下图给出了两个例子，左侧图像的较暗区域在右侧图像中展示为黑色，其余区域展示为白色。现给定邻域参数 r 和阈值 t，试统计输入灰度图像中有多少像素处于较暗区域。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;图我就不放了，没什么卵用&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;输入格式-2&#34;&gt;输入格式&lt;/h3&gt;
+&lt;p&gt;从标准输入读入数据。&lt;br&gt;
+输入共 n+1 行。&lt;br&gt;
+输入的第一行包含四个用空格分隔的正整数 n、L、r 和 t，含义如前文所述。&lt;br&gt;
+第二到第 n+1 行输入矩阵 A。 第 i+2（0≤i&amp;lt;n）行包含用空格分隔的 n 个整数，依次为 Ai0,Ai1,⋯,Ai(n−1)。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式-2&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;输出到标准输出。&lt;br&gt;
+输出一个整数，表示输入灰度图像中处于较暗区域的像素总数。&lt;br&gt;
+70% 的测试数据满足 n≤100、r≤10。&lt;br&gt;
+全部的测试数据满足 0&amp;lt;n≤600、0&amp;lt;r≤100 且 2≤t&amp;lt;L≤256。&lt;/p&gt;
+&lt;h3 id=&#34;样例-2&#34;&gt;样例&lt;/h3&gt;
+&lt;h4 id=&#34;输入-2&#34;&gt;输入&lt;/h4&gt;
+&lt;p&gt;11 8 2 2&lt;br&gt;
+0 0 0 0 0 0 0 0 0 0 0&lt;br&gt;
+0 0 0 0 0 0 0 0 0 0 0&lt;br&gt;
+0 7 0 0 0 7 0 0 7 7 0&lt;br&gt;
+7 0 7 0 7 0 7 0 7 0 7&lt;br&gt;
+7 0 0 0 7 0 0 0 7 0 7&lt;br&gt;
+7 0 0 0 0 7 0 0 7 7 0&lt;br&gt;
+7 0 0 0 0 0 7 0 7 0 0&lt;br&gt;
+7 0 7 0 7 0 7 0 7 0 0&lt;br&gt;
+0 7 0 0 0 7 0 0 7 0 0&lt;br&gt;
+0 0 0 0 0 0 0 0 0 0 0&lt;br&gt;
+0 0 0 0 0 0 0 0 0 0 0&lt;/p&gt;
+&lt;h4 id=&#34;输出-2&#34;&gt;输出&lt;/h4&gt;
+&lt;p&gt;83&lt;/p&gt;
+&lt;h3 id=&#34;题解-3&#34;&gt;题解&lt;/h3&gt;
+&lt;p&gt;嵌套 4 层 for 循环的暴力解直接超时，无法通过 30% 的测试样例。（我为什么知道，因为我就这么做的... ...）&lt;/p&gt;
+&lt;p&gt;&lt;font color=red&gt;建议做这道题前先掌握前缀和打表法的知识&lt;/font&gt;（其实我也会，但真的没想到要用... ...还是题做少了）&lt;/p&gt;
+&lt;p&gt;贴个链接，讲得比较好的：&lt;a href=&#34;https://zhuanlan.zhihu.com/p/117569086&#34; target=&#34;_blank&#34;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你掌握了上面的知识，那这道题也相当于白给了。核心思想就是用前缀和公式求那一片的平均值而不是两层循环。注意边界条件，比如不能超过二维数组的范围，以及左上角的数据要 -1 等。&lt;/p&gt;
+&lt;h3 id=&#34;代码-2&#34;&gt;代码&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;cstdio&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+
+using namespace std;
+int a[610][610];
+
+int main() {
+    int res = 0;
+    int n, L, r, t;
+    scanf(&amp;quot;%d %d %d %d&amp;quot;, &amp;amp;n, &amp;amp;L, &amp;amp;r, &amp;amp;t);
+
+    int x;
+    for (int i = 1; i &amp;lt;= n; i++) {
+        for (int j = 1; j &amp;lt;= n; j++) {
+            scanf(&amp;quot;%d&amp;quot;, &amp;amp;x);
+            a[i][j] = a[i - 1][j] + a[i][j - 1] - a[i - 1][j - 1] + x;
+        }
+    }
+
+    for (int i = 1; i &amp;lt;= n; i++) {
+        for (int j = 1; j &amp;lt;= n; j++) {
+            int total, m;
+            int x1, x2, y1, y2;
+
+            x1 = max(1, i - r);
+            y1 = max(1, j - r);
+            x2 = min(n, i + r);
+            y2 = min(n, j + r);
+
+            total = a[x2][y2] - a[x1 - 1][y2] - a[x2][y1 - 1] + a[x1 - 1][y1 - 1];
+            m = (y2 - y1 + 1) * (x2 - x1 + 1);
+
+            if (total &amp;lt;= t * m)
+                res++;
+        }
+    }
+
+    printf(&amp;quot;%d&amp;quot;, res);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;感谢博客&lt;a href=&#34;https://www.cnblogs.com/hujunyao37201/p/14647595.html&#34; target=&#34;_blank&#34;&gt;2021年四月CCF-CSP认证题目&lt;/a&gt;提供的相关思路。&lt;/p&gt;
+">2021年春季CSP认证题解</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://bluebonnet27.github.io/post/crossfirefix/"" data-c="
