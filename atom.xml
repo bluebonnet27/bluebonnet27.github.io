@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://bluebonnet27.github.io</id>
+    <title>bluebonnet27的博客</title>
+    <updated>2022-07-30T02:24:13.159Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://bluebonnet27.github.io"/>
+    <link rel="self" href="https://bluebonnet27.github.io/atom.xml"/>
+    <subtitle>欢迎来到这里，建议使用电脑浏览</subtitle>
+    <logo>https://bluebonnet27.github.io/images/avatar.png</logo>
+    <icon>https://bluebonnet27.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, bluebonnet27的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[2021年终总结]]></title>
+        <id>https://bluebonnet27.github.io/post/2021-nian-zhong-zong-jie/</id>
+        <link href="https://bluebonnet27.github.io/post/2021-nian-zhong-zong-jie/">
+        </link>
+        <updated>2022-01-03T13:01:41.000Z</updated>
+        <content type="html"><![CDATA[<p><em>明年会更好的吧，大概</em><br>
+又到了写年终总结的时候了。<br>
+每次写年终总结的时候，我都在想，写或者不写，这一年糊弄糊弄也就过去了。然而三十一号这天确实要做点什么的，做什么我也不知道——那不如写一点，至少随便写一点。<br>
+这一年最重要的事情便是考研了，但其实也没什么好说的。第一次考研难免会有经验不足的情况，决定得也比较仓促，但我是不太想考第二次了（也可能不需要考第二次）。考研教会我更多的是考研之外的事情。因准备的过程而得到的东西往往比结果更为重要。这个道理，很多年前就有人告诉过我，但我一直没能找到机会验证。<br>
+即使把考研算在内，上半年的生活也和去年的大学生活没有太大区别。一样想办法挣学分完成作业，一样好几个报告和考试聚在同一周。一边准备考研，一边上课，日子过得飞快。暑假未能留校而在家复习考研。下半年课全上完了，还有毕设找导师、写立题书、开题答辩，忙完这一切便直接上考场了。即将到来的寒假也许稍有喘息机会，但“我还有很多事情要做，还不能休息”（笑），总归有时间思考以前从未思考过的东西，做未想过去做的事。<br>
+大学生活还有半年就结束了。在写下这段话的时候，我在想，下一篇年终总结会是写什么？或许已经入职工作，或许已经开始读研。知道一年后的生活会有很大的不同，却不能窥见其哪怕一毫。每一年写年终总结的时候，我都在心里期待下一年会发生改变。每一年回过头来看，改变确实是改变了，但也许不是朝着我所设想的方向改变。<br>
+写到这里，我发现这根本不像是一篇年终总结，更像是把我现在想的东西直接写在纸上。记一年的流水账尚有更好的方法，一点一滴留在日常生活中，一年与另一年的交接之处确实应该写点别的。我一直设想着此刻心情应该不很平静，但实际上写这些东西不能在我心中掀起一丝波澜。人年龄越大，每一步越小心谨慎，不愿意冒险；越愿意浪费大把时间在琐碎的小事上，无所事事地坐十几分钟。<br>
+人们往往愿意为自己的未来设定很多目标，说等到什么时候一定要做哪些事情，然而到时候又有新的问题和挑战在等待自己了。条理清晰地总结这一年的事情很困难，不知是事情太多无从总结还是事情太少无可总结。我自认为一直以来的一个缺点是情绪控制能力太差，太容易被外界事物影响；做事也喜欢往悲观的方向看待；喜欢逃避，把头缩在沙子里就看不见别人吃自己的肉。<br>
+然而我并没想到什么好办法改正这些缺点。然而我心里又有一个声音告诉我，这是总结，不是展望。这不是学术报告不是论文，写给自己的总结不必被条条框框的规矩所束缚。不必把明年要做的事情写在这里，因未有人能预知明朝何事会发生。我所能做的，我们所能做的，只是安安稳稳地度过这一夜，明天开始平常的一天。</p>
+<p>于是挥手告别2021年，许多话难以在纸上写出。</p>
+<p>“Here’s to our future, here’s to our bones.”</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2021年春季CSP认证题解]]></title>
+        <id>https://bluebonnet27.github.io/post/202104csp/</id>
+        <link href="https://bluebonnet27.github.io/post/202104csp/">
+        </link>
+        <updated>2021-04-23T08:49:58.000Z</updated>
+        <content type="html"><![CDATA[<p><em>给孩子用的，孩子很开心，9月份还会买的</em></p>
+<h1 id="成绩">成绩</h1>
+<p><em>反正就是 50 块换了一个 CSP 选修课及格</em></p>
+<figure data-type="image" tabindex="1"><img src="https://ftp.bmp.ovh/imgs/2021/04/8a96b8d1f1abb90b.png" alt="成绩" loading="lazy"></figure>
+<h1 id="题解">题解</h1>
+<p><em>说实话我就会两道题... ...硬着头皮写题解，还是第一次写<s>多美妙的词汇</s></em></p>
+<h2 id="灰度直方图">灰度直方图</h2>
+<p><em>原题链接：<a href="http://118.190.20.162/view.page?gpid=T128" target="_blank">链接</a></em></p>
+<h3 id="问题描述">问题描述</h3>
+<p>一幅长宽分别为 n 个像素和 m 个像素的灰度图像可以表示为一个 n×m 大小的矩阵 A。 其中每个元素 Aij（0≤i&lt;n、0≤j&lt;m）是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 具体来说，一个 8 比特的灰度图像中每个像素的灰度范围是 [0,128)。<br>
+一副灰度图像的灰度统计直方图（以下简称“直方图”）可以表示为一个长度为 L 的数组 h，其中 h[x]（0≤x&lt;L）表示该图像中灰度值为 x 的像素个数。显然，h[0] 到 h[L−1] 的总和应等于图像中的像素总数 n⋅m。<br>
+已知一副图像的灰度矩阵 A，试计算其灰度直方图 h[0],h[1],⋯,h[L−1]。</p>
+<h3 id="输入格式">输入格式</h3>
+<p>输入共 n+1 行。<br>
+输入的第一行包含三个用空格分隔的正整数n、m 和 L，含义如前文所述。<br>
+第二到第 n+1 行输入矩阵 A 。<br>
+第 i+2（0&lt;=i&lt;=n）行包含用空格分隔的 m 个整数，依次为Ai0,Ai1...Ai(m-1) 。</p>
+<h3 id="输出格式">输出格式</h3>
+<p>输出到标准输出。<br>
+输出仅一行，包含用空格分隔的 L 个整数 h[0],h[1],⋯,h[L−1]，表示输入图像的灰度直方图。<br>
+全部的测试数据满足 0&lt;n,m≤500 且 4≤L≤256。</p>
+<h3 id="样例">样例</h3>
+<h4 id="输入">输入</h4>
+<p>7 11 8<br>
+0 7 0 0 0 7 0 0 7 7 0<br>
+7 0 7 0 7 0 7 0 7 0 7<br>
+7 0 0 0 7 0 0 0 7 0 7<br>
+7 0 0 0 0 7 0 0 7 7 0<br>
+7 0 0 0 0 0 7 0 7 0 0<br>
+7 0 7 0 7 0 7 0 7 0 0<br>
+0 7 0 0 0 7 0 0 7 0 0</p>
+<h4 id="输出">输出</h4>
+<p>48 0 0 0 0 0 0 29</p>
+<h3 id="题解-2">题解</h3>
+<p>这题完全白给，你甚至不需要建立矩阵，直接边输入边加和就完事了。</p>
+<h3 id="代码">代码</h3>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+
+int main() {
+    int n, m, L;
+    scanf(&quot;%d %d %d&quot;, &amp;n, &amp;m, &amp;L);
+
+    int h[L];
+    int point;
+
+    memset(h, 0, sizeof(h));
+
+    for (int i = 0; i &lt; m; i++) {
+	    for (int j = 0; j &lt; n; j++) {
+		    scanf(&quot;%d&quot;, &amp;point);
+		    h[point]++;
+	    }
+    }
+
+    for (int k = 0; k &lt; L; k++) {
+	    printf(&quot;%d &quot;, h[k]);
+    }
+}
+</code></pre>
+<h2 id="邻域均值">邻域均值</h2>
+<p><em>原题链接：<a href="http://118.190.20.162/view.page?gpid=T127" target="_blank">链接</a></em></p>
+<h3 id="题目背景">题目背景</h3>
+<p>顿顿在学习了数字图像处理后，想要对手上的一副灰度图像进行降噪处理。不过该图像仅在较暗区域有很多噪点，如果贸然对全图进行降噪，会在抹去噪点的同时也模糊了原有图像。因此顿顿打算先使用邻域均值来判断一个像素是否处于较暗区域，然后仅对处于较暗区域的像素进行降噪处理。</p>
+<h3 id="题目描述">题目描述</h3>
+<p>待处理的灰度图像长宽皆为 n 个像素，可以表示为一个 n×n 大小的矩阵 A，其中每个元素是一个 [0,L) 范围内的整数，表示对应位置像素的灰度值。 对于矩阵中任意一个元素 Aij（0≤i,j&lt;n），其邻域定义为附近若干元素的集和：<br>
+Neighbor(i,j,r)={Axy|0≤x,y&lt;n and |x−i|≤r and |y−j|≤r}<br>
+这里使用了一个额外的参数 r 来指明 Aij 附近元素的具体范围。根据定义，易知 Neighbor(i,j,r) 最多有 (2r+1)2 个元素。<br>
+如果元素 Aij 邻域中所有元素的平均值小于或等于一个给定的阈值 t，我们就认为该元素对应位置的像素处于较暗区域。 下图给出了两个例子，左侧图像的较暗区域在右侧图像中展示为黑色，其余区域展示为白色。现给定邻域参数 r 和阈值 t，试统计输入灰度图像中有多少像素处于较暗区域。</p>
+<p><strong>图我就不放了，没什么卵用</strong></p>
+<h3 id="输入格式-2">输入格式</h3>
+<p>从标准输入读入数据。<br>
+输入共 n+1 行。<br>
+输入的第一行包含四个用空格分隔的正整数 n、L、r 和 t，含义如前文所述。<br>
+第二到第 n+1 行输入矩阵 A。 第 i+2（0≤i&lt;n）行包含用空格分隔的 n 个整数，依次为 Ai0,Ai1,⋯,Ai(n−1)。</p>
+<h3 id="输出格式-2">输出格式</h3>
+<p>输出到标准输出。<br>
+输出一个整数，表示输入灰度图像中处于较暗区域的像素总数。<br>
+70% 的测试数据满足 n≤100、r≤10。<br>
+全部的测试数据满足 0&lt;n≤600、0&lt;r≤100 且 2≤t&lt;L≤256。</p>
+<h3 id="样例-2">样例</h3>
+<h4 id="输入-2">输入</h4>
+<p>11 8 2 2<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 7 0 0 0 7 0 0 7 7 0<br>
+7 0 7 0 7 0 7 0 7 0 7<br>
+7 0 0 0 7 0 0 0 7 0 7<br>
+7 0 0 0 0 7 0 0 7 7 0<br>
+7 0 0 0 0 0 7 0 7 0 0<br>
+7 0 7 0 7 0 7 0 7 0 0<br>
+0 7 0 0 0 7 0 0 7 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0<br>
+0 0 0 0 0 0 0 0 0 0 0</p>
+<h4 id="输出-2">输出</h4>
+<p>83</p>
+<h3 id="题解-3">题解</h3>
+<p>嵌套 4 层 for 循环的暴力解直接超时，无法通过 30% 的测试样例。（我为什么知道，因为我就这么做的... ...）</p>
+<p><font color=red>建议做这道题前先掌握前缀和打表法的知识</font>（其实我也会，但真的没想到要用... ...还是题做少了）</p>
+<p>贴个链接，讲得比较好的：<a href="https://zhuanlan.zhihu.com/p/117569086" target="_blank">链接</a></p>
+<p>如果你掌握了上面的知识，那这道题也相当于白给了。核心思想就是用前缀和公式求那一片的平均值而不是两层循环。注意边界条件，比如不能超过二维数组的范围，以及左上角的数据要 -1 等。</p>
+<h3 id="代码-2">代码</h3>
+<pre><code>#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+int a[610][610];
+
+int main() {
+    int res = 0;
+    int n, L, r, t;
+    scanf(&quot;%d %d %d %d&quot;, &amp;n, &amp;L, &amp;r, &amp;t);
+
+    int x;
+    for (int i = 1; i &lt;= n; i++) {
+        for (int j = 1; j &lt;= n; j++) {
+            scanf(&quot;%d&quot;, &amp;x);
+            a[i][j] = a[i - 1][j] + a[i][j - 1] - a[i - 1][j - 1] + x;
+        }
+    }
+
+    for (int i = 1; i &lt;= n; i++) {
+        for (int j = 1; j &lt;= n; j++) {
+            int total, m;
+            int x1, x2, y1, y2;
+
+            x1 = max(1, i - r);
+            y1 = max(1, j - r);
+            x2 = min(n, i + r);
+            y2 = min(n, j + r);
+
+            total = a[x2][y2] - a[x1 - 1][y2] - a[x2][y1 - 1] + a[x1 - 1][y1 - 1];
+            m = (y2 - y1 + 1) * (x2 - x1 + 1);
+
+            if (total &lt;= t * m)
+                res++;
+        }
+    }
+
+    printf(&quot;%d&quot;, res);
+}
+</code></pre>
+<hr>
+<p>感谢博客<a href="https://www.cnblogs.com/hujunyao37201/p/14647595.html" target="_blank">2021年四月CCF-CSP认证题目</a>提供的相关思路。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决《穿越火线》在windows10上的模糊问题]]></title>
+        <id>https://bluebonnet27.github.io/post/crossfirefix/</id>
+        <link href="https://bluebonnet27.github.io/post/crossfirefix/">
+        </link>
+        <updated>2021-04-19T07:20:08.000Z</updated>
+        <content type="html"><![CDATA[<p><em>大三亿鼠标的枪战梦想已经消逝，但仍有朝圣者耕耘在先人曾踌躇的大地上</em></p>
+<h1 id="前言">前言</h1>
+<p>更换新电脑后，我第一件事就是把《穿越火线》下载回来。但在游戏里调整为<font color=red>1920*1080</font>时，字体和界面都变得很模糊，不像是这个分辨率下应该有的画质。于是我开始寻找解决办法，发现这不仅仅是一个游戏的问题，更是 Windows 10 系统对于所有使用老开发技术的软件的优化问题。</p>
+<h1 id="amdintel">AMD？Intel？</h1>
+<p><img src="https://ftp.bmp.ovh/imgs/2021/04/b8474a17936c839b.png" alt="" loading="lazy"><br>
+起初我觉得是 AMD 的问题。因为使用 i3 9100f ,GTX 1065 的 Windows 7 并没有出现模糊的问题。但是我使用的这台 lenovo region r9000x 是有独显直连功能的，开启以后 AMD 的 Radeon 核显会被屏蔽。</p>
+<p>然后，依然很模糊。</p>
+<p>难不成是针对图灵架构的显卡也没有优化？当然不可能。AMD 可能会有兼容性问题，但 NVIDIA 不可能会有的。（当然，事实证明这是我对 AMD 根深蒂固的偏见罢了，其实根本和硬件没关系）</p>
+<h1 id="封顶">封顶</h1>
+<p>首先尝试在游戏里修改多个分辨率，排除分辨率修改本身出问题的可能。</p>
+<p>结果发现调节 4:3 下 800*600 ，画质会变得异常模糊，（题外话：判断《穿越火线》分辨率的一个简单办法是看游戏内的字体。低分辨率下游戏的字体会退化成点阵字体，这也是当年 M bug 的来源；高分辨率下则会变成标准的宋体字）证明调低分辨率是有效的。</p>
+<p>也就是说，更像是<font color=red>分辨率的向上调整撞上了“墙”，使得这些操作完全无效。</font></p>
+<p>WeGame 自带的修复就不说了，不可能解决任何问题的东西。</p>
+<h1 id="主程序">主程序</h1>
+<p>难道是兼容性出了问题？找到桌面图标对应的本地源 Win32 文件，发现这个名为&quot;client.exe&quot;的文件只是一个客户端。于是只能启动游戏用任务管理器找到主程序文件是&quot;crossfire.exe&quot;，使用兼容性疑难解答调整其为“Windows 8”。</p>
+<p>问题依然没有解决。而且可以确定，这个问题在 Windows 8 时代就已经出现了。</p>
+<h1 id="125️124">125➡️124</h1>
+<p>在找解决办法的同时，我也在网上找相关的资料。不过，毕竟游戏年代久远，相关的解决办法少之又少，靠谱的我想一个也没有。但当我把搜索范围扩大，将“穿越火线”替换成“所有软件”的模糊问题时。一个解决办法出现了：</p>
+<p>把Windows10的缩放比例调整为 124%。（默认是 125%）<br>
+<img src="https://ftp.bmp.ovh/imgs/2021/04/da299515e6ac3924.png" alt="" loading="lazy"><br>
+确实有用。</p>
+<p>不过毕竟不能为了一个软件更改系统的规则。不过我已经积累了足够的信息了，而我与真正的解决办法之间，只有一座山的距离。</p>
+<h1 id="真相">真相</h1>
+<h2 id="解决办法">解决办法：</h2>
+<ol>
+<li>在 &quot;D:\WeGameApps\穿越火线&quot; 下找到crossfire.exe，右键属性，</li>
+<li>选择“兼容性”-“更改高 DPI 设置”，</li>
+<li>在下面的“高DPI缩放替代”-“缩放执行”选择“应用程序”</li>
+</ol>
+<h2 id="原理">原理</h2>
+<p>在 Windows 8 的时代，微软就意识到随着 Windows 设备屏幕分辨率的不断增大，Windows 组件也需要不断增大防止高分屏下组件过小。于是，微软在系统中加入了“缩放比例”直接放大组件，而不是开发多个适配不同分辨率的组件。对于第三方软件，微软也提供了一系列与原来不冲突的 API 方便适配。当然，像穿越火线这样的软件肯定是不会适配的。</p>
+<p>这就带来了几个问题：</p>
+<ol>
+<li>主界面直接按照原来的像素放大，变模糊。</li>
+<li>更严重的是，软件内部分辨率调节和屏幕的分辨率永远会有“缩放比例”的缩放。</li>
+</ol>
+<p>以穿越火线为例。我的电脑是 1920 *1080 的，对于 125% 的放大，游戏内能调节的最大纵向分辨率就是 1080/1.25=864 ，超过 864 的调节都是无效的。甚至调不到 1600x900。</p>
+<p>那怎么办呢？很简单，这种 bug 出现的原因就是系统接管了应用程序的缩放调节，把缩放调节的权利还给应用程序不就可以了？就是我刚才的操作。</p>
+<p>能否将所有应用程序的缩放权利都还给应用自己呢？目前看来是不太现实。一方面，淘汰过去的软件本身就是一种趋势，在兼容性上做最大限度的保证和恶化体验加速淘汰并不冲突；另一方面，微软似乎觉得自己有能力解决这个问题。<br>
+<img src="https://ftp.bmp.ovh/imgs/2021/04/32341f556c31dd1b.png" alt="" loading="lazy"></p>
+<h1 id="题外话">题外话</h1>
+<p>在我查阅相关资料的时候，我也在联想社区里看到类似的问题。不过评论区都是冷嘲热讽：</p>
+<blockquote>
+<p>cf老掉牙的游戏还要玩？</p>
+</blockquote>
+<blockquote>
+<p>为什么不去玩CSGO呢？</p>
+</blockquote>
+<p>这就像是我写一段c代码出现问题发到 CSDN 上，结果一堆人讽刺我为什么不用 Python 一样。我一直觉得有 bug 就要解决，说风凉话的人可能连基本的原理都不清楚，nt一样。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[每周说（9）：考研路上]]></title>
+        <id>https://bluebonnet27.github.io/post/weeklysay9/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay9/">
+        </link>
+        <updated>2021-03-21T03:22:41.000Z</updated>
+        <content type="html"><![CDATA[<p><em>翻过这座山，让他们听到你的故事</em></p>
+<p>每周说第9期，<em>这个系列的目的是练习Markdown语法</em></p>
+<h1 id="三月不下雪">三月不下雪</h1>
+<p><em>上个四月份下雪的时候，我在自习室看窗边的妹子</em></p>
+<h2 id="我生病了">我生病了</h2>
+<p>全身酸痛，喉咙痛，没有力气，昏昏沉沉的。吃点药也许缓解了一下，马上开始背单词，毕竟今天的 60 个单词还没有背完。</p>
+<p>正大光明地摸鱼让我寝食难安，但确实除了背单词别的都干不动了。也许一会可以看一会汤神或者永乐大帝的网课？</p>
+<h1 id="四月新电脑">四月新电脑</h1>
+<p><em>“智商检测卡”“四九年入国军”</em><br>
+<img src="https://ftp.bmp.ovh/imgs/2021/04/713bad4e1780ebb5.png" alt="硬件参数" loading="lazy"><br>
+联想拯救者 R9000x，<font color="red">AMD r7 4800h，NVIDIA GTX1650ti，6499 </font>首发价入的。这电脑显卡确实拉跨，好在 CPU 还算不错。重点是轻薄，1.92kg，支持 100w 的 PD 充电。好在我打的都是老掉牙的 3a 游戏，对新出的大作没什么兴趣。</p>
+<p>当然，预算卡在 7000 确实莫得办法，只能说这台电脑作为过渡使用，有钱换个更好的 3060 或者组装台式机。实测 1650ti CSGO大概 270fps 左右（1080p，贴图特效最低，抗锯齿4x），144hz 的屏幕对于 FPS games 加成明显，日常使用也十分愉悦。（当然 cf 的话。。。算了，这游戏不知道能不能坚持到我换下一台电脑）</p>
+<p>vega7 核显的性能也就是普通 zen2 水平，512 MB 的显存，CSGO大概 70-80fps 的样子。zen3 提升不太明显。话说 R9000x 还有一个 RTX 2060 max-Q 的高配版，但价格一直下不来。。。</p>
+<p>话说今年的矿潮真的吓人，去年年末就筹划换台电脑，结果做等等党，等等党大失败。电脑到手想加块硬盘，眼睁睁看着西数 SN 550 蓝盘从七百多涨到八百多，不知道是真的用来挖矿还是奸商炒货。真有人能在矿潮面前独善其身么？</p>
+<p>说到底还是没钱。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《第一行代码Android（第三版）》遇到的问题记录]]></title>
+        <id>https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/</id>
+        <link href="https://bluebonnet27.github.io/post/problems_of_DiYIHangDaiMa/">
+        </link>
+        <updated>2020-11-06T14:16:45.000Z</updated>
+        <content type="html"><![CDATA[<p><em>写在前面：guolin肯定是个大神。就凭他能用一本书把Android讲得如此透彻也是个大神。但纸质书最大的问题就是会过时，所以开个新坑，记录这本书遇到的一些问题</em></p>
+<p><font color=green>纸质书的版本：2020.04版（2020.05重印）</font></p>
+<h1 id="2020-11-06-更新">2020-11-06 更新</h1>
+<p><em>Android Studio 4.1<br>
+内部版本号 #AI-201.8743.12.41.6858069, 构建于 September 23, 2020<br>
+运行时版本: 1.8.0_242-release-1644-b01 amd64<br>
+kotlin 1.3.72-release-Studio4.1-5</em></p>
+<h2 id="chapter3">Chapter3：</h2>
+<ol>
+<li>
+<p>首先 Google 现在十分坑爹的把 xml 设计页一分为三（而不是这本书上的一分为二），增加了一个可视化编辑与代码共存的 Split 页。而且默认是可视化的设计页。Google 就这么觉得可视化设计很舒服么？<br>
+<img src="https://i.loli.net/2020/11/06/Nm8OFITlAE2wntZ.jpg" alt="android1.jpg" loading="lazy"></p>
+<p>新建 activity 向下兼容的选项已经没了<s>这玩意没啥影响其实</s></p>
+<p>android x 的选项也没了，guolin 确实是预言家。</p>
+</li>
+<li>
+<p>最新版本的 Android studio 新建项目的时候不会自动引入 kotlin-android-extensions 插件（也可能是我 AS 出 bug 了，反正我重装以后就会一直不引入），需要在<code>app</code>的<code>build.gradle</code>里引入 id 自动导入插件：</p>
+<pre><code>plugins {
+ id 'com.android.application'
+ id 'kotlin-android'
+ id 'kotlin-android-extensions'
+ }
+</code></pre>
+</li>
+</ol>
+<h2 id="chapter-7">Chapter 7</h2>
+<p>如今 Android studio 已经自带了查看数据库的功能了，所以书上的插件其实不用安装也 OK ，<a href="https://d.android.com/r/studio-ui/db-inspector-help">Google 的说明（国内应该打不开）</a><br>
+<img src="https://i.loli.net/2020/11/06/6hfQjgniSlFKmpk.jpg" alt="android2.jpg" loading="lazy"></p>
+<p>但是这个要求 API 26 以上，而且应用没在运行的时候是看不了数据库的（似乎不是查看db文件的）</p>
+<h2 id="chapter-8">Chapter 8</h2>
+<p>p324 的 Manifest 是 android 下的，而不是 java.util 的。所以写进程序的时候前面会加上 android 的前缀。</p>
+<h2 id="chapter-9">Chapter 9</h2>
+<p>项目遇到了一个bug，从相册返回主mainactivity时没有照片显示，所以把出bug的代码先记录下来，以后解决：</p>
+<h3 id="这是mainactivity的">这是mainactivity的</h3>
+<pre><code>package com.ti.cameraalbumtest
+
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Matrix
+import android.media.ExifInterface
+import android.net.Uri
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
+import androidx.core.content.FileProvider
+import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
+import java.net.URI
+
+class MainActivity : AppCompatActivity() {
+
+    //button1
+    val takePhoto = 1
+    lateinit var imageUri:Uri
+    lateinit var outputImage:File
+
+    //button2
+    val fromAlbum = 2
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        takePhotoButton.setOnClickListener {
+            //file object
+            outputImage = File(externalCacheDir,&quot;output_image.jpg&quot;)
+            //exist
+            if(outputImage.exists()){
+                outputImage.delete()
+            }
+            outputImage.createNewFile()
+            //API judge,兼容性处理
+            imageUri = if(Build.VERSION.SDK_INT&gt;=Build.VERSION_CODES.N){
+                // need to unit in Manifest.xml
+                FileProvider.getUriForFile(this,&quot;com.ti.cameraalbumtest.fileprovider&quot;,
+                outputImage)
+            }else{
+                Uri.fromFile(outputImage)
+            }
+            //Set up CAMERA
+            val intent_camera = Intent(&quot;android.media.action.IMAGE_CAPTURE&quot;)
+            intent_camera.putExtra(MediaStore.EXTRA_OUTPUT,imageUri)
+            startActivityForResult(intent_camera,takePhoto)
+        }
+
+        getPhotoFromAlbum.setOnClickListener {
+            //文件选择器
+            val intent_album = Intent(Intent.ACTION_OPEN_DOCUMENT)
+                //只访问可以被共享的文件
+            intent_album.addCategory(Intent.CATEGORY_OPENABLE)
+                //文件格式：图片
+            intent_album.type=&quot;image/*&quot;
+            //下一个activity销毁后返回fromdlbum值
+            startActivityForResult(intent_album,fromAlbum)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode){
+            takePhoto-&gt;{
+                if(resultCode==Activity.RESULT_OK){
+                    //show the photo photoed
+                    val bitmap = BitmapFactory.decodeStream(contentResolver.
+                        openInputStream(imageUri))
+                    photoImageMe.setImageBitmap(rotatedIfRequired(bitmap))
+                }
+            }
+            fromAlbum-&gt;{
+                if(requestCode==Activity.RESULT_OK&amp;&amp;data!=null){
+                    data.data?.let { uri -&gt;
+                        //the second data=getData()
+//                        if(uri==null){
+//                            Log.d(&quot;emptyResult&quot;,&quot;uri is empty&quot;)
+//                        }
+                        val bitmap = getBitmapFromUri(uri)
+//                        if(bitmap==null){
+//                            Log.d(&quot;emptyResult&quot;,&quot;bitmap is empty&quot;)
+//                        }
+                        photoImageMe.setImageBitmap(bitmap)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun rotatedIfRequired(bitmap: Bitmap):Bitmap{
+        //exif object: infor + jpeg
+        val exif = ExifInterface(outputImage.path)
+        //direction information
+        val orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION,
+            ExifInterface.ORIENTATION_NORMAL)
+        // spin/rotate
+        return when(orientation){
+            ExifInterface.ORIENTATION_ROTATE_90 -&gt; rotateBitmap(bitmap,90)
+            ExifInterface.ORIENTATION_ROTATE_180 -&gt; rotateBitmap(bitmap,180)
+            ExifInterface.ORIENTATION_ROTATE_270 -&gt; rotateBitmap(bitmap,270)
+            //do nothing if no degree
+            else -&gt; bitmap
+        }
+    }
+
+    private fun rotateBitmap(bitmap: Bitmap,degree:Int):Bitmap{
+        //矩阵程序
+        val matrix = Matrix();
+        //旋转矩阵到一定的角度
+        matrix.postRotate(degree.toFloat())
+        val rotatedBitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.width,bitmap.height,
+                        matrix,true)
+        bitmap.recycle()//回收矩阵
+        return rotatedBitmap
+    }
+
+    private fun getBitmapFromUri(uri: Uri) = contentResolver.openFileDescriptor(uri,&quot;r&quot;)?.use {
+        BitmapFactory.decodeFileDescriptor(it.fileDescriptor)
+    }
+}
+</code></pre>
+<h3 id="这是对应的xml">这是对应的xml</h3>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    tools:context=&quot;.MainActivity&quot;&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/takePhotoButton&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;点我拍照&quot;&gt;&lt;/Button&gt;
+
+    &lt;Button
+        android:id=&quot;@+id/getPhotoFromAlbum&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:text=&quot;点我从相册选择图片&quot;&gt;&lt;/Button&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/photoImageMe&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_gravity=&quot;center_horizontal&quot;&gt;&lt;/ImageView&gt;
+
+&lt;/LinearLayout&gt;
+</code></pre>
+<h3 id="这是manifest文件">这是manifest文件：</h3>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    package=&quot;com.ti.cameraalbumtest&quot;&gt;
+
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;&gt;&lt;/uses-permission&gt;
+
+    &lt;application
+        android:allowBackup=&quot;true&quot;
+        android:icon=&quot;@mipmap/ic_launcher&quot;
+        android:label=&quot;@string/app_name&quot;
+        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;
+        android:supportsRtl=&quot;true&quot;
+        android:theme=&quot;@style/Theme.CameraAlbumTest&quot;&gt;
+
+        &lt;provider
+            android:authorities=&quot;com.ti.cameraalbumtest.fileprovider&quot;
+            android:name=&quot;androidx.core.content.FileProvider&quot;
+            android:exported=&quot;false&quot;
+            android:grantUriPermissions=&quot;true&quot;&gt;
+            &lt;meta-data
+                android:name=&quot;android.support.FILE_PROVIDER_PATHS&quot;
+                android:resource=&quot;@xml/file_paths&quot;&gt;&lt;/meta-data&gt;
+        &lt;/provider&gt;
+        &lt;activity android:name=&quot;.MainActivity&quot; android:screenOrientation=&quot;portrait&quot;&gt;
+        &lt;!--    Not in the book, but in source codes        --&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+<h1 id="2020-11-22-更新">2020-11-22 更新</h1>
+<h2 id="补充-android-studio-中-git-的使用">补充 Android Studio 中 git 的使用</h2>
+<p>首先再次强调我的 AS 的版本，</p>
+<blockquote>
+<p>Android Studio 4.1<br>
+内部版本号 #AI-201.8743.12.41.6858069, 构建于 September 23, 2020<br>
+运行时版本: 1.8.0_242-release-1644-b01 amd64<br>
+JVM: OpenJDK 64-Bit Server VM by JetBrains s.r.o</p>
+</blockquote>
+<p>我电脑里最新版本的 pycharm 和 webstorm 的 git 登录方法和 AS 的不太一样，不过大家都是jetbrains 家的软件，想必 AS 下一步也会更新到这个版本。只是时间问题。（也可能是已经更新了但我没更新软件所以不知道）</p>
+<h3 id="前言">前言</h3>
+<p>guolin 在书中写的很好，命令行格式的 git 命令是每个程序员应该掌握的技能，但不得不说图形化更容易操作。所以我简单补充下图形化的操作方法。</p>
+<h3 id="基础搭建">基础搭建</h3>
+<p>首先你需要有一个 git ，然后配置正确的用户名和邮箱，如果你这步有问题的话网上有一大堆教程，我以后可能也会写一个出来。书里也有教程。</p>
+<p>需要在 android studio 的设置（settings）里配置 git.exe 的位置，AS 会自动找到的，没有的话你手动找一下就行。<br>
+<img src="https://i.loli.net/2020/11/22/pWtKuPR64eL8cbG.jpg" alt="git1.jpg" loading="lazy"><br>
+在下面的 github 里配置你的账号密码，然后登录。<br>
+<img src="https://i.loli.net/2020/11/22/jtL31ZIJOl4EqyP.jpg" alt="github1.jpg" loading="lazy"><br>
+这一步可能会报 401 错误，网上的解决办法有很多，比如在网址前面加一个 https:// ，或者改账号为你的用户名，或者你可以直接用右上角的 token 登录。去 github 的网站申请一个 token 。申请的方法就是点击 头像 - settings - develop settings - general access tokens。为 AS 申请一个 token ，然后将 token 输入进来就可以。</p>
+<p>注意 ：<font color = red> token 需要 <code>repo,gist,read:org</code>权限。</font></p>
+<h3 id="本地项目上传到-github">本地项目上传到 github</h3>
+<p>点击 VCS ，上传到版本控制（version control)，有一个 <code>share project on github</code>，AS 会检测 github 上有没有重名的 resposity ，没有会提示你新建一个。这里新建的话，只能填写库名和描述，选择公开性。不能初始化 readme 和 license 文件。<br>
+<img src="https://i.loli.net/2020/11/22/jCIeLJkShWHvgor.jpg" alt="github2.jpg" loading="lazy"><br>
+然后就是正常的git操作了，和其他 jetbrains 家的软件一样，commit，push 和 ferch。都可以在VCS 的菜单里解决。</p>
+<h3 id="直接拉取远程项目到本地">直接拉取远程项目到本地</h3>
+<p>Android Studio 首页有从 github 拉取项目的选项，直接操作即可。</p>
+<h3 id="其他">其他</h3>
+<p>如果你使用的是 gitee ，你需要在扩展商店（plugins-marketplace）里找一个 gitee 插件，<br>
+<img src="https://i.loli.net/2020/11/22/v9BOyC3aoSUflPx.jpg" alt="github3.jpg" loading="lazy"><br>
+然后设置-版本控制里 github 附近会多出一个 gitee ，操作和 github 类似，这里就不写了。（其实 github 相关功能本身也是 AS 的一个插件，只不过因为预装的原因看起来像是 AS 的一部分）</p>
+<h2 id="chapter-10">Chapter 10</h2>
+<p>如果你的 SDK 是 Android R（11），IntentService 方法会显示被废弃，这很正常，因为它确实被废弃了。<s>废弃又不耽误你用，在乎那么多干啥😒</s></p>
+<p>具体可以参考这篇博客：<a href="https://shoewann0402.github.io/2020/03/10/android-R-IntentService-deprecated/">链接</a></p>
+<h1 id="2020-11-25-更新">2020-11-25 更新</h1>
+<h2 id="apache-服务器的使用chapter-11">Apache 服务器的使用（Chapter 11）</h2>
+<p>书上关于这个 Apache 服务器并没有说明太多，所以我补充一点东西。</p>
+<h3 id="下载与安装">下载与安装</h3>
+<p>首先我建议你下载和安装时参考网上的一些教程。你从 Apache 官网是下不到二进制exe文件的，只能下载到压缩包（我倒不是很意外，毕竟 tomcat 和 maven 都是压缩包，一个组织下的 httpd 不至于用别的），所以书上的无脑 next 教程并不适用。</p>
+<p>首先解压下载的文件，到<code>Apache24\conf</code>里找<code>httpd.conf</code>文件，找到<code>Define SRVROOT</code>，把它从默认的<code>c:/Apache24</code>改成你解压的正确的 Apache24 路径，比如我的是：</p>
+<pre><code>D:/privatePrograms/httpd-2.4.46-o111h-x64-vc15/Apache24
+</code></pre>
+<p>注意改下斜杠。</p>
+<p>然后将 httpd 的服务注册到系统里。需要用管理员权限在<code>httpd.exe</code>所在的根目录执行以下命令：</p>
+<pre><code>.\httpd -k install
+</code></pre>
+<p>注册成功的话会有提示信息的。这时可以去系统的服务里看有没有 Apache 开头的服务。</p>
+<h3 id="启动">启动</h3>
+<p>启动的方式可以在目录下直接执行<code>httpd.exe</code>，或者双击执行。会有一个窗口，关窗口就是停止了。可能会有接口占用的问题，表现为：</p>
+<ol>
+<li>Windows 警告：<br>
+<img src="https://i.loli.net/2020/11/25/CsgQT7danz4j21H.jpg" alt="httpderrpr1.jpg" loading="lazy"></li>
+<li>命令行界面执行会直接告诉你接口被占用。
+<blockquote>
+<p>(OS 10013)以一种访问权限不允许的方式做了一个访问套接字的尝试。 : AH00072: make_sock: could not bind to address [::]:80<br>
+(OS 10013)以一种访问权限不允许的方式做了一个访问套接字的尝试。 : AH00072: make_sock: could not bind to address 0.0.0.0:80<br>
+AH00451: no listening sockets available, shutting down<br>
+AH00015: Unable to open logs</p>
+</blockquote>
+</li>
+</ol>
+<p>解决办法：</p>
+<ol>
+<li>改 httpd 的接口，在刚才的 conf 文件里找<code>listen 80</code>，这是默认的监听接口，改成别的就 ok。</li>
+<li>把占用的程序停止。首先要找到占用的程序。<code>netstat -ano</code>查看接口占用，<code>tasklist|findstr 进程PID</code>找到程序信息，我的是 VMWare 的托管程序占用了，所以去任务管理器里关掉就可以了。</li>
+</ol>
+<h3 id="访问">访问：</h3>
+<ol>
+<li>访问<code>localhost:80</code>（接口号改了就用你改完的）</li>
+<li>访问<code>127.0.0.1</code></li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[打包发布firefox的主题]]></title>
+        <id>https://bluebonnet27.github.io/post/firefox_theme_upload/</id>
+        <link href="https://bluebonnet27.github.io/post/firefox_theme_upload/">
+        </link>
+        <updated>2020-10-30T11:37:14.000Z</updated>
+        <content type="html"><![CDATA[<p><em>本说明基于 firefox 79</em><br>
+<em>文章最早由我发布在CSDN</em><a href="https://blog.csdn.net/qq_37387199/article/details/107892333">地址</a><br>
+上一篇教程里，我介绍了如何使用 firefox color 自定义浏览器的主题。<br>
+<a href="https://blog.csdn.net/qq_37387199/article/details/107801061">文章链接</a></p>
+<p>这一次我们将制作好的主题进行打包发布。</p>
+<p>如同 firefox 的扩展一样，打包好的主题是一个<strong>xpi文件</strong><br>
+我们将其解压（使用7zip或者别的解压软件都可以）<br>
+<img src="https://img-blog.csdnimg.cn/20200809121708620.jpg" alt="解压后的" loading="lazy"></p>
+<p>其中：</p>
+<ul>
+<li><strong>images</strong>是主题用到的图片文件</li>
+<li><strong>json</strong>是主题文件的描述，类似于 firefox 扩展的 json 描述。</li>
+</ul>
+<p>我的主题 json 描述如下：</p>
+<pre><code>{
+  &quot;manifest_version&quot;: 2,
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;name&quot;: &quot;秒速五厘米1&quot;,
+  &quot;theme&quot;: {
+    &quot;images&quot;: {
+      &quot;additional_backgrounds&quot;: [
+        &quot;images/0.jpg&quot;
+      ]
+    },
+    &quot;properties&quot;: {
+      &quot;additional_backgrounds_alignment&quot;: [
+        &quot;center center&quot;
+      ],
+      &quot;additional_backgrounds_tiling&quot;: [
+        &quot;no-repeat&quot;
+      ]
+    },
+    &quot;colors&quot;: {
+      &quot;toolbar&quot;: &quot;rgba(43, 206, 227, 0)&quot;,
+      &quot;toolbar_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;frame&quot;: &quot;rgb(84, 84, 84)&quot;,
+      &quot;tab_background_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;toolbar_field&quot;: &quot;rgba(0, 0, 0, 0.36)&quot;,
+      &quot;toolbar_field_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;tab_line&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;popup&quot;: &quot;rgb(84, 84, 84)&quot;,
+      &quot;popup_text&quot;: &quot;rgb(255, 255, 255)&quot;,
+      &quot;tab_loading&quot;: &quot;rgb(255, 255, 255)&quot;
+    }
+  }
+}
+</code></pre>
+<p>其实这些东西就是在 firefox color 里自定义的部分，只不过将可视化的语言转成了代码。</p>
+<p>接下来，我们登陆 <a href="https://addons.mozilla.org/zh-CN/developers/">firefox附加组件开发者中心</a><br>
+<img src="https://img-blog.csdnimg.cn/20200809122629628.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="主页" loading="lazy"><br>
+这里，我们选择提交一个新主题，并将主题交给mozilla的网站托管。<br>
+<img src="https://img-blog.csdnimg.cn/20200809122748955.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="上传" loading="lazy"><br>
+这里选择我们之前导出的xpi文件就可以了，选择兼容性为PC端的firefox。上传文件后会进行校验，没问题就可以转到发布页了。</p>
+<p>值得一提的是，选择下面的<strong>创建一个主题</strong>也可以当场创建主题，但界面比较简陋，效果远不如 firefox color 的可视化要好。</p>
+<p>下一个页面就是填写主题的详细信息了，中文名字方便中国人搜到主题，可惜的是 firefox 主题商店是没有“动漫”的分类的，所以我选择了“影视”。<br>
+<img src="https://img-blog.csdnimg.cn/20200809123241784.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="许可协议" loading="lazy"><br>
+这里的几个选项决定了cc协议的种类。</p>
+<p>之后就是审核了，速度还是很快的。这里是我审核完的主题。<br>
+<img src="https://img-blog.csdnimg.cn/20200809123859464.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70" alt="主题" loading="lazy">希望这篇文章能对你有所帮助。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用firefox color自定义firefox的主题]]></title>
+        <id>https://bluebonnet27.github.io/post/firefox_theme_manual/</id>
+        <link href="https://bluebonnet27.github.io/post/firefox_theme_manual/">
+        </link>
+        <updated>2020-10-30T11:33:20.000Z</updated>
+        <content type="html"><![CDATA[<p><em>本说明基于firefox 79</em><br>
+<em>最早发布在CSDN</em><a href="https://blog.csdn.net/qq_37387199/article/details/107801061">原地址</a></p>
+<h2 id="轻量级主题">轻量级主题</h2>
+<p>引用：<a href="https://support.mozilla.org/zh-CN/kb/Firefox%20%E5%86%85%E7%BD%AE%E7%9A%84%E4%B8%BB%E9%A2%98">firefox关于主题</a>的说法，firefox现在仅支持轻量级主题了。</p>
+<p>那么什么是<font color="red">轻量级主题</font>呢？</p>
+<p>mozilla官方并没有明确的定义，我的理解是，<strong>轻量级主题的概念是区别于旧的，高度自定义的主题的概念。它只能改变一些静态的样式</strong>。这使得对于普通用户来说，制作一个自己的主题变得更加容易——你不需要任何编程知识。</p>
+<p>轻量级主题还可能有以下优点：</p>
+<ul>
+<li>加快firefox的冷启动速度</li>
+<li>提升兼容性</li>
+</ul>
+<p>当然，缺点也是显而易见的。你无法实现一些比较漂亮而复杂的样式。相比于国产浏览器花样百出的主题<img src="https://img-blog.csdnimg.cn/20200804220127403.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="某国产浏览器的主题宣传" loading="lazy">firefox的主题市场显得比较冷清。<br>
+但话又说回来了，chrome和edge都是轻量级主题。也许没有谁是绝对的正确的。</p>
+<h2 id="使用firefox-color自定义主题">使用firefox color自定义主题</h2>
+<p>在firefox的扩展商店找到这个扩展：<br>
+<a href="https://addons.mozilla.org/zh-CN/firefox/addon/firefox-color/">下载地址</a></p>
+<figure data-type="image" tabindex="1"><img src="https://img-blog.csdnimg.cn/20200804220551124.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>这是官方提供给你的可视化制作主题的工具。<br>
+打开主界面，如图：</p>
+<figure data-type="image" tabindex="2"><img src="https://img-blog.csdnimg.cn/2020080422075611.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>界面是全英文的，不过不碍事。</p>
+<ul>
+<li>preset themes：官方预设的主题样式</li>
+<li>custom colors：基本的组件颜色与透明度</li>
+<li>advanced colors：高级的组件颜色与透明度</li>
+<li>custom colors：背景</li>
+</ul>
+<p>你可以使用custom里官方预设的主题样式，在这些样式的基础上进行自己的修改，比如在custom colors里更改颜色，在custom backgrounds里更改背景填充，用官方花纹或者自己的图片。</p>
+<figure data-type="image" tabindex="3"><img src="https://img-blog.csdnimg.cn/2020080422130660.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>当我们选择这里的每一项时，上方的可视化窗口会展示效果。你不必知道每个选项究竟是做什么的。</p>
+<figure data-type="image" tabindex="4"><img src="https://img-blog.csdnimg.cn/202008042214566.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3Mzg3MTk5,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>这里要特别说一下。如果你使用自己的图片，需要将图片的比例调节至15:1接近的比例，在中间两项选择水平与垂直居中，“重复”选择“no repeat”。这个比例是firefox制作主题时的默认比例。过大或者过小都会导致图片没办法完全显示。</p>
+<p>做完主题就自动使用了。若换回原来的主题，在设置里启用即可。若想换回这个，打开firefox color，随便做一点更改，就自动套用了。</p>
+<figure data-type="image" tabindex="5"><img src="https://img-blog.csdnimg.cn/20200804222401423.jpg#pic_center" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>你可以选择这里的export，将做好的主题打包成xpi格式发布到firefox主题市场。我没发布过主题，不知道审核速度如何。关于主题发布的问题，也许我会在下一篇博客里说明。</p>
+<p>谢谢你的阅读。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[每周说（8）：新的开始]]></title>
+        <id>https://bluebonnet27.github.io/post/weeklysay8/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay8/">
+        </link>
+        <updated>2020-10-24T04:08:03.000Z</updated>
+        <content type="html"><![CDATA[<p><em>已经过去一半了</em></p>
+<p>每周说第8期，<em>这个系列的目的是练习Markdown语法</em></p>
+<h1 id="老朋友新故事">老朋友，新故事</h1>
+<p><em>来自刻俄柏的问候：你今天被密饼撑到了么？</em></p>
+<p>想说的东西有很多，就是不知道从哪里说起。</p>
+<h2 id="找回自己的博客">找回自己的博客</h2>
+<p>4月份的时候，我在腾讯云申请了现在的域名<a href="http://blog.bluebonnet27.xyz/">blog.bluebonnet27.xyz</a>，计划将这个域名解析到我原来的<a href="http://bluebonnet27.github.io/">bluebonnet27.github.io</a>，也许这样做就不会发生<font color=red>只能用特殊手段访问</font>的问题。但事实上解析依旧不好用，我产生了用 coding 码云代替 gihub pages 的想法，一通操作结果还是不行。说下决心自己花钱购买服务器，估计也没那个精力去配置很多东西。</p>
+<p>向来对云服务不感兴趣，或者说以后可能会感兴趣但不打算把现在的精力花到这个里面。于是<font color=red >博客的事情就这么不了了之了</font></p>
+<p>这个月（10月）偶然写Android代码写累了，想试试 github.io 的地址是不是还能访问，结果意外进去了。gridea 的同步也恢复正常了。于是想着：再写一篇吧。反正文件本地都有备份的。github pages 再访问不了也可以“东山再起”。于是写了这一篇博客。</p>
+<h2 id="其他的">其他的</h2>
+<p>这期间我尝试在<a href="https://blog.csdn.net/qq_37387199/">CSDN</a>，<a href="https://www.cnblogs.com/bluebonnet27/">cnblogs博客园</a>，发一些文章。CSDN 上的有两篇是原创的，有空我会搬到这里来，<s>或者就是单纯贴个链接</s>但其实大部分文章都是从这里搬过去的。</p>
+<p>CSDN，怎么说呢。恰饭的行为我没什么感觉。但大部分都是关于代码的文章，我一个天天吹水的人不适合在那里和大佬一块玩耍。cnblogs 也是，而且博客园自定义的程度貌似更高一点，用到很多前端的高级知识。我自己的博客用的都是 gridea 商城的主题，惭愧，我不是一个合格的程序员，天天piao别人的轮子。</p>
+<p>其实更重要的是，<font color=red>我希望博客是一个半私人的空间</font>。攀比也好利益也好，CSDN 和博客园很多文章都是互相抄袭不写出处的。原创文章出头之日遥遥无期。所以不如干脆不出头，关起门来自己玩。有人问你为什么不直接写日记呢？<font color=red>其实还是希望自己的文章有人看见</font>，总比只有自己能看见的日记强。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/10/24/sSQ7n1gumPFkl6Y.jpg" alt="博客.jpg" loading="lazy"></figure>
+<p>重新看到这个界面的时候，那种心情难以形容，就像小时候搬走的邻居家的小女孩有一天在大街上和你重新遇见了一样。泻药，人在图书馆，外面的红叶落了一地。午后的阳光准确的打在面前的桌子上，像极了动漫中的某个场景。</p>
+<h1 id="友情链接">友情链接</h1>
+<p>lifeni 大佬也有写博客的习惯我是没有想到的，人工智能课上我们交换了下友链。他的博客地址：<a href="https://lifeni.life/">记录干杯</a>，反正做的肯定比我好就是了。</p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/10/24/skw5Ql3Oizx1btZ.jpg" alt="l博客.jpg" loading="lazy"></figure>
+<h1 id="one-more-thing">One more thing...</h1>
+<p><em>by Steve Jobs</em></p>
+<p>写一下这次的更新记录吧：</p>
+<ol>
+<li>更新了腾讯云到这个网站的解析记录。</li>
+<li>和 lifeni大佬交换了下友链</li>
+<li>更新这篇文章</li>
+</ol>
+<p>未来计划的：</p>
+<ol>
+<li>增加评论系统</li>
+<li>把 CSDN 上的几篇文章移植过来</li>
+<li>更新博客的“about”界面。</li>
+</ol>
+<hr>
+<p>封面图：《言叶之庭》剧照</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[每周说（7）：特别篇：《三色绘恋s》]]></title>
+        <id>https://bluebonnet27.github.io/post/weeklysay7/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay7/">
+        </link>
+        <updated>2020-07-11T03:05:12.000Z</updated>
+        <content type="html"><![CDATA[<p><em>明知道不是真实的，你依然会热泪盈眶</em></p>
+<p>每周说第7期，<em>这个系列的目的是练习Markdown语法</em></p>
+<h1 id="特别篇三色绘恋s">特别篇：三色绘恋s</h1>
+<p><em>即使tricolour变成了sunnyrain，我也不希望这故事止步于此</em></p>
+<p><font color="red">©所有cg来自<a href="https://www.bilibili.com/read/cv6139115/" target="_blank">三色绘恋S CG选集</a>,若有侵权即刻删除本文。</font></p>
+<p>玩《三色绘恋》第一部是在2018年的冬天，也就是我大一寒假期间。</p>
+<p>我是从哪里知道这款galgame的？说出来可能令人惊讶，因为我是从电视上看到的广告。（我现在已经找不到这个广告了）所以steam冬季促销的时候买了一部，也不贵，然后寒假回家打了一遍。</p>
+<p>那个时候白天练习科目二，晚上回去打《求生之路2》或者《三色绘恋》，这游戏的流程特别长，以至于在我回学校以后才把结局打完。打完结局的心情是复杂的，因为剧情有点。。。呃。。。苍白。</p>
+<p>不过这钱花的很值。当然还是选了文芷啦，因为x大即正义嘛。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/07/11/68wfSs2cBUCnJM4.png" alt="sunnyrain-chiguo2.png" loading="lazy"></figure>
+<p>于是又到了今年春天，续集不断跳票，最后改成数字版发行。也曾纠结于pc版还是Android版通关，玩得断断续续的。结果在一个雨天的下午，百无聊赖之中打开，竟然一口气打完了剩下的部分。</p>
+<p>剧情相比上一代有了很大进步，起码这一次我真的从头到尾认真看完了。尺度也够大的，很多cg我都不敢放在自己的博客里。</p>
+<p>通关之后，一个人面对雨中的窗外城镇。顿时生出了一种莫名其妙的虚无感。这种虚无感也发生在我看完每一部日漫以后。它应该在我通关一代的时候就有的，只不过那时的感觉被开学的气氛淹没了。</p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/07/11/cJ5Srqw6QBphv8A.png" alt="sunnyrain-chiguoAndChiyaoInTheRain.png" loading="lazy"></figure>
+<p>你知道游戏中的江城武汉不是真正的江城武汉，你知道游戏中的人物所做的事情在现实中绝对不可能发生，你知道你和他们是两个世界的人，可你依然会与他们产生共情。明知道不是真实的，依然会热泪盈眶。</p>
+<p>tricolour讨论的既是一个男孩在两个女孩间做出自己的选择，也是一群人面对突如其来的风暴时做出的自己的选择；而sunnyrain，名副其实，阳光灿烂和暴雨如注交错缠绕，有点和某经典话剧撞车了，但无所谓。正视并坚持一份感情是需要很多努力的，幸好制作组坚持了自己的想法——“是兄妹，也是恋人”，即使<br>
+现在因为能力不够而不能起身对抗世界，抱有一份信念一起走下去也不失为好的选择。</p>
+<p>两部作品都在讨论选择，第二部可能还要比第一部深刻一点。结合近期发生的种种事情，不得不称赞制作组的远见。这里不剧透，请自行玩游戏体验。实时弹幕和云存档功能至少在技术上，在国产galgame或者加上日本的galgame里，都是领先的。虽然这个弹幕也不是那么“实时”，云存档还要手动，也不能同步gallery。</p>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/07/11/LErvUNnTpxg5yh8.png" alt="sunnyrain-chiguoelder.png" loading="lazy"></figure>
+<p>一代在我练车的日子里，缓解了我的很多压力；二代则在我即将参加实训时，缓解了我的很多压力。其实galgame应该更多地被看作小说而非游戏。一部作品在你最需要的时候出现，为你提供精神上的帮助，最后变成你回忆里的一部分。不过，即使tricolour变成了sunnyrain，我也不希望这故事止步于此。我想看到更多的故事，关于他们，或者不关于。</p>
+<p>有时间要去一次武汉，在疫情完全结束以后。</p>
+<p>bluebonnet27,2020年7月11日于家中。</p>
+<hr>
+<p>封面图：《三色绘恋s》cg</p>
+<p>《三色绘恋》购买链接：<a href="https://store.steampowered.com/app/668630/Tricolour_Lovestory/" target="_blank">链接</a></p>
+<p>《三色绘恋s》官网：<a href="https://s.hl-avg.com/" target="_blank">链接</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[每周说（6）：独立思考的能力在任何时候都显得无比重要]]></title>
+        <id>https://bluebonnet27.github.io/post/weeklysay6/</id>
+        <link href="https://bluebonnet27.github.io/post/weeklysay6/">
+        </link>
+        <updated>2020-07-02T02:34:58.000Z</updated>
+        <content type="html"><![CDATA[<p><em>起码让你活得明白些，也许不会带来快乐</em></p>
+<p>每周说第6期，<em>这个系列的目的是练习Markdown语法</em></p>
+<p><strong>每周说的第5期因为重装系统的原因，而且我也没备份好源文件，所以就丢失了。幸好写的也不是什么重要的东西</strong></p>
+<h1 id="我的大学生活1">我的大学生活（1）</h1>
+<p><em>自己明白自己想要的是什么</em></p>
+<p>下周一（7月6日）就开始了我的实训生活。我会在博客新建tag“<strong>Java实训日记</strong>”记录下实训期间学到的一些东西。我报的是Java方向，其实还可以选web方向和Python方向。主要是想学点新的东西。因为Python我有在自学。<img src="https://i.loli.net/2020/07/02/lQWBfxMeS4q7bXh.jpg" alt="培训安排.jpg" loading="lazy"></p>
+<p>其实你看到这张图的话，就会发现这是教课的形式而非单纯的实习。事实上也是如此。这个实训使得我们每年多交了一万元学费。而它的实质是学校和第三方培训机构，以及机构背后的软件企业的合作。学校似乎清楚自己教的知识全是理论，并不能教会学生在将来的软件企业如何生存，也就是具体的代码能力。于是利用培训机构教这些。这个机构在知乎上的名声似乎也不太好，很多大学和这个机构做过联合培训。</p>
+<p>当然最后肯定还是要实习的，两周，在大连的东软。</p>
+<p>7月初开始实训一直到8月中旬，使得一个暑假只剩下两周的时间。这两周的时间还要用来准备开学9月的5门期末考试。似乎学生在生活节奏上已经提前步入社会。</p>
+<p>然而我们开学在学些什么呢？<img src="https://i.loli.net/2020/07/02/WoCrd9gDbMAciSj.png" alt="课表.png" loading="lazy"></p>
+<p>工程训练？数控机床？怎么看都不像是一个学计算机的学生应该学习的东西吧？如果说三大数学和物理，化学之类的是工科基础学科，难道机械设计基础也是工科基础学科？一个知乎上的观点是这样说的：</p>
+<blockquote>
+<p>... ... 这些水课的存在意义就是让你们没有时间没有精力去学逻辑学，去学方法论，去学学术写作 ... ... 只有你人格有缺陷，才会无条件爱x，才会不去思考行业利润与产业链，才会不去思考财富和货币的关系 ... ...</p>
+</blockquote>
+<p><font color=green>独立思考的能力在任何时候都无比重要</font>。</p>
+<h1 id="腾讯与老干妈">腾讯与老干妈</h1>
+<p><em>广告？</em></p>
+<p>这个瓜就太大了，层层翻转。</p>
+<ol>
+<li>先是腾讯起诉冻结老干妈财产，理由是<font color="red">老干妈欠他们的广告费1600w不还</font>。</li>
+<li>老干妈反驳，说<font color="red">自己从来没有投放任何广告</font>。报警查出来是<font color="red">三个骗子骗了腾讯</font>。</li>
+<li>腾讯在各大媒体卖惨。字节跳动副总裁质疑腾讯利用某种力量打压对手。</li>
+<li>腾讯回怼，字节跳动便扒出<font color="red">不少官员退休以后直接去了腾讯</font>。</li>
+</ol>
+<p>老干妈白嫖了1600w的广告？</p>
+<p>我好奇的是，什么样的骗子能骗过一次又一次的审查？两家公司合作，必然有多次的磋商和交流。难道骗子能躲过每一次的交流？而且，警方的公告说，骗子的目的是赚取游戏礼包。和这1600w比起来，一整年的游戏礼包都可以忽略不计了，何必舍本逐末呢？</p>
+<p>我在等，等下一次的反转。</p>
+<h1 id="one-more-thing">one more thing ...</h1>
+<p><em>by Steve Jobs</em></p>
+<ol>
+<li>label“Java实训日记”正式建立，可以在这个标签查看我的Java实训文章。目前打算是在本地用typola写好，然后这里和<a href="https://zhuanlan.zhihu.com/c_1261366623153827840" target="_blank">知乎专栏</a>各更新一篇。</li>
+<li><a href="https://s.hl-avg.com/">《三色绘恋S》</a>很棒。有空会写一篇安利文发在这里。</li>
+<li>欠了两周的电影了，是真的找不到片子。</li>
+</ol>
+<p>封面图：<span>Photo by <a href="https://unsplash.com/@a_d_s_w?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Adrian Swancar</a> on <a href="https://unsplash.com/s/photos/tired?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
+]]></content>
+    </entry>
+</feed>
